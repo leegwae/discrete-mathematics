@@ -22,6 +22,10 @@
 
 
 
+$x^2 + 2 = 11$은 $x$의 값에 따라 진리값이 참 또는 거짓이므로 statement가 아니다.
+
+
+
 **2.1.2 Compound Statements**
 
 | symbol             | meaning |
@@ -38,7 +42,7 @@
 
 
 
-문장을 논리 연산을 사용하여 바꾸기
+기호를 사용하여 번역하기
 $$
 p\ \mathrm {but}\ q\quad\mathrm {means}\quad p\ \mathrm {and}\ q
 $$
@@ -232,7 +236,7 @@ $$
 
 **Definition[Biconditional]**
 
-$p$와 $q$가 statment variable로 주어졌을 때, **$p$ 그리고 $q$의 biconditional**은 "$p$는 $q$인 경우, 그리고 오직 그러한 경우에만 참이다."이며, $p\leftrightarrow q$로 표기한다. 이것은 $p$와 $q$ 모두가 동일한 값을 가질 경우 참이고, 서로 다른 값을 가질 경우 거짓이다. *if and only if​는* **iff**로 축약한다.
+$p$와 $q$가 statement variable로 주어졌을 때, **$p$ 그리고 $q$의 biconditional**은 "$p$는 $q$인 경우, 그리고 오직 그러한 경우에만 참이다."이며, $p\leftrightarrow q$로 표기한다. 이것은 $p$와 $q$ 모두가 동일한 값을 가질 경우 참이고, 서로 다른 값을 가질 경우 거짓이다. *if and only if​는* **iff**로 축약한다.
 
 | $p$  | $q$  | $p\to q$ | $q\to p$ | $p\leftrightarrow q$ |
 | ---- | ---- | -------- | -------- | -------------------- |

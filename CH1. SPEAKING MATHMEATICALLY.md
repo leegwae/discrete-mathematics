@@ -187,13 +187,13 @@ $$
 
 **Definition[Subset]**
 
-A와 B가 집합일 때, A의 모든 element가 B의 element인 경우, 그리고 오직 이 경우에만 A는 B의 **subset**이다.
+A와 B가 집합일 때, A의 모든 element가 B의 element인 경우, 그리고 오직 이 경우에만 A는 B의 **subset(부분집합)**이다.
 $$
 \{ A\subseteq B\}\quad 모든\ \mathbf {element}\ x에\ 대하여\ x \in A이면\ x \in B이다.
 $$
 모든 element x에 대하여, x가 A에도 속하고 B에도 속함을 의미한다.
 
-"A는 B에 포함된다"와 "B는 A를 포함한다"는 문장은 A가 B의 부분집합이라는 것을 의미한다.
+"A는 B에 포함된다"와 "B는 A를 포함한다"는  phrases은 A가 B의 부분집합이라는 것을 의미한다.
 
 
 
