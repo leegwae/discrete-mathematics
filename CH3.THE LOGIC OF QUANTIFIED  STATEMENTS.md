@@ -343,3 +343,145 @@ $\forall$ 실수 $y$와 $\forall$ 실수 $x$, $x+y=y+x$
 **3.3.6 Prolog**
 
 예시
+
+
+
+**3.4 Arguments with Quantified Statements**
+
+**Universal Instantiation**
+
+- property가 집합의 *전부(everything)*에 있어 참일 때, 집합의 *어떤 특정한 것(any particular)*에 대해서도 참이다.
+- univeral instantiation은 deductive reasoning(연역적 추론)의 핵심적인 도구이다.
+
+$$
+\begin{matrix}
+r^{k+1}\cdot r &=& r^{k+1}\cdot r^1 \\
+       &=& r^{(k+1) +1}\\
+       &=& r^{K+2}
+\end{matrix}
+$$
+
+[Step1]
+
+모든 실수 $x$에 대하여, $x^1 = x$이다.		universal truth
+
+$r$는 특정 실수이다.										particular instance
+
+$\therefore r^1=r$														conclusion
+
+[Step2]
+
+모든 실수 $x$와 모든 정수 $m$에 대하여, $x^m\cdot x^n = x^{m+n}$이다.		universal truth
+
+$r$는 특정 실수이고 $k+1$과 1은 특정 정수이다.									particular instance
+
+$\therefore r^{k+1}\cdot r^1=r^{(k+1)+1}$																			conclusion
+
+
+
+**3.4.1 Universal Modus Ponens**
+
+- universal instantiation의 법칙은 타당한 argument의 형태를 포함한 modus ponens로 결합될 수 있는데, 이것은 *universal modus ponens*라고 한다.
+
+- Formal Version
+
+$\forall x$, if $P(x)$ then $Q(x)$
+
+$P(a)$ for a particular $a$.
+
+$\therefore Q(a)$.
+
+- Informal Version
+
+If $x$ makes $P(x)$ true, then $x$ makes $Q(x)$ true.
+
+$a$ makes $P(x)$ true.
+
+$\therefore a$ makes $Q(x)$ true.
+
+
+
+**3.4.2 Use of Universal Modus Ponens in a Proof**
+
+예시
+
+
+
+**3.4.3 Universal Modus Tollens**
+
+- *univeral modus tollens*: univeral instantiation과 modus tollens를 결합한 것으로부터 타당성이 비롯된다.
+- Formal Version
+
+$\forall x$, if $P(x)$ then $Q(x)$
+
+$\sim Q(a)$, for a particular $a$.
+
+$\therefore\ \sim P(a)$.
+
+- Informal Version
+
+If $x$ makes $P(x)$ true, then $x$ makes $Q(x)$ true.
+
+$a$ makes $P(x)$ true.
+
+$\therefore\ a$ makes $Q(x)$ true.
+
+
+
+**3.4.4 Use of Universal Modus Ponens in a Proof**
+
+예시
+
+
+
+**3.4.5 Proving Validity of Arguments with Quantified Statements**
+
+**Definition[Valid, Sound]**
+
+*argument form*이  **valid(타당하다)**는 것은 다음을 의미한다: 전제의 어떤 술어가 술어 기호로 대체되든, resulting premise statements가 모두 참이라면, 결론 또한 참이다.
+
+*argument*가 **valid(타당하다)**는 것은 그것의 form이 타당한 경우, 그리고 오직 이 경우에만 참이다. 이것이 **sound(건전하다)**는 것은 이것의 form이 타당하고 이것의 전제가 참일 때, 그리고 오직 이 경우에만 참이다.
+
+
+
+**3.4.6 Using Diagrams to Test for Validity**
+
+**Converse Error (Quantified Form)**
+
+$\forall x$, if $P(x)$ then $Q(x)$.
+
+$Q(x)$ for a particular $a$.
+
+$\therefore P(a)$.
+
+**Inverse Error (Quantified Form)**
+
+$\forall x$, if $P(x)$ then $Q(x)$.
+
+$\sim P(a)$, for a particular $a$.
+
+$\therefore\ \sim Q(a)$.
+
+
+
+**3.4.7 Creating Additional Forms of Argument**
+
+- univeral modus ponens과 modus tollens는 univeral instantiation과 modus ponens, 그리고 modus tollens를 결합한 것을 포함한다.
+- 마찬가지로 universally quantified statements를 포함한 argument의 additional form도 univeral instantiation과 다른 형태의 valid argument를 결합한 것을 포함한다. (예)
+
+$p\to q$
+
+$q\to r$
+
+$\therefore p\to r$
+
+
+
+**Univeral Transitivity**
+
+$\forall x\ P(x)\to Q(x)$
+
+$\forall x\ Q(x)\to R(x)$
+
+$\therefore\forall x\ P(x)\to R(x)$
+
