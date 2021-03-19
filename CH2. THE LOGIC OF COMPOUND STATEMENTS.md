@@ -89,7 +89,7 @@ $p$와 $q$가 statement variable일 때, $p$와 $q$의 **disjunction(선언)**�
 
 **Definition[Statement form]**
 
-**statement form** (혹은 **propositional form**)은 $p,\ q,\ r$과 같은 statement variable들과 $\sim,\ \and,\ \or$과 같은 논리적 연결사(logical connectives)들로 이루어진 expression이다. (이것은 acutal statements가 component statement varialbe로 대체될 때 statement가 된다.) 주어진 statement form에 대한 **truth table(진리표)**은 그것의 component statement variable에 대한 진리값의 모든 가능한 조합에 대응하는 truth values를 보여준다.
+**statement form** (혹은 **propositional form**)은 $p,\ q,\ r$과 같은 statement variable들과 $\sim,\ \and,\ \or$과 같은 논리적 연결사(logical connectives)들로 이루어진 expression이다. (이것은 acutal statements가 component statement varialbe로 치환될 때 statement가 된다.) 주어진 statement form에 대한 **truth table(진리표)**은 그것의 component statement variable에 대한 진리값의 모든 가능한 조합에 대응하는 truth values를 보여준다.
 
  
 
@@ -105,9 +105,9 @@ $p$와 $q$가 statement variable일 때, $p$와 $q$의 **disjunction(선언)**�
 
 **Definition[Logically equivalent]**
 
-두 개의 *statement forms*는 그것들의 statement variable에 대해 가능한 statement의 각각의 대체에 대하여 동일한 진리값을 가지고 있을 때, 그리고 오직 이 경우에만 **논리적으로 동등하다(logically equivalent)**. $P$ 와 $Q$ statement form의 logical equivalence는 $P\equiv Q$라고 표기한다.
+두 개의 *statement forms*는 그것들의 statement variable에 대해 가능한 statement의 각각의 치환에 대하여 동일한 진리값을 가지고 있을 때, 그리고 오직 이 경우에만 **논리적으로 동등하다(logically equivalent)**. $P$ 와 $Q$ statement form의 logical equivalence는 $P\equiv Q$라고 표기한다.
 
-두 *statements*는 동일한 component statement variable이 동일한 copmonent statement를 대체할 때 논리적으로 동등한 경우, 그리고 오직 이 경우에만 **logically equivalent**하다고 한다.
+두 *statements*는 동일한 component statement variable이 동일한 copmonent statement를 치환할 때 논리적으로 동등한 경우, 그리고 오직 이 경우에만 **logically equivalent**하다고 한다.
 
 
 
@@ -121,9 +121,9 @@ $or$ statement의 부정은 각각의 component가 부정된 $and$ statement와 
 
 **2.1.6 Tautologies and Contradictions**
 
-**tautology**는 statement variable로 대체된 개별적인 statement의 진리값에 상관없이 언제나 참인 statement form이라고 한다. 그것의 form이 tautology인 statement는 **tautological statement**라고 한다.
+**tautology**는 statement variable로 치환된 개별적인 statement의 진리값에 상관없이 언제나 참인 statement form이라고 한다. 그것의 form이 tautology인 statement는 **tautological statement**라고 한다.
 
-**contradication**는 statement variable로 대체된 개별적인 statement의 진리값에 상관없이 항상 거짓인 statement form이라고 한다. 그것의 form이 contradiction인 statement를 **contradictory statement**라고 한다.
+**contradication**는 statement variable로 치환된 개별적인 statement의 진리값에 상관없이 항상 거짓인 statement form이라고 한다. 그것의 form이 contradiction인 statement를 **contradictory statement**라고 한다.
 
 
 

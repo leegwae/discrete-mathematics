@@ -32,13 +32,13 @@ $P(x),\ Q(x,y)$ 등
 
 **Definition[predicate]**
 
-**predicate(술어)**는 유한한 수의 변수를 가지며, 특정한 값이 변수로 대체될 때 statement가 되는 sentence(문장)이다. predicate variable의 **domain**(논의 영역)는 변수로 대체될 수 있는 모든 값의 집합이다.
+**predicate(술어)**는 유한한 수의 변수를 가지며, 특정한 값이 변수로 치환될 때 statement가 되는 sentence(문장)이다. predicate variable의 **domain**(논의 영역)는 변수로 치환될 수 있는 모든 값의 집합이다.
 
 
 
 **Definition[Truth set]**
 
-$P(x)$가 predicate이고 $x$가 domain $D$를 가졌을 때, $P(x)$의 **truth set**은 $x$로 대체될 때 $P(x)$를 참이게 하는 $D$의 모든 element의 집합이다. $P(x)$의 truth set은 다음과 같이 표기한다.
+$P(x)$가 predicate이고 $x$가 domain $D$를 가졌을 때, $P(x)$의 **truth set**은 $x$로 치환될 때 $P(x)$를 참이게 하는 $D$의 모든 element의 집합이다. $P(x)$의 truth set은 다음과 같이 표기한다.
 $$
 \{x \in D\ |\ P(x)\}
 $$
@@ -438,7 +438,7 @@ $\therefore\ a$ makes $Q(x)$ true.
 
 **Definition[Valid, Sound]**
 
-*argument form*이  **valid(타당하다)**는 것은 다음을 의미한다: 전제의 어떤 술어가 술어 기호로 대체되든, resulting premise statements가 모두 참이라면, 결론 또한 참이다.
+*argument form*이  **valid(타당하다)**는 것은 다음을 의미한다: 전제의 어떤 술어가 술어 기호로 치환되든, resulting premise statements가 모두 참이라면, 결론 또한 참이다.
 
 *argument*가 **valid(타당하다)**는 것은 그것의 form이 타당한 경우, 그리고 오직 이 경우에만 참이다. 이것이 **sound(건전하다)**는 것은 이것의 form이 타당하고 이것의 전제가 참일 때, 그리고 오직 이 경우에만 참이다.
 
