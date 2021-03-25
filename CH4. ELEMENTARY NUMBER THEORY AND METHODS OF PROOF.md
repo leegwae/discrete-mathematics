@@ -651,3 +651,146 @@ $$
 |x+y| = (-x)+(-y)\le |x|+|y|.
 $$
 그러므로 두 경우 모두에서 $|x+y|\le |x|+|y|$가 성립한다.
+
+
+
+**4.7 Indirect Argument: Contradiction and Contraposition**
+
+- indirect argument의 종류 (1) proof by contradiction (2) proof by contraposition
+
+- *모순에 의한 논증(argument by contradiction)*은 statement가 참이거나 거짓이지만 참이면서 거짓일 수 없다는 사실에 기초한다.
+
+
+
+**Method of Proof by Contradiction**
+
+(1) 증명할 statement가 거짓이라고 가정한다. 즉, statement의 부정을 참이라고 가정한다.
+
+(2) 위 가정이 논리적으로 모순임을 보인다.
+
+(3) 증명할 statement는 참이다.
+
+
+
+**Theorem 4.7.1**
+
+가장 큰 정수는 없다(There is no greatest integer).
+
+**Proof**
+
+가장 큰 정수가 있으며, 모든 정수 $n$에 대하여 $N\ge n$이라고 하자. 또한 $M=N+1$이라고 하자. $M$은 정수의 합이므로 정수이다. 또한 $M=N+1$이므로 $M >N$이다. 그러므로 $M$은 $N$보다 큰 정수이다. 그리하여 $N$은 가장 큰 정수이며 $N$은 가장 큰 정수가 아니기도 한데 이것은 모순이다.
+
+
+
+**Theorem 4.7.2**
+
+짝수이면서 동시에 홀수인 정수는 없다(There is no integer that is both even and odd).
+
+**Proof**
+
+짝수이면서 동시에 홀수인 정수 $n$이 적어도 하나가 있다고 하자. 짝수의 정의에 의하여, 어떤 정수 $a$에 대하여 $n=2a$이며 홀수의 정의에 의하여, 어떤 정수 $b$에 대하여 $n=2b+1$이다. 결론적으로
+$$
+2a=2b+1\quad n\mathrm{에\ 대한\ 두\ expression을\ 등호로\ 표시한다}
+$$
+이므로
+$$
+\begin{align*}
+2a-2b &= 1	\\
+2(a-b) &= 1 \\
+a-b&=1/2 &대수학에\ 의하여 \\
+\end{align*}
+$$
+$a$와 $b$가 정수이므로, $a-b$의 차 또한 정수여야한다. 그러나 $a-b$는 $1/2$로 정수가 아니다. 그러므로 $a-b$는 정수이며 $a-b$는 정수가 아니게 되므로 이는 모순이다.
+
+
+
+**Theorem 4.7.3**
+
+유리수와 유리수가 아닌 수의 합은 유리수가 아니다(The sum of any rational number and any irrational number is irrational).
+
+**Proof**
+
+유리수 $r$과 유리수가 아닌 수 $s$의 합이 유리수라고 하자. 유리수의 정의에 의하여, 어떤 정수 $b\ne0$이고 $d\ne0$인  $a,b,c,d$에 대하여 $r=a/b$와 $r+s=c/d$이다. 치환하면
+$$
+\frac{a}{b} +s=\frac{c}{d}
+$$
+그러므로
+$$
+\begin{align*}
+s&=\frac{c}{d}-\frac{a}{b} \\
+&=\frac{bc-ad}{bd}
+\end{align*}
+$$
+$a,b,c,d$가 정수이고 정수의 합과 곱은 정수이므로 $bc-ad$와 $b-d$는 정수이다. 또한 zero product property에 의하여 $bd\ne0$이다. 그리하여 $s$는 두 정수 $bc-ad$와 $bd\ne0$인 $bd$의 몫이다. 그러므로, 유리수의 정의에 의하여, $s$가 유리수가 아니라는 가정이 모순이며 $s$는 유리수이다.
+
+
+
+**4.7.1 Argument by Contraposition**
+
+*대우에 의한 논증(argument by contraposition)*은 statement와 그것의 대우 간의 논리적 동등성(equivalence)에 기초한다.
+
+
+
+**Method of Proof by Contraposition**
+
+(1) 증명할 statement를 다음과 같은 형태로 표현한다.
+$$
+\forall x\mathrm{\ in\ D,\ if\ }P(x)\mathrm{\ then\ }Q(x)
+$$
+(2) 이 statement를 대우의 형태로 다시 쓴다.
+$$
+\forall x\mathrm{\ in\ D, if\ }Q(x)\mathrm{\ is\ false\ then\ }P(x)\mathrm{\ is\ false}
+$$
+(3) direct proof를 통해 contrapositive를 증명한다.
+
+​	(a) $x$가 $Q(x)$를 거짓이게 하는 $D$의 요소라고 가정한다.
+
+​	(b) $P(x)$가 거짓임을 보인다.
+
+
+
+**Proposition(명제) 4.7.4**
+
+모든 정수 $n$에 대하여, $n^2$이 짝수이면 $n$은 짝수이다.
+
+**Proof(by contraposition)**
+
+$n$이 홀수 정수(any odd integer)라고 하자. 홀수의 정의에 의하여, 어떤 정수 $k$는 $n=2k+1$이다. 치환과 대수학에 의하여,
+$$
+\begin{align*}
+n^2&=(2k+1)^2 \\
+&=4k^2+4k+1 \\
+&=2(2k^2+2k)+1
+\end{align*}
+$$
+정수의 곱과 합은 정수이므로 $2k^2+2k$는 정수이다. 그러므로 $n^2=2(정수)+1$이므로, 홀수의 정의에 의하여, $n^2$는 홀수이다.
+
+
+
+**4.7.2 Relation between Proof by Contradiction and Proof by Contraposition**
+
+- Proof by Contraposition
+  - $x$가 $\sim Q(x)$를 만족하는 $D$의 임의의 요소라고 하자
+  - $\sim P(x)$를 보인다.
+- Proof by Contradiction
+  - $P(x)$와 $\sim Q(x)$를 만족하는 $x$가 $D$에 존재한다고 하자
+  - Contradiction: $P(x)$이며 $\sim P(x)$임을 보인다. 
+
+
+
+**Proposition(명제) 4.7.4**
+
+모든 정수 $n$에 대하여, $n^2$이 짝수이면 $n$은 짝수이다.
+
+**Proof(by contradiction)**
+
+$n^2$이 짝수이면서 $n$이 짝수가 아닌 그러한 정수 $n$이 있다고 하자. 몫-나머지 정리에 의하여, 모든 정수는 짝수거나 홀수이다. 그러므로, $n$은 짝수가 아니고 홀수이므로, 홀수의 정의에 의하여 어떤 정수 $k$에 의하여 $n=2k+1$이다. 치환과 대수학에 의하여
+$$
+\begin{align*}
+n^2&=(2k+1)^2 \\
+&=4k^2+4k+1 \\
+&=2(2k^2+2k)+1
+\end{align*}
+$$
+정수의 곱과 합은 정수이므로 $2k^2+2k$이다. 그러므로 $n^2=2(정수)+1$이고, 홀수의 정의에 의하여, $n^2$는 홀수이다. 따라서 $n^2$는 짝수이면서 동시에 홀수이다. 이는 어떤 정수도 동시에 짝수나 홀수일 수 있다는 정리 4.7.2에 모순된다.
+
