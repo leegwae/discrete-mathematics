@@ -90,8 +90,6 @@ m+n &= 2r+2s &치환\\
 &= 2(r+s) &2로\ 묶기
 \end{align*}
 $$
-(ㄱ) 치환 (ㄴ) 2로 묶기
-
 $t=r+s$라고 하자. $t$는 정수의 합이므로 정수이다.
 $$
 m+n=2t\quad 여기서\ t는\ 정수이다.
@@ -193,8 +191,8 @@ $$
 $r$과 $s$가 유리수(any rational numbers)라고 하자. 유리수의 정의에 의하여, $b\ne0$이고 $d\ne0$인 어떤 정수 $a,b,c,d$에 대하여 $r=a/b$이고  $s=c/d$이다. 그러므로
 $$
 \begin{align*}
-r+s&=\frac{a}{b}+\frac{c}{d}\quad(ㄱ)치환 \\
-&=\frac{ad+bc}{bd}\quad (ㄴ) 대수학
+r+s&=\frac{a}{b}+\frac{c}{d} &치환 \\
+&=\frac{ad+bc}{bd}&대수학
 \end{align*}
 $$
 $p=ad$이고 $q=bd$라고 하자. 정수의 곱과 합은 정수이고 $a,b,c,d$는 정수이므로 $p$와 $q$도 정수이다. 또한 zero product property에 의하여 $q\ne0$이다. 그러므로
@@ -326,25 +324,25 @@ $$
 
 $n$이 1보다 큰 정수라고 하자. 
 
-(1) $n$이 유리수이면, $n$은 유리수에 의해 나누어 떨어질 수 있다. $n$이 유리수가 아니면 다음과 같다.
+(1) $n$이 유리수이면, $n$은 유리수에 의해 나누어 떨어질 수 있다. $n$이 무리수이면 다음과 같다.
 $$
 n=r_0s_0\quad r_0과\ s_0은\ 정수이며\ 1<r_0<n\ 그리고\  1<s_0<n이다.
 $$
 이것은 $r_0|n$인 divisibility의 정의로부터 도출된다.
 
-(2) $r_0$이 유리수이면, $r_0$은 $n$으로 나누어떨어지는 유리수이다. $r_0$이 유리수가 아니면 다음과 같다.
+(2) $r_0$이 유리수이면, $r_0$은 $n$으로 나누어떨어지는 유리수이다. $r_0$이  무리수이면 다음과 같다.
 $$
 r_0=r_1s_1\quad r_1과\ s_1은\ 정수이며\ 1<r_1<r_0\ 그리고\  1<s_1<r_0이다.
 $$
 이것은 $r_1|r_0$인 divisibility의 정의로부터 도출된다. $r_0|n$은 알고있으므로, transitivity of divisibility에 의하여 $r_1|n$이다.
 
-(3) $r_1$이 유리수이면, $r_1$은 $n$으로 나누어떨어지는 유리수이다. $r_1$이 유리수가 아니면 다음과 같다.
+(3) $r_1$이 유리수이면, $r_1$은 $n$으로 나누어떨어지는 유리수이다. $r_1$이 무리수이면 다음과 같다.
 $$
 r_1=r_1s_2\quad r_2과\ s_2은\ 정수이며\ 1<r_2<r_1\ 그리고\  1<s_2<r_1이다.
 $$
 이것은 $r_2|r_1$인 divisibility의 정의로부터 도출된다. $r_1|n$은 알고있으므로, transitivity of divisibility에 의하여 $r_2|n$이다.
 
-(4) $r_2$이 유리수이면, $r_2$은 $n$으로 나누어떨어지는 유리수이다. $r_2$이 유리수가 아니면 $r_3s_3$으로 $r_2$를 인수분해하여 위와 같은 과정을 반복한다.
+(4) $r_2$이 유리수이면, $r_2$은 $n$으로 나누어떨어지는 유리수이다. $r_2$이 무리수이면 $r_3s_3$으로 $r_2$를 인수분해하여 위와 같은 과정을 반복한다.
 
 이 과정을 반복하면 다음과 같은 sequence를 얻을 수 있다.
 $$
@@ -654,6 +652,122 @@ $$
 
 
 
+**4.6 Direct Proof and Counterexample 6: Floor and Ceiling**
+
+**Definition[Floor]**
+
+주어진 실수(any real number) $x$에 대하여, $x$의 **floor**은 $\lfloor x\rfloor$로 표기하며 다음과 같이 정의된다.
+$$
+\lfloor x\rfloor=n\mathrm{은\ }n\le x< n+1을\ 만족하는\ 유일한\ 정수
+$$
+기호화하면 다음과 같다. $x$가 실수이고 $n$이 정수이면,
+$$
+\lfloor x\rfloor=n\quad\Leftrightarrow\quad n\le x< n+1
+$$
+**Definition[Ceiling]**
+
+주어진 실수 $x$에 대하여, $x$의 **ceiling​**은 $\lceil x\rceil$로 표기하며 다음과 같이 정의된다.
+$$
+\lceil x\rceil=n\mathrm{은\ }n-1< x\le n을\ 만족하는\ 유일한\ 정수
+$$
+기호화하면 다음과 같다. $x$가 실수이고 $n$이 정수이면,
+$$
+\lceil x\rceil=n\quad\Leftrightarrow\quad n-1< x\le n
+$$
+
+
+**Theorem 4.6.1**
+
+실수 $x$와 정수 $m$에 대하여, $\lfloor x+m \rfloor=\lfloor x\rfloor+m$이다.
+
+**Proof**
+
+주어진 실수 $x$와 정수 $x$에 대하여 $n=\lfloor x \rfloor$이라고 하자. floor의 정의에 의하여, $n$은 정수이며 $n\le x <n+1$이다.
+
+각 변에 $m$을 더하면 다음을 얻을 수 있다.
+$$
+n+m\le x+m <n+m+1
+$$
+$n,m$이 정수이며 정수의 합은 정수이므로 $n+m$은 정수이다. 그러므로, floor의 정의에 의하여 항등식의 좌변은 다음과 같이 볼 수 있다.
+$$
+\lfloor x+m \rfloor = n+m
+$$
+그런데 $n=\lfloor x\rfloor$이므로, 치환에 의하여 항등식의 우변은 다음과 같이 볼 수 있다.
+$$
+n+m=\lfloor x \rfloor +m
+$$
+그러므로 $\lfloor x+m \rfloor=\lfloor x\rfloor+m$이다.
+
+
+
+**Theorem 4.6.2 [The Floor of n/2]**
+
+정수 $n$에 대하여,
+$$
+\lfloor\frac{n}{2}\rfloor=
+\begin{cases}
+\frac{n}{2} &\mathrm{(n은\ 짝수)} \\
+\frac{n-1}{2} &\mathrm{(n은\ 홀수)}
+\end{cases}
+$$
+**Proof**
+
+$n$은 정수라고 하자. 몫-나머지 정리에 의하여, $n$은 짝수이거나 $n$은 홀수이다.
+
+**Case 1($n$은 홀수이다)**: 이 경우, 어떤 정수 $k$에 대하여 $n=2k+1$이다. $k$는 정수이며 $k\le k+1/2<k+1$이므로, 좌변은 다음과 같이 나타낼 수 있다.
+$$
+\lfloor\frac{n}{2}\rfloor
+=\lfloor\frac{2k+1}{2}\rfloor
+=\lfloor\frac{2k}{2}+\frac{1}{2}\rfloor
+=\lfloor k+\frac{1}{2}\rfloor
+=k
+$$
+우변 또한 다음과 같이 나타낼 수 있다.
+$$
+\frac{n-1}{2}
+=\frac{(2k+1)-1}{2}
+=\frac{2k}{2}
+=k
+$$
+그러므로 좌변과 우변은 $k$와 같으므로, 서로도 같다.즉, $\lfloor\frac{n}{2}\rfloor=\frac{n-1}{2}$이다.
+
+**Case2($n$은 짝수이다)**: 이 경우, 어떤 정수 $k$에 대하여 $n=2k$이다.
+
+!! 이 뒤는 연습으로 풀어보기
+
+
+
+**Theorem 4.6.3**
+
+$n$이 정수이고 $d$가 양의 정수이면, 또한 $q=\lfloor n/d\rfloor$이고 $r=n-d\cdot\lfloor n/d\rfloor$이면, $n=dq+r$이고 $0\le r<d$이다.
+
+**Proof**
+
+$n$이 정수, $d$가 양의 정수, $q=\lfloor n/d\rfloor$이고 $r=n-d\cdot\lfloor n/d\rfloor$이라고 하자. 치환에 의하여,
+$$
+dq+r=d\cdot\lfloor\frac{n}{d}\rfloor+(n-d\cdot\lfloor\frac{n}{d}\rfloor)=n
+$$
+따라서 $q=\lfloor n/d\rfloor$는 증명된다. 
+
+floor의 정의에 의하면,
+$$
+q\le \frac{n}{d}<q+1
+$$
+이다. 그리고
+$$
+\begin{align*}
+dq&\le n < dq+d &d\mathrm{로\ 각\ 변을\ 곱한다} \\
+0&\le n-dq <d &\mathrm{각\ 변에서\ }dq\mathrm{를\ 추출한다}
+\end{align*}
+$$
+그런데
+$$
+r=n-d\lfloor\frac{n}{d}\rfloor=n-dq
+$$
+이다. 그러므로
+$$
+0\le r <d\quad 치환
+$$
 **4.7 Indirect Argument: Contradiction and Contraposition**
 
 - indirect argument의 종류 (1) proof by contradiction (2) proof by contraposition
@@ -706,11 +820,11 @@ $a$와 $b$가 정수이므로, $a-b$의 차 또한 정수여야한다. 그러나
 
 **Theorem 4.7.3**
 
-유리수와 유리수가 아닌 수의 합은 유리수가 아니다(The sum of any rational number and any irrational number is irrational).
+유리수와 무리수의 합은 무리수이다(The sum of any rational number and any irrational number is irrational).
 
 **Proof**
 
-유리수 $r$과 유리수가 아닌 수 $s$의 합이 유리수라고 하자. 유리수의 정의에 의하여, 어떤 정수 $b\ne0$이고 $d\ne0$인  $a,b,c,d$에 대하여 $r=a/b$와 $r+s=c/d$이다. 치환하면
+유리수 $r$과 무리수 $s$의 합이 유리수라고 하자. 유리수의 정의에 의하여, 어떤 정수 $b\ne0$이고 $d\ne0$인  $a,b,c,d$에 대하여 $r=a/b$와 $r+s=c/d$이다. 치환하면
 $$
 \frac{a}{b} +s=\frac{c}{d}
 $$
@@ -721,7 +835,7 @@ s&=\frac{c}{d}-\frac{a}{b} \\
 &=\frac{bc-ad}{bd}
 \end{align*}
 $$
-$a,b,c,d$가 정수이고 정수의 합과 곱은 정수이므로 $bc-ad$와 $b-d$는 정수이다. 또한 zero product property에 의하여 $bd\ne0$이다. 그리하여 $s$는 두 정수 $bc-ad$와 $bd\ne0$인 $bd$의 몫이다. 그러므로, 유리수의 정의에 의하여, $s$가 유리수가 아니라는 가정이 모순이며 $s$는 유리수이다.
+$a,b,c,d$가 정수이고 정수의 합과 곱은 정수이므로 $bc-ad$와 $b-d$는 정수이다. 또한 zero product property에 의하여 $bd\ne0$이다. 그리하여 $s$는 두 정수 $bc-ad$와 $bd\ne0$인 $bd$의 몫이다. 그러므로, 유리수의 정의에 의하여, $s$가 무리수라는 가정은 모순이며 $s$는 유리수이다.
 
 
 
@@ -793,4 +907,94 @@ n^2&=(2k+1)^2 \\
 \end{align*}
 $$
 정수의 곱과 합은 정수이므로 $2k^2+2k$이다. 그러므로 $n^2=2(정수)+1$이고, 홀수의 정의에 의하여, $n^2$는 홀수이다. 따라서 $n^2$는 짝수이면서 동시에 홀수이다. 이는 어떤 정수도 동시에 짝수나 홀수일 수 있다는 정리 4.7.2에 모순된다.
+
+
+
+**4.8 Indirect Argument: Two Famous Theorems**
+
+**4.8.1 The Irrationality of $\sqrt{2}$**
+
+**Theorem 4.8.1 [Irrationality of $\sqrt{2}$]**
+
+$\sqrt{2}$는 무리수이다.
+
+**Proof(by contradiction)**
+
+$\sqrt{2}$를 유리수라고 가정하자. 공통 인수(common factor)가 없는 정수 $m$과 $n$이 다음을 만족한다고 하자.
+$$
+\begin{align*}
+\sqrt{2}&=\frac{m}{n} &4.8.1\\
+2&=\frac{m^2}{n^2} &4.8.1에서\ 양변을\ 제곱하였음 \\
+m^2 &= 2n^2 &4.8.2
+\end{align*}
+$$
+항등식 (4.8.2)는 짝수의 정의에 의하여 $m^2$가 짝수라는 것을 암시한다. 또한 Proposition 4.7.4에 의하여 $m$은 짝수다.
+$$
+\begin{align*}
+m&=2k &k는\ 정수,\ 4.8.2 \\
+m^2&=(2k)^2=4k^2=2n^2 &(4.8.3)으로\ 치환 \\
+n^2&=2k^2 &양변을\ 2로\ 나눈다
+\end{align*}
+$$
+그러므로, $n^2$은 짝수이며, Proposition 4.7.4에 의하여 $n$은 짝수이다. $m$도 짝수이다. 그리하여 $m$과 $n$은 공통 인수로 2를 가진다. 이것은 $m$과 $n$이 공통 인수를 가지지 않는다는 전제에 모순된다.
+
+
+
+**Proposition 4.8.2**
+
+$1+3\sqrt{2}$는 무리수이다.
+
+**Proof**
+
+$1+3\sqrt{2}$가 유리수라고 하자. 유리수의 정의에 의하여, 어떤 정수 $a$와 $b\ne 0$인 정수 $b$에 대하여
+$$
+\begin{align*}
+1+3\sqrt{2}&=\frac{a}{b} \\
+3\sqrt{2}&=\frac{a}{b}-1 &양변에\ 1을\ 더한다 \\
+&=\frac{a}{b}-\frac{b}{b} &치환 \\
+&=\frac{a-b}{b} &\mathrm{rule\ for\ subtracting\ fractions} \\
+&&\mathrm{\ with\ a\ common\ denominator}
+\end{align*}
+$$
+그리하여
+$$
+\begin{align*}
+\sqrt{2}&=\frac{a-b}{3b} &양변을\ 3으로\ 나눈다
+\end{align*}
+$$
+$a, b$는 정수이며 정수의 차와 곱은 정수이므로 $a-b$와 $3b$는 정수이다. 또한 zero product property에 의하여 $3b\ne 0$이다. 그리하여 $\sqrt{2}$은 두 정수 $a-b$와 $3b\ne 0$인 $b$의 몫이며, 유리수의 정의에 의하여 $\sqrt{2}$는 유리수이다. 이것은 $\sqrt{2}$가 무리수라는 사실에 모순된다. 그러므로 $1+3\sqrt{2}$는 무리수이다.
+
+
+
+**4.8.2 Are there Infinitely Many Prime Numbers?**
+
+**Proposition 4.8.3**
+
+정수 $a$와 소수 $p$에 대하여, $p\mid a$이면 $p\nmid (a+1)$이다.
+
+**Proof(by contradiction)**
+
+$p|a$와 $p\nmid (a+1)$을 만족하는 정수 $a$와 소수 $p$가 존재한다고 하자. divisibility의 정의에 의하여, $a=pr$과 $a+1=ps$를 만족하는 정수 $r$와 $s$가 존재한다. 이에 다음이 도출된다.
+$$
+1=(a+1)-1=ps-pr=p(s-r)
+$$
+$s-r$이 정수이므로 $p|1$이다. 그러나, [정리 4.4.2]에 의하여, 1의 정수 divisor는 오직 1과 -1이며, $p$는 소수이므로 $p>1$이다. 그러므로 $p\le1$이고 $p>1$인데, 이것은 모순이다. 그러므로 명제 4.8.3은 참이다.
+
+
+
+**Theorem 4.8.4 [Infinitude of the Primes]**
+
+소수의 집합은 무한하다.
+
+**Proof(by contradiction)**
+
+소수의 집합이 무한하다고 하자. 그리고 어떤 소수 $p$는 모든 소수 중 가장 크다고 하자. 그리하여 소수는 다음과 같이 오름차순으로 나열할 수 있다.
+$$
+2,3,5,7,11,...,p
+$$
+모든 소수를 곱한 것에 1을 더한 것을 $N$이라고 하자.
+$$
+N=(2\cdot3\cdot5\cdot7\cdot11\cdot...\cdot p)+1
+$$
+그러면 $N>1$이며, [정리 4.4.2]에 의하여 $N$은 어떤 소수 $q$에 의하여 divisible하다. $q$는 소수이므로, $q$는 소수 2, 3, 5, 7, ..., $p$ 중 하나이다. 그러므로, divisibility의 정의에 의하여, $2\cdot3\cdot5\cdot7\cdot11\cdot...\cdot p$는 $q$에 의해 나누어진다(divides). 그리하여 [명제 4.8.3]에 의하여, $q$는 $(2\cdot3\cdot5\cdot7\cdot11\cdot...\cdot p)+1$ 곧 $N$을 나눌 수 없다. 그리하여 $N$은 $q$에 의하여 divisible하고 divisible하지 않다. 이는 모순이므로, 소수의 집합은 무한하다.
 
