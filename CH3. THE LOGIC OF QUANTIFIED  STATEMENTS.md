@@ -1,4 +1,4 @@
-# CH3. THE LOGIC OF QUANTIFIED  STATEMENTS
+# CH3. THE LOGIC OF QUANTIFIED STATEMENTS
 
 - **predicate calculus**: predicates(술어)와 quantified statement의 symbolic analysis(기호적 분석)
 - **statement calculus** (혹은 **propositional calculus(명제 논리)**): ordinary compound statement의 기호적 분석
@@ -206,7 +206,7 @@ $$
 
 **3.2.2 Negations of Universal Conditional Statements**
 
-- *모든* statement의 부정의 정의에 따르면
+- *for all* statement의 부정의 정의에 따르면
 
 $$
 \sim (\forall x,\ P(x)\to Q(x))\equiv \exist x\mathrm {\ such\ that\ }\sim (P(x)\to Q(x))\quad 3.2.1
@@ -252,7 +252,7 @@ $$
 
 **3.2.4 Vacuous Truth of Universal Statements**
 
-- 다음 형태의 statement를 **vacuously true** 혹은 **true by default**라고 한다.
+- 다음 형태의 statement는 $P(x)$가 $D$의 모든 $x$에 대하여 거짓인 경우, 그리고 오직 이 경우에만 **vacuously true** 혹은 **true by default**라고 한다.
 
 $$
 \forall x \in D,\mathrm {\ if\ }P(x)\mathrm{\ then\ }Q(x)
@@ -284,11 +284,11 @@ $\forall x \in D,\mathrm {\ if\ }P(x)\mathrm{\ then\ }Q(x)$에 대하여,
 
 **3.3 Statements with Multiple Quantifiers**
 
-**statement가 한 종류 이상의 quantifier를 가지고 있을 때, quantifier에 의해 일어나는 action이 순서대로 수행된다고 생각한다.** (??)
+**statement가 한 종류 이상의 quantifier를 가지고 있을 때, quantifier에 의해 일어나는 action이 순서대로 수행된다고 생각한다.**
 
 
 
-**3.3.1 Translating from Informal to Fornal Language**
+**3.3.1 Translating from Informal to Formal Language**
 
 예시
 
@@ -323,7 +323,7 @@ $\forall$ 실수 $y$와 $\forall$ 실수 $x$, $x+y=y+x$
 **3.3.5 Formal Logical Notation**
 
 - "$\forall x$ in $D, P(x)$"는 다음과 같이 쓸 수 있다: "$\forall x\ (x\mathrm{\ in\ }D\to P(x))$"
-- "$\exist x$ in $D$ such that $P(x)$"는 다음과 같이 다시 쓸 수 있다: "$\exist x\ (x\mathrm{\ in\ }D\to P(x))$"
+- "$\exist x$ in $D$ such that $P(x)$"는 다음과 같이 다시 쓸 수 있다: "$\exist x\ (x\mathrm{\ in\ }D\and P(x))$"
 
 
 
@@ -357,7 +357,7 @@ $$
 \begin{matrix}
 r^{k+1}\cdot r &=& r^{k+1}\cdot r^1 \\
        &=& r^{(k+1) +1}\\
-       &=& r^{K+2}
+       &=& r^{k+2}
 \end{matrix}
 $$
 

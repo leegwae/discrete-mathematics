@@ -42,6 +42,10 @@ $$
 
 
 
+
+
+
+
 **4.1.2 Proving Existential Statements**
 $$
 \exist x\in D\mathrm{\ such\ that\ }Q(x)
