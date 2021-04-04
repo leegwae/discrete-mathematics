@@ -129,3 +129,17 @@ input은 nonnegative 정수 $a$이다. 알고리즘의 목적은 $r[0],\ r[1],\ 
 $$
 a=2^k\cdot r[k]+2^{k-1}\cdot r[k-1]+\cdot\cdot\cdot+2^2\cdot r[2]+2^1\cdot[1]+2^0\cdot r[0]
 $$
+
+
+
+intput: $q:=a, i:=0$
+
+```
+while (i = 0 or q != 0)
+	r[i] := q mod 2
+	q := q div 2
+	i = i+ 1
+end while
+```
+
+output: $r[0],\ r[1],\ r[2],...,r[i-1]$
