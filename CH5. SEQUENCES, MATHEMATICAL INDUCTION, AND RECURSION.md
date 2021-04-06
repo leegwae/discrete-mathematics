@@ -492,9 +492,300 @@ a_{k+1}&=5a_{(k+1)-1} &a_1,a_2,a_3,...의\ 정의에\ 의하여 \\
 $$
 
 
+**5.3.1 A Problem with Trominoes**
+
 **Theorem 5.3.4 Covering a Board with Tromineos**
 
 $n\ge1$인 정수 $n$에 대하여, $2^n \times 2^n$의 체크보드로부터 하나의 사각형을 제거한다면 남은 사각형들은 L자 모형의 trominoes로 완전히 감쌀 수 있다.
 
 ???
 
+
+
+## 5.4 String Mathematical Induction and the Well-Ordering Principle for the Integers
+
+**Principle of String Mathematical Induction**
+
+$P(n)$은 정수 $n$에 대한 property이며, $a$과 $b$는 $a\le b$인 fixed integers라고 하자. 다음의 두 statement가 참이라고 가정한다.
+
+(1) $P(a),P(a+1),...,그리고\ P(b)는\ 참이다.$ (**basic step**)
+
+(2) $k\ge b$를 만족하는 모든 정수 $k$에 대하여, $P(i)$가 $a$부터 $k$까지의 각각의 정수 $i$에 대하여 참이면, $P(k+1)$는 참이다. (**inductive step**)
+
+이때 다음의 문장이 성립한다.
+$$
+n\ge a를\ 만족하는\ 모든\ 정수\ n에\ 대하여,\ P(n)
+$$
+$P(i)$가 $a$부터 $k$까지의 각각의 정수 $i$에 대하여 참이라고 가정하는 것을 **inductive hypothesis(귀납적 가설)**이라고 한다. 귀납적 가설을 표현하는 다른 방법은 $P(a),P(a+1),...,P(k)가\ 모두\ 참이다.$이다.
+
+
+
+**5.4.1 Applying String Mathematical Induction**
+
+
+
+**Theorem 4.4.4**
+
+1보다 큰 정수는 소수로 divisible하다.
+
+
+
+**Poorf (by string mathematical induction)**
+
+$P(n)$이 다음과 같은 문장이라고 하자.
+$$
+n은\ 소수로\ \mathrm{divisible}하다.
+$$
+**$P(2)$가 참임을 보여라:**
+
+$P(2)$를 증명하기 위해, 다음이 참임을 보여야한다.
+$$
+2는\ 소수로\ \mathrm{divisible}하다.
+$$
+**2보다 크거나 같은 모든 정수 $k$에 대하여 $P(i)$가 2부터 $k$까지의 모든 정수에 대하여 참이면, $P(k+1)$도 참임을 보여라**:
+
+$k\ge 2$을 만족하는 모든 정수 $k$에 대하여, 다음이 참이라고 가정한다.
+$$
+2부터\ k까지의\ 각각의\ 정수\ i는\ 소수로\ \mathrm{divisible}하다.
+$$
+우리는 $P(k+1)$가 참임을 보여야한다.
+$$
+k+1은\ 소수로\ \mathrm{divisible}하다.
+$$
+**Case 1($k+1$은 소수이다)**: 이 경우, $k+1$은 소수이므로, divisible하다.
+
+**Case2($k+1$이 소수가 아니다)**: $a$와 $b$가 $1<a<k+1$와 $1<b<k+1$를 만족하는 정수이며 $k+1=ab$라고 가정한다. 그러므로, $2\le a\le k$이므로 귀납적 가설에 의하여, $a$는 소수 $p$로 divisible할 수 있다. 게다가 $k+1=ab$이므로, $k+1$은 $a$로 divisible하다. 그러므로, $k+1$은 $a$로 divisible하고 $a$는 $p$로 divisible하므로, transitivity of divisibility에 의하여, $k+1$은 소수 $p$로 divisible하다.
+
+그러므로, $k+1$가 소수인지 아닌지에 상관없이, 이것은 소수로 divisible하다.
+
+
+
+**예시 5.4.2 Proving a Property of a Sequence with String Induction**
+
+sequence $s_0, s_1, s_2,...$를 다음과 같이 정의한다:
+$$
+s_0=0, s_1=4, s_k=6a_{k-1}-5a_{k-2}\quad 2보다\ 크거나\ 같은\ 모든\ 정수\ k에\ 대하여
+$$
+
+- sequence의 모든 항이 항등식 $s_n=5^n-1$을 만족하는지 증명하라.
+
+
+
+**Proof**
+
+$P(n)$이 다음과 같은 formula라고 하자.
+$$
+s_n=5^n-1
+$$
+**$P(0)$이 참이고 $P(1)$이 참임을 보여라**
+
+$P(0), P(1)$을 증명하기 위하여, 다음을 보여야한다.
+$$
+s_0=5^0-1\quad그리고\quad s_1=5^1-1
+$$
+$s_0, s_1, s_2$의 정의에 의하여 $s_0=0$이고 $s_1=4$이다. $5^0-1=1-1=0$이고 $5^1-1=5-1=4$이므로 $s_0$과 $s_1$의 값은 formula에 의해 주어진 값과 일치한다.
+
+
+
+**1보다 크거나 같은 모든 정수 $k$에 대하여 $P(i)$가 0부터 $k$까지의 모든 정수에 대하여 참이면, $P(k+1)$도 참임을 보여라**:
+
+정수 $k$가 $k\ge1$을 만족하며, 다음이 참이라고 가정한다.
+$$
+s_i=5^i-1\quad(0\le i\le k를\ 만족하는\ 각각의\ 정수\ i에\ 대하여)
+$$
+우리는 $P(k+1)$가 참임을 보여야한다.
+$$
+s_{k+1}=5^{k+1}-1
+$$
+$k\ge1$이므로, $k+1\ge 2$이다. 따라서,
+$$
+\begin{align*}
+s_{k+1}&=6s_k-5s_{k-1} & s_0, s_1, s_2의\ 정의에\ 의하여 \\
+&=6(5^k-1)-5(5^{k-1}-1) & \mathrm{definition\ hypothesis}에\ 의하여\\
+&=6\cdot 5^k-6-5^k+5 & 괄호를\ 풀고\ 지수법칙을\ 적용함. \\
+&=(6-1)5^k-1 &\ 5^k로\ 묶고\ 산술연산 \\
+&=5\cdot 5^k-1 &산술연산 \\
+&=5^{k+1}-1
+\end{align*}
+$$
+
+
+
+
+
+**예시 5.4.3 A Sequence That Involves the Floor Function**
+
+sequence $a_1, a_2, a_3, ...$를 다음과 같이 정의한다:
+$$
+a_1=0,\ a_2=2,\ a_k=3a_{\lfloor k/2 \rfloor}+2
+$$
+$a_n$이 $n\ge1$을 만족하는 모든 정수 $n$에서 짝수임을 증명하라.
+
+
+
+**$P(1)$과 $P(2)$가 참임을 보여라**: $a_0=0$이고 $a_1=0$이며 0과 2는 짝수 정수이므로 $n=1$과 $n=2$에서 참이다.
+
+
+
+**1보다 크거나 같은 모든 정수 $k$에 대하여 $P(i)$가 1부터 $k$까지의 각각의 정수 $i$에 대해서 참이면, $P(k+1)$에서도 참임을 보여라:**
+
+$k$는 $k\ge1$을 만족하는 정수이며, 다음이 성립한다고 가정하자.
+$$
+a_i는\ 1\le i\le k를\ 만족하는\ 각각의\ 정수\ i에\ 대하여\ 짝수이다.
+$$
+$a_1, a_2, a_3, ...$의 정의에 의하여,
+$$
+a_k=3a_{\lfloor k/2 \rfloor}+2\quad(k\ge3을\ 만족하는\ 모든\ 정수에서)
+$$
+$k\ge 1$이므로, $1\le \lfloor k/2 \rfloor \le k$이다. 귀납적 가설에 의하여 $a_{\lfloor k/2 \rfloor}$는 짝수이다. 홀수와 짝수의 곱은 짝수이므로, $3a_{\lfloor k/2 \rfloor}$는 짝수이다. 또한 짝수의 합은 짝수이므로 $3a_{\lfloor k/2 \rfloor}+2$도 짝수이다. 결론적으로, $a_k$는 짝수이다.
+
+
+
+**Convention**
+
+단일한 숫자 $x_1$은 하나의 인수로 된 곱이며 zero multiplications으로 계산될 수 있다.
+
+
+
+**예시 5.4.4 The Number of Multiplications Needed to Multiply $n$ Numbers**
+
+$n\ge1$을 만족하는 정수에 대하여, $x_1, x_2, ..., x_n$이 $n$개의 숫자라면, 이들의 곱 사이에 어떻게 괄호가 들어가든 곱을 계산하기 위해 사용하는 곱하기(multiplications)의 수는 $n-1$이다.
+
+
+
+**Proof (by string mathematical induction)**
+
+$P(n)$이 위 문장이라고 해보자.
+
+
+
+**P(1)이 참임을 보여라:**
+
+$P(1)$이 참이려면, 다음이 참임을 보여야한다.
+
+$x_1$의 곱을 계산하기 위해 필요한 곱하기의 수는 1-1이다.
+
+convenction에 의하여, $x_1$은 zero multiplications로 계산될 수 있는 product이고, $0=1-1$이므로 이것은 참이다.
+
+
+
+**$k\ge1$을 만족하는 모든 정수 $k$에 대하여, $1$ 부터 $k$까지의 각각의 숫자 $i$에 대하여 $P(i)$가 참이면 $P(k+1)$ 역시 참임을 보여라.**
+
+$k$가 $k\ge1$을 만족하는 정수이며, 다음 $P(k)$가 참이라고 가정한다.
+
+1부터 $k$까지의 각각의 정수 $i$에 대하여, $x_1, x_2, ..., x_i$이 $i$개라면, 이들의 곱에 어떻게 괄호가 삽입되든, 이 곱을 계산하기 위해 필요한 곱하기의 수는 $i-1$이다.
+
+우리는 다음 $P(k+1)$이 참임을 보여야한다.
+
+1부터 $k+1$까지의 각각의 정수 $i$에 대하여, $x_1, x_2, ..., x_{k+1}$이 $k+1$개라면, 이들의 곱에 어떻게 괄호가 삽입되든, 이 곱을 계산하기 위해 필요한 곱하기의 수는 $(k+1)-1=k$개이다.
+
+$k+1$의 곱의 인수가 $x_1, x_2, ..., x_{k+1}$이라고 하자. 곱은 계산하기 위하여 괄호가 삽입되었을 때, 어떤 곱하기는 마지막 곱하기이고, 마지막 곱하기를 구성하는 두 개의 인자는 $k+1$ 인자보다 작다. $L$이 좌변의 인자들의 곱이고 $R$이 우변의 인자들의 곱이라고 하자. 곱의 총 인자수는 $l+r=k+1$이고 $1\le l \le k$이고 $1\ge r \le k$이다.
+
+귀납적 가설에 의하여, $L$을 계산하는 것은 $l-1$개의 곱하기를 취하고 $R$을 계산하는 것은 $r-1$개의 곱하기를 취한다. 최종 곱하기가 $L\cdot R$을 평가하는데 필요하므로, 모든 $k+1$ 개의 인자의 곱을 평가하는데 필요한 곱하기의 수는 다음과 같다.
+$$
+(l-1)+(r-1)+1=(l+r)-1=(k+1)-1=k
+$$
+
+
+**Theorem 5.4.1 Existence and Uniqueness of Binary Integer Representations**
+
+주어진 양의 정수 $n$에 대하여, $n$은 다음의 형태로 unique하게 표현할 수 있다.
+$$
+n=c_r\cdot 2^r+c_{r-1}\cdot 2^{r-1}+...+c_2\cdot 2^2+c_1\cdot 2+c_0
+$$
+이때 $r$은 nonnegative intger이며, $j=0,1,2,...,r-1$인 각각의 $j$에 대하여 $c_r=1$이고 $c_j=1$이거나 0이다.
+
+**Proof: **
+
+**Existence (proof by strong mathematical induction)**: property $P(n)$이 다음과 같은 항등식이라고 하자.
+$$
+n=c_r\cdot 2^r+c_{r-1}\cdot 2^{r-1}+...+c_2\cdot 2^2+c_1\cdot 2+c_0
+$$
+이때 $r$은 nonnegative intger이며, $j=0,1,2,...,r-1$인 각각의 $j$에 대하여 $c_r=1$이고 $c_j=1$이거나 0이다.
+
+**$P(1)$이 참임을 보여라:**
+
+$r=0$이고 $c_0=1$이라고 하자. $1=c_r\cdot 2^r$이므로, $n=1$은 주어진 form으로 쓸 수 있다.
+
+
+
+**$k\ge1$을 만족하는 모든 정수 $k$에 대하여, $1$ 부터 $k$까지의 각각의 숫자 $i$에 대하여 $P(i)$가 참이면 $P(k+1)$ 역시 참임을 보여라.**
+
+$k$가 $k\ge1$을 만족하는 정수이며, 다음이 $1$부터 $k$까지의 각각의 정수 $i$에 대하여 참이라고 가정한다.
+$$
+i=c_r\cdot 2^r+c_{r-1}\cdot 2^{r-1}+...+c_2\cdot 2^2+c_1\cdot 2+c_0
+$$
+이때 $r$은 nonnegative intger이며, $j=0,1,2,...,r-1$인 각각의 $j$에 대하여 $c_r=1$이고 $c_j=1$이거나 0이다. 우리는 $k+1$이 주어진 form에서 2의 제곱의 합으로 쓸 수 있다고 증명해야한다.
+
+**Case 1($k+1$이 짝수인 경우)**: 이 경우, $(k+1)/2$는 정수이며, 귀납적 가설에 의하여 $1\le(k+1)/2\le k$이므로
+$$
+\frac{k+1}{2}=c_r\cdot 2^r+c_{r-1}\cdot 2^{r-1}+...+c_2\cdot 2^2+c_1\cdot 2+c_0
+$$
+이때 $r$은 nonnegative intger이며, $j=0,1,2,...,r-1$인 각각의 $j$에 대하여 $c_r=1$이고 $c_j=1$이거나 0이다.  항등식의 양변을 2로 곱하면
+$$
+k+1=c_r\cdot 2^{r+1}+c_{r}\cdot 2^{r}+...+c_2\cdot 2^3+c_1\cdot 2^2+c_0\cdot2
+$$
+이것은 주어진 form의 2의 제곱의 합이다.
+
+
+
+**Case 2($k+1$이 홀수인 경우)**: 이 경우, $k/2$는 정수이며, 귀납적 가설에 의하여 $1\le k/2 =k$이므로,
+$$
+\frac{k}{2}=c_r\cdot 2^r+c_{r-1}\cdot 2^{r-1}+...+c_2\cdot 2^2+c_1\cdot 2+c_0
+$$
+이때 $r$은 nonnegative intger이며, $j=0,1,2,...,r-1$인 각각의 $j$에 대하여 $c_r=1$이고 $c_j=1$이거나 0이다.  항등식의 양변을 2로 곱하고 1을 더하면
+$$
+k+1=c_r\cdot 2^{r+1}+c_{r}\cdot 2^{r}+...+c_2\cdot 2^3+c_1\cdot 2^2+c_0\cdot2+1
+$$
+이것은 주어진 form의 2의 제곱의 합이다.
+
+$k+1$이 짝수인지 홀수인지에 상관없이 $k+1$은 주어진 형태로 표현할 수 있다.
+
+
+
+**Uniqueness:** uniqueness를 증명하기 위해서, 정수 $n$이 2의 nonnegative integer 제곱의 합으로 된 표현을 서로 다른 두 개로 가질 수 있다고 하자. 두 식을 항등식으로 만들고, 동일한 항을 제거하면 다음과 같다.
+$$
+2^r+c_{r-1}\cdot 2^{r-1}+..c_1\cdot2+c_0=2^s+d_{s-1}\cdot2^{s-1}+...+d_1\cdot2+d_0
+$$
+이때 $r$과 $s$는 nonnegative intger이며, $c_i$과 $d_i$은 0이나 1과 같다. generality의 손실없이, $r<s$라고 하자. sum of geometric sequence(Theorem 5.2.2)에 대한 formula에 의하여, $r<s$는 $r+1\le s$를 암시하므로,
+$$
+\begin{align*}
+2^r+c_{r-1}\cdot 2^{r-1}+..c_1\cdot2+c_0&\le 2^r+2^{r-1}+...+2+1=2^{r+1}-1 \\&<2^s
+\end{align*}
+$$
+그러므로
+$$
+2^r+c_{r-1}\cdot 2^{r-1}+..c_1\cdot2+c_0\le 2^s+d_{s-1}\cdot2^{s-1}+...+d_1\cdot2+d_0
+$$
+
+
+**5.4.2 The Well-Ordering Principle for the Integers**
+
+**Well-Ordering Principle for the Integers**
+
+$s$는 하나 혹은 모두 어떤 fixed 정수보다 큰 정수들을 포함한 정수의 집합이라고 하자. 그렇다면 $S$는 적어도 하나의 element를 가진다.
+
+
+
+**Quotient-Remainder Theorem (Existence Part)**
+
+주어진 정수 $n$과 양의 정수 $d$에 대하여, 다음을 만족하는 정수 $q$와 $r$이 존재한다.
+$$
+n=dq+r\ 그리고\ 0\le r\le d
+$$
+**Proof**: $S$이 $n-dk$와 같은 형태의 모든 nonnegative 정수들의 집합이라고 하자. $k$는 정수이다. 
+
+$n$이 nonnegative라면, $n-0\cdot =n\ge0$이므로 $n-0$은 $S$에 속한다. 또한, $n$이 nonnegative가 아니라도, $n-nd=n(1-d)\ge0$이므로 $n-nd$는 $S$에 속한다. 따라서 이 집합은 적어도 하나의 요소를 가진다. 이것은 $S$가 적어도 하나의 요소 $r$을 가진다는 well-ordering principle for the integers에 의하여 도출된다. 
+
+$k$의 특정 명시적인 정수 값을 $q$라고 하면 $S$의 모든 정수는 $n-dk$과 같은 형태로 쓰일 수 있으므로 $n-dq=r$과 같이 쓸 수 있다. 양변에 $dq$를 더하면 $n=dq+r$이다.
+
+$r\ge d$라고 가정했으므로, 다음은 참이다.
+$$
+n-d(q+1)=n-dq-d=r-d\ge0
+$$
+그러므로 $n-d(q+1)$은 $S$에 속하는 $r$보다 작은 nonnegative 정수이다. 그런데 $r$이 $S$에서 가장 작은 정수이다. 이는 모순이므로, $r\ge d$는 거짓이다. 따라서 $r<d$이다.
+
+앞선 논증에 따라, 다음을 만족하는 정수 $q$와 $r$이 존재한다.
+$$
+n=dq+r\ 그리고\ 0\le r\le d
+$$
