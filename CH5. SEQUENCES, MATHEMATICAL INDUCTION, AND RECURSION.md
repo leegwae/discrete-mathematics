@@ -101,6 +101,14 @@ $$
 $$
 
 
+
+**Recursive definition for factorial**
+$$
+
+$$
+
+
+
 **Definition[$n$ choose $r$]**
 
 $n$과 $r$이 $0\le r\le n$인 정수라고 하자.
@@ -108,6 +116,10 @@ $$
 {n \choose r}
 $$
 은 **$n$ choose $r$**이라고 읽으며, $n$개의 element를 가진 집합으로부터 $r$개 만큼 선택한 부분집합의 수를 나타낸다.
+
+
+
+- ${n \choose r}$은 combination이라고 불리며, binomial conefficient라고 하기도 한다.
 
 
 
@@ -295,7 +307,7 @@ $$
 
 
 
-# 5.3 Mathematical Induction 2: Applications
+## 5.3 Mathematical Induction 2: Applications
 
 **Proposition 5.3.1**
 
@@ -498,13 +510,13 @@ $$
 
 $n\ge1$인 정수 $n$에 대하여, $2^n \times 2^n$의 체크보드로부터 하나의 사각형을 제거한다면 남은 사각형들은 L자 모형의 trominoes로 완전히 감쌀 수 있다.
 
-???
+교재참고
 
 
 
-## 5.4 String Mathematical Induction and the Well-Ordering Principle for the Integers
+## 5.4 Stong Mathematical Induction and the Well-Ordering Principle for the Integers
 
-**Principle of String Mathematical Induction**
+**Principle of Stong Mathematical Induction**
 
 $P(n)$은 정수 $n$에 대한 property이며, $a$과 $b$는 $a\le b$인 fixed integers라고 하자. 다음의 두 statement가 참이라고 가정한다.
 
@@ -520,7 +532,7 @@ $P(i)$가 $a$부터 $k$까지의 각각의 정수 $i$에 대하여 참이라고 
 
 
 
-**5.4.1 Applying String Mathematical Induction**
+**5.4.1 Applying Strong Mathematical Induction**
 
 
 
@@ -530,7 +542,7 @@ $P(i)$가 $a$부터 $k$까지의 각각의 정수 $i$에 대하여 참이라고 
 
 
 
-**Poorf (by string mathematical induction)**
+**Poorf (by strong mathematical induction)**
 
 $P(n)$이 다음과 같은 문장이라고 하자.
 $$
@@ -789,3 +801,4 @@ $$
 $$
 n=dq+r\ 그리고\ 0\le r\le d
 $$
+
