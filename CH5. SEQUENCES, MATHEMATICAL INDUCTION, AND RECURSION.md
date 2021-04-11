@@ -802,3 +802,31 @@ $$
 n=dq+r\ 그리고\ 0\le r\le d
 $$
 
+
+
+
+
+## 5.6 Defining Sequences Recursively
+
+**Definition[Recurrence relation]**
+
+sequence $a_0, a_1, a_2,...$에 대한 **recurrence relation**은 각각의 항 $a_k$와 $i$가 $k-i\ge0$인 predecessors의 일부 $a_{k-1}, a_{k-2},...,a_{k-i}$를 연관짓는 formula이다. $i$가 fixed integer라면, 그러한 recurrence relation에 대한 **initial conditions**은 $a_0, a_1, a_2,...,a_{i-1}$의 값을 명시한다. $i$가 $k$에 의존한다면, initial conditions은  $m$이 $m\ge0$을 만족하는 정수인 $a_0, a_1, a_2,...,a_{m}$의 값을 명시한다.
+
+
+
+**5.6.1 Examples of Recursively Defined Sequences**
+
+하노이, 피보나치 수열
+
+**5.6.2 Recursive Definitions of Sum and Product**
+
+**Definition[Summation, Product]**
+
+$n$이 양의 정수인 주어진 수 $a_1, a_2,..., a_n$에 대해, **$i$=1부터 $a_i$의 $n$까지의 summation**은 $\sum_{i=1}^{n}a_i$으로 표기하며, 다음과 같이 정의한다.
+$$
+\sum_{i=1}^1 a_i=1\quad그리고\sum_{i=1}^n a_i=\left(\sum_{i=1}^{n-1} a_i\right)+a_n\quad(만약\ n>1)
+$$
+**$i$=1부터 $a_i$의 $n$까지의 summation**은 $\prod_{i=1}^{n}a_i$으로 표기하며, 다음과 같이 정의한다.
+$$
+\prod_{i=1}^1 a_i=1\quad그리고\prod_{i=1}^n a_i=\left(\prod_{i=1}^{n-1} a_i\right)\cdot a_n\quad(만약\ n>1)
+$$
