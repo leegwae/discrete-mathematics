@@ -830,3 +830,375 @@ $$
 $$
 \prod_{i=1}^1 a_i=1\quad그리고\prod_{i=1}^n a_i=\left(\prod_{i=1}^{n-1} a_i\right)\cdot a_n\quad(만약\ n>1)
 $$
+
+
+## 5.7 Solving Recurrence Relations by Iteration
+
+**5.7.1 The Method of Iteration**
+
+- **iteration(반복, 순회)**: 재귀적으로 정의된 sequence에 대한 explicit formula를 찾는 기본적인 방법
+
+
+
+**Definition[Arithmetic Sequence]**
+
+sequence $a_0, a_1, a_2,...$는 다음을 만족시키는 constant(상수) $d$가 있는 경우, 그리고 오직 이 경우에만 **arithmetic sequence**라고 한다.
+$$
+a_k=a_{k-1}+d\quad(k\ge1인\ 각각의\ 정수에\ 대하여)
+$$
+이로부터 다음을 이끌어낼 수 있다.
+$$
+a_n = a_0 + dn\quad(n\ge0인\ 각각의\ 정수에\ 대하여)
+$$
+
+
+**Definition[Geometric Sequence]**
+
+sequence $a_0, a_1, a_2,...$는 다음을 만족시키는 constant(상수) $r$이 있는 경우, 그리고 오직 이 경우에만 **geometric sequence**라고 한다.
+$$
+a_k=ra_{k-1}\quad(k\ge1인\ 각각의\ 정수에\ 대하여)
+$$
+이로부터 다음을 이끌어낼 수 있다.
+$$
+a_n=a_0r^{n}\quad(k\ge0인\ 각각의\ 정수에\ 대하여)
+$$
+
+
+**5.7.2 Using Formulas to Simlify Solutions Obtained by Iteration**
+
+
+
+**5.7.3 Checking the Correctness of a Formula by Mathematical Induction**
+
+**5.7.4 Discovering That an Explicit Formula Is Incorrect**
+
+
+
+## 5.8 Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients
+
+**Definition[Second-Order Linear Homogeneous Recurrence Relations with Constant Coefficients]**
+
+**second-order linear homogeneous recurrence relation with constant coefficients**는 다음과 같은 form의 recurrence relation이다.
+$$
+a_k=Aa_{k-1}+Ba_{k-2}\quad(k\ge어떤\ \mathrm{fixed}\ 정수에\ 대하여)
+$$
+이때, $A$와 $B$는 fixed 실수이며, $B\ne0$이다.
+
+
+
+**5.8.1 The Distinct-Roots Case**
+
+**Lemma 5.8.1**
+
+$A$와 $B$가 실수라고 하자.
+$$
+a_k=Aa_{k-1}+Ba_{k-2}\quad(k\ge어떤\ \mathrm{fixed}\ 정수에\ 대하여)\quad(5.8.1)
+$$
+와 같은 form의 recurrence relation는 다음과 같은 sequence에 의해 만족된다.
+$$
+1, t,t^2,t^3,...,t^n,...,
+$$
+여기서 $t$는 0이 아닌 실수이다. 이때, $t$가 다음의 방정식을 만족하는 경우, 그리고 오직 이 경우에만 그러하다.
+$$
+t^2-At-B=0\quad(5.8.2)
+$$
+
+
+**Definition[Characteristic equation of the relation]**
+
+주어진 second-order linear homogeneous recurrence relation with constant coefficients
+$$
+a_k=Aa_{k-1}+Ba_{k-2}\quad(k\ge어떤\ \mathrm{fixed}\ 정수에\ 대하여)\quad(5.8.1)
+$$
+에 대하여, **characteristic equation of the relation**은 다음과 같다.
+$$
+t^2-At-B=0\quad(5.8.2)
+$$
+
+
+**Lemma 5.8.3 Distinct-Roots Theorem**
+
+sequence $a_0, a_1, a_2,...$가 다음 recurrence relation을 만족한다고 가정하자.
+$$
+a_k=Aa_{k-1}+Ba_{k-2}\quad(5.8.2)
+$$
+이때 $A$와 $B$는 어떤 실수이며, $B\ne0$이다. 또한 $k\ge2$이다. 
+$$
+t^2-At-B=0\quad(5.8.2)
+$$
+인 characteristic equation이 서로 다른 roots $r$과 $s$를 가지면, $a_0, a_1, a_2,...$는 다음 explicit formula에 의해 주어진다.
+$$
+a_n=Cr^n+Ds^n
+$$
+여기서 $C$와 $D$는 $a_0$과 $a_1$의 값에 의해 그 값이 결정되는 수들이다.
+
+
+
+**Proof**
+
+어떤 실수 $A$와 $B$에 대하여, sequence $a_0, a_1, a_2,...$가 $k\ge0$인 각각의 정수에 대하여 recurrence relation $a_k=Aa_{k-1}+Ba_{k-2}$을 만족한다고 가정하자. 그리고 characteristic equation $t^2-At-B$가 서로 다른 roots $r$과 $s$를 가진다고 하자.
+
+우리가 증명할 것은 다음과 같다.
+$$
+n\ge0인\ 각각의\ 정수에\ 대하여,\ a_n=Cr^n+Ds^n
+$$
+이때 $C$와 $D$는 다음과 같은 수들이다.
+$$
+a_0=Cr^0+Ds^0\quad그리고\quad a_1=Cr^1+Ds^1
+$$
+
+
+$P(n)$은 다음과 같은 항등식이라고 하자.
+$$
+a_n=Cr^n+Ds^n
+$$
+**$P(n)$과 $P(1)$이 참임을 보여라**: $P(0)$과 $P(1)$의 진리값은 자동적으로 정해지는데, 왜냐하면 $C$와 $D$가 다음의 항등식을 참이게 만드는 수이기 때문이다.
+$$
+a_0=Cr^0+Ds^0\quad그리고\quad a_1=Cr^1+Ds^1
+$$
+
+
+**$k\ge1$인 각각의 정수에 대하여, $P(i)$가 0부터 $k$까지의 각각의 정수 $i$에 대해 참이면, $k+1$도 참임을 보여라:**
+
+$k$가 $k\ge1$을 만족하는 정수이며, 0부터 $k$까지의 각각의 정수 $i$에 대하여 다음이 참이라고 가정하자.
+$$
+a_i=Cr^i+Ds^i
+$$
+우리는 다음 $P(k+1)$을 증명해야 한다
+$$
+a_{k+1}=Cr^{k+1}+Ds^{k+1}
+$$
+inductive hypothesis에 의하여
+$$
+a_k=Cr^k+Ds^k\quad그리고\quad a_{k-1}=Cr^{k-1}+Ds^{k-1}
+$$
+따라서
+$$
+\begin{align*}
+a_{k+1}&=Aa_k+Ba_{k-1} &a_0,\ a_1,\ a_2,...의\ 정의에\ 의하여\\ 
+&=A(Cr^k+Ds^k)+B(Cr^{k-1}+Ds^{k-1}) &\mathrm{inductive\ hypothesis}에\ 의하여\\
+&=C(Ar^k+Br^{k-1})+D(As^k+Bs^{k-1}) &항으로\ 묶기\\
+&=Cr^{k+1}+Ds^{k+1} &\mathrm{Lemma}\ 5.8.1에\ 의하여\\
+\end{align*}
+$$
+
+
+**5.8.1 The Single-Root Case**
+
+**Lemma 5.8.4**
+
+$A$와 $B$가 실수이며, characteristic equation
+$$
+t^2-At-B=0
+$$
+이 single root $r$을 가진다고 가정하자. sequences $1,\ r^1,\ r^2,\ r^3,...,\ r^n,...$그리고 $0,r,2k^2,3r^3,..,nr^n,...$ 모두 $k\ge2$인 각각의 정수에 대하여 다음 recurrence relation을 만족한다고 하자.
+$$
+a_k=Aa_{k-1}+Ba_{k-2}
+$$
+
+
+**Theorem 5.8.5 Single-Root Theorem**
+
+sequence $a_0, a_1, a_2,...$가 다음 recurrence relation을 만족한다고 가정하자.
+$$
+a_k=Aa_{k-1}+Ba_{k-2}
+$$
+이때 $A$와 $B$는 어떤 실수이며, $B\ne0$이다. 또한 $k\ge2$이다. characteristic equation $t^2-At-B=0$이 single (real) root $r$을 가지면, $a_0, a_1, a_2,...$은 다음 explicit formula에 의해 주어진다.
+$$
+a_n=Cr^n+Dnr^n
+$$
+여기서 $C$와 $D$는 $a_0$의 값과 sequence의 다른 알려진 값들에 의해 그 값이 결정되는 실수이다.
+
+
+
+## 5.9 General Recursive Definitions and Structural Induction
+
+**5.9.1 Recursively Defined Sets**
+
+집합에 대한 recursive definition은 다음의 세 component로 구성되어 있다.
+
+- (1) **Base**: certain object가 집합에 속해있다는 statement
+- (2) **Recursion**: 집합 안의 이미 알려진 객체로부터 어떻게 새로운 집합 객체를 구성하느냐(form)를 지시하는 rule의 collection
+- (3) **Restriction**: base와 recursion으로부터 비롯된 객체 이외에는 어떤 객체도 집합에 속하지 않는다는 statement
+
+
+
+**Recursive Definition for the Set of All Strings over al Finite Set**
+
+$A$가 유한한 집합이라고 하자. $A$의 요소를 **Characters**라고 하고, **$A$에 대한 모든 문자열의 집합 $S$**를 다음과 같이 정의한다.
+
+$\mathrm{I.}$ **Base: ** $\lambda$는 $S$의 문자열이며, $\lambda$는 문자가 없는 "문자열"인 **null string**이라고 나타낸다.
+
+$\mathrm{II}. $**Recursion**: 새로운 문자열은 다음의 규칙을 따라 만든다.
+
+​	$\mathrm{II(a)}$	$u$가 $S$의 문자열이고 $c$가 $A$의 문자이면, $uc$는 $S$의 문자열이다. $uc$는 **concatenation of $u$*and $c$**($u$와 $c$의 결합)이라고 하며, $u$의 오른편에 $c$를 추가(append)함으로써 얻어진다.
+
+​	$\mathrm{II(b)}$	$u$가 $S$의 문자열이면, $\lambda u$로 표기하는 $\lambda$와 $u$의 concatenation와 $u\lambda$로 표기하는 $u$와 $\lambda$의 concatenation 모두 $u$와 동일한 것으로 정의된다. 기호화하면 다음과 같다.
+$$
+\lambda u=u\lambda=u
+$$
+​	$\mathrm{II(b)}$	$u$와 $v$가 $S$의 문자열이고, $c$가 $A$의 문자이면, $u$와 $vc$의 concatenation은 $uv$와 $c$의 concatenation과 동일한 것으로 정의된다. 기호화하면:
+$$
+u(vc)=(uv)c
+$$
+$\mathrm{II}. $ **Restriction**: base와 recursion으로부터 얻은 객체를 제외하고 어떤 것도 $S$의 문자열이 아니다.
+
+
+
+**Theorem 5.9.1 Characters Are Strings**
+
+$A$가 유한한 집합이고 $S$가 $A$에 대한 모든 문자열의 집합이면, $A$의 모든 문자는 $S$의 문자열이다.
+
+
+
+**Proof:**
+
+1. $c$가 $A$의 문자라고 가정하자.
+2. $\mathrm{I}$의 문자열의 정의에 의하여, $\lambda$는 $S$의 문자열이다.
+3. $\mathrm{II(a)}$의 문자열의 정의에 의하여, $\lambda c$는 $S$의 문자열이다.
+4. $\mathrm{I}$의 문자열의 정의에 의하여, $\lambda c=c$이다.
+5. 그러므로 $c$는 $S$의 문자열이다.
+
+
+
+**Structural Induction for a Recursively Defined Set**
+
+$S$가 재귀적으로 정의된 집합이며, $P(x)$가 $S$의 객체가 만족할 수도, 만족하지 않을 수도 있는 property라고 하자. $S$의 모든 객체가 $P(x)$를 만족한다고 증명하기 위해서, 다음의 두 단계를 수행해야 한다.
+
+**Step 1(basic step)**: $P(a)$가 $S$에 기초하는 각각의 객체 $a$에 대하여 참임을 보여라.
+
+**Step2 (inductive step)**: $S$의 각각의 $x$에 대하여, $P(x)$가 참이고 $y$가 recursion으로부터 규칙을 적용하여 $x$로부터 얻은 것이면, $P(y)$가 참임을 보여라. 이 단계를 수행하기 위해,
+
+​			$x$가 $P(x)$가 참이게 하는 $S$의 임의로 선택된 요소라고 **가정하라.** (이 가정을 ***inductive hypothesis***라고 한다.) 그리고
+
+​			$y$가 $S$에 대한 recursion으로부터 규칙을 적용하여 $x$로부터 얻은 것이면, $P(y)$가 참임을 **보여라.**
+
+**Conclusion:** 그 어떤 객체도 base와 recursion으로부터 얻어진 객체 이외에 $S$에 포함되지 않으므로, step1과 step2는 $P(x)$가 $S$의 모든 객체 $x$에 대해 참임을 증명한다.
+
+
+
+**Definition Length of a String**
+
+유한한 집합 $A$에 대해 모든 문자열의 집합 $S$이 주어졌을 때, ***$S$의 문자열의 길이 $L$***은 다음과 같이 정의된다:
+
+1. $L(\lambda)=0$
+2. $S$의 모든 문자열 $u$과 $A$의 모든 문자 $a$에 대하여, $ua$의 길이는 $u$의 길이보다 1만큼 더 길다. 기호화하면,
+
+$$
+L(ua)=L(u)+1\quad(u\in S\ 그리고\ a\in A)
+$$
+
+
+
+**Theorem 5.9.2 Additive Property of String Length**
+
+$S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이면, $S$의 모든 문자열 $u$와 $v$에 대하여, $L(uv) = L(u)+L(v)$이다.
+
+
+
+**Proof(by structural induction)**: $S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이라고 하자. $S$의 주어진 모든 문자열 $v$에 대하여, $P(v)$가 다음과 같은 문장이라고 하자.
+$$
+S의\ 모든\ 문자열\ u에\ 대하여,\quad L(uv)=L(u)+L(v)
+$$
+$P(v)$는 $S$의 모든 문자열 $v$에 대하여  참이다.
+
+
+
+**$P(a)$가 $S$에 기초한 각각의 문자열 $a$에 대하여 참임을 보여라:**
+
+$S$에 기초한 유일한 문자열은 $\lambda$이고, $u$가 $S$의 모든 문자열이면,
+$$
+\begin{align*}
+L(u\lambda)&=L(u) \\
+&=L(u)+0 \\
+&=L(u)+L(\lambda)
+\end{align*}
+$$
+이것은 $P(\lambda)$가 참임을 보인다.
+
+
+
+**$S$의 각각의 문자열 $x$에 대하여, $P(x)$가 참이고 $y$가 $S$에 대한 recursion으로부터 규칙을 적용하여 $x$로부터 얻은 것이면, $P(y)$가 참임을 보여라:**
+
+$S$에 대한 recursion은 $\mathrm{II(a)}$, $\mathrm{II(b)}$, 그리고 $\mathrm{II(c)}$로 표기하는 세 개의 규칙으로 구성되어있다. 그러나 규칙 $\mathrm{II(a)}$만이 $S$의 새로운 문자열을 생성하는 규칙이다. $v$가 $P(v)$를 참이게 하는 그러한 $S$의 모든 문자열이라고 하자. 달리 말하여, $L(uv)=L(u)+L(v)$라고 가정하자.
+
+$\mathrm{II(a)}$을 $v$에 적용했을 때, 결과는 $vc$이며, $c$는 $A$의 문자이다. 그러므로, inductive step을 완전히 하기 위해 $P(vc)$가 참임을 보여야한다.
+$$
+\begin{align*}
+L(u(vc))&=L((uv)c) &\mathrm{II(a)}의\ 문자열의\ 정의에\ 의하여\\
+&=L(uv)+1 &문자열의\ 길이의\ 정의에\ 의하여\\
+&=(L(u)+L(v))+1 &u가\ P를\ 만족한다고\ 가정했으므로\\
+&=L(u)+(L(v)+1) &덧셈\ 결합\ 법칙\\
+&=L(u)+L(vc) &문자열의\ 길이의\ 정의에\ 의하여
+\end{align*}
+$$
+그러므로 $P(vc)$는 참이다.
+
+**Conclusion**:
+
+$S$에 대한 recursion과 base로부터 얻은 문자열 이외에는 $S$에 어떤 문자열도 없으므로, $S$의 모든 문자열이 문자열 길에 대한 추가적인 property를 만족한다고 결론지을 수 있다.
+
+
+
+**Theorem 5.9.3 Tjhe Concatenation of Any Tow Strings Is a String**
+
+$S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이고 $u$와 $v$가 $S$의 모든 문자열이면, $uv$는 $S$의 문자열이다.
+
+
+
+**Proof (by structural indcution)**: $S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이라고 하자. $S$의 모든 문자열 $v$에 대하여, $P(v)$가 다음과 같은 문장이라고 하자.
+$$
+S의\ 모든\ 문자열\ u에\ 대하여,\ uv는\ S의\ 문자열이다.
+$$
+$P(v)$가 $S$의 모든 문자열 $v$에 대하여 참임을 보여야 한다.
+
+
+
+**$P(a)$가 $S$에 기초한 각각의 문자열 $a$에 대하여 참임을 보여라:**
+
+$S$에 기초한 유일한 문자열은 $\lambda$이고 $u$가 $S$의 모든 문자열이면, 문자열의 정의 안의 규칙 $\mathrm{II(a)}$에 의하여, $u\lambda=u$이다. 그러므로 $u$와 $\lambda$의 conactenation은 $S$ 안의 문자열이고, 따라서 $P(\lambda)$는 참이다.
+
+
+
+**$S$의 각각의 문자열 $x$에 대하여, $P(x)$가 참이고 $y$가 $S$에 대한 recursion으로부터 규칙을 적용하여 $x$로부터 얻은 것이면, $P(y)$가 참임을 보여라:**
+
+$S$에 대한 recursion은 $\mathrm{II(a)}$, $\mathrm{II(b)}$, 그리고 $\mathrm{II(c)}$로 표기하는 세 개의 규칙으로 구성되어있다. 그러나 규칙 $\mathrm{II(a)}$만이 $S$의 새로운 문자열을 생성하는 규칙이다. $v$가 $P(v)$를 참이게 하는 그러한 $S$의 모든 문자열이라고 하자. 달리 말하여, $S$의 모든 문자열 $u$에 대하여, $uv$가 $S$의 문자열이라고 가정하자.
+
+$\mathrm{II(a)}$을 $v$에 적용했을 때, 결과는 $vc$이며, $c$는 $A$의 문자이다. 그러므로, inductive step을 완전히 하기 위해 $P(vc)$가 참임을 보여야한다. 그러기 위해서, $u(vc)$가 $S$의 문자열임을 보여야 한다.
+
+한편 $uv$는 $S$의 문자열이므로, 규칙 $\mathrm{II(a)}$에 의하여 $(uv)c$도 $S$의 문자열이다. 게다가, 규칙 $\mathrm{II(b)}$에 의하여,
+$$
+(uv)c=u(vc)
+$$
+그러므로, $u(vc)$는 $S$의 문자열이며, 이는 $P(vc)$가 참임을 의미한다.
+
+
+
+**Conclusion**:
+
+$S$에 대한 recursion과 base로부터 얻은 문자열 이외에는 $S$에 어떤 문자열도 없으므로, $S$ 안의 모든 두 개의 문자열의 concatenation이 $S$의 문자열이라고 결론지을 수 있다.
+
+
+
+**Theorem 5.9.4 Concatenation of Strings Is Associative**
+
+$S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이고 $u$와 $v$, $w$가 $S$의 모든 문자열이면, $u(vw)=(uv)w$이다.
+
+
+
+**Idea of a proof by structural induction:**
+
+$S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이라고 하자. $S$의 모든 문자열 $w$에 대하여, $P(w)$가 다음과 같은 문장이라고 하자.
+$$
+S의\ 모든\ 문자열\ w에\ 대하여,\ u(vw)=(uv)w
+$$
+증명은 (1) $P(\lambda)$가 참이다 그리고 (2) $w$가 $P(w)$를 만족시키는 그러한 $S$의 문자열이고 $y$가 $S$에 대한 recursion으로부터 규칙을 적용하여 $w$로부터 얻은 것이면, $P(y)$가 참이다 를 보여야 한다. 한편 규칙 $\mathrm{II(a)}$이 $w$에 적용되었을 때, 결과는 $A$ 안의 어떤 문자 $c$에 대한 $wc$이다. 중요한 단계는 $u(vw)=(uv)w$를 보이는 것이다. 이것은 $u$와 $vw$이 $S$에 속하고 $c$는 $A$에 속하므로 문자열의 정의로부터 비롯된다.
+
+완전한 증명은 너가 써봐라.
+
+
+
+**5.9.2 Recursive Functions**
+
+- 함수는 그것의 정의의 규칙이 그 자신을 가리킬 때 **defined recursively(재귀적으로 정의되었다)** 거나 **recursive function(재귀적인 함수)**라고 불린다.
+

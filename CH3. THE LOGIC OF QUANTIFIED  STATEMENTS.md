@@ -47,7 +47,7 @@ $$
 **3.1.1 The Universal Quantifier: $\forall$**   
 
 - **quantifier(양화사)**: "어떤" 혹은 "모든"과 같이 quantities(양)을 가리키는 단어이며, 주어진 술어가 참인 element가 몇 개 인지 알려준다.
-- **보편 양화사(universal quantifier)**: "모든 ~에 대하여(for  every)", "각각에 대하여(for each)", $\forall$
+- **보편 양화사(universal quantifier)**: "모든 ~에 대하여(for  every)", "각각에 대하여(for each)", "for any(어떤 것에 대해서도)", "given any(주어진 어떤 것이라도)", "for all(모든 것에 대해)" $\forall$
 
 
 
@@ -66,8 +66,11 @@ $Q(x)$가 predicate이고, $D$가 $x$의 domain이라 하자. **universal statem
 **3.1.2 The Existential Quantifier: $\exists$**
 
 - **존재 양화사(existential quantifier)**: "~가 있다", $\exists$
-
-
+  - there exists are there is $a$
+  - we can find $a$
+  - there is at least one
+  - for some
+  - for at least one.
 
 **Definition[Existential Statement]**
 
