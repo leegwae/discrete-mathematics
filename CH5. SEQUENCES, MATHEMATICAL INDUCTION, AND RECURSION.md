@@ -814,9 +814,41 @@ sequence $a_0, a_1, a_2,...$에 대한 **recurrence relation**은 각각의 항 
 
 
 
+**예 5.6.4 sequence of Catalan numbers**
+
+모든 정수 $k\ge1$에 대하여, 다음과 같다고 하자.
+$$
+C_n=\frac{1}{n+1}\left(\frac{2n}{n}\right)
+$$
+모든 정수 $k\ge2$에 대하여 이 sequence가 recurrence relation $C_k=\frac{4k-2}{k+1}C_{k-1}$을 만족함을 증명하라.
+
+
+
 **5.6.1 Examples of Recursively Defined Sequences**
 
-하노이, 피보나치 수열
+**예시 5.6.4 하노이 타워**
+
+A, B, C
+
+(1) A에서 C로 $n$개의 원반을 모두 옮겨야한다.
+
+(2) 한 번에 한 개의 원반만 움직일 수 있다.
+
+(3) 큰 원반은 작은 원반 위에 올라가면 안된다.
+
+
+
+
+
+**예시 5.6.5 피보나치 수열**
+
+
+
+
+
+
+
+
 
 **5.6.2 Recursive Definitions of Sum and Product**
 
@@ -830,6 +862,8 @@ $$
 $$
 \prod_{i=1}^1 a_i=1\quad그리고\prod_{i=1}^n a_i=\left(\prod_{i=1}^{n-1} a_i\right)\cdot a_n\quad(만약\ n>1)
 $$
+
+
 
 
 ## 5.7 Solving Recurrence Relations by Iteration
@@ -852,6 +886,32 @@ a_n = a_0 + dn\quad(n\ge0인\ 각각의\ 정수에\ 대하여)
 $$
 
 
+
+**예시 5.7.3 The Explicit Formula for a Geometric Sequence**
+
+$r$이 fixed 0이 아닌 상수, sequence $a_0, a_1, a_2,...$이 다음과 같이 재귀적으로 정의되었다고 하자.
+$$
+\begin{align*}
+a_k&=ra_{k-1} &k\ge1인\ 각각의\ 정수\\
+a_0&=a
+\end{align*}
+$$
+explicit formula를 작성하라.
+$$
+\begin{align*}
+a_0&=a\\
+a_1&=ra_0=ra\\
+a_2&=ra_1=r^2a\\
+a_3&=ra_3=r^3a \\
+a_n&=ra_{n-1}=r^na \\
+\end{align*}
+$$
+추측하건대
+$$
+a_n=r^na=ar^n
+$$
+
+
 **Definition[Geometric Sequence]**
 
 sequence $a_0, a_1, a_2,...$는 다음을 만족시키는 constant(상수) $r$이 있는 경우, 그리고 오직 이 경우에만 **geometric sequence**라고 한다.
@@ -864,11 +924,126 @@ a_n=a_0r^{n}\quad(k\ge0인\ 각각의\ 정수에\ 대하여)
 $$
 
 
+
 **5.7.2 Using Formulas to Simlify Solutions Obtained by Iteration**
 
+첫번째항이 1인 geometric sequence의 sum에 대한 formula에 의해, $r=1$을 제외한 각각의 실수 $r$에 대하여,
+$$
+1+r+r^2+...+r^n=\frac{r^{n+1}-1}{r-1}\quad(n\ge0인\ 각각의\ 정수에\ 대하여)
+$$
+1부터 정수 $n$까지의 합에 대한 formula에 따르면,
+$$
+1+2+3+...+n=\frac{n(n+1)}{2}\quad(n\ge1인\ 각각의\ 정수에\ 대하여)
+$$
+
+
+**예시 5.7.5 An Explicit Formula for the Tower of Hanoi Sequence**
+$$
+\begin{align*}
+m_k&=2m_{k-1}+1\quad(k\ge2인\ 각각의\ 정수에\ 대하여) \\
+m_1&=1
+\end{align*}
+$$
+이 sequence에 대한 explicit formula를 추측하기 위해, iteration을 사용하고 5.2를 참고하여 formula를 증명하라.
+$$
+\begin{align*}
+m_1&=1\\
+m_2&=2m_2+1=2\cdot1+1\\
+m_3&=2m_2+1=2(2+1)+1\\
+m_4&=2m_3+1=2(2^2+2+1)+1\\
+m_5&=2m_4+1=2(2^3+2^2+2+1)+1\\
+...\\
+m_k&=2m_{k-1}+1=2(2^{k-2}+2^{k-3}+...+2^0)+1\\
+&=2^{k-1}+2^{k-2}+2^{k-3}+...+2^1+1\\
+&=\frac{2^r-1}{2-1}\\
+&=2^r-1
+\end{align*}
+$$
+그러므로
+$$
+m_n=2^n-1\quad(n\ge1인\ 각각의\ 정수에\ 대하여)
+$$
+**5.7.6 Using Recursion to Compute the Number of Edges of $K_n$**
+$$
+\begin{align*}
+s_k&=s_{k-1}+(k-1) &(k\ge2인\ 정수에\ 대하여)\\
+s_1&=0
+\end{align*}
+$$
+iteration을 사용하여 $s_1,s_2,s_3,...$에 대한 explicit formula를 찾아라.
+$$
+\begin{align*}
+s_1&=0 \\
+s_2&=s_1+1=0+1\\
+s_3&=s_2+2=(0+1)+2=0+1+2 \\
+s_4&=s_3+3=(0+1+2)+3=0+1+2+3\\
+...\\
+s_k&=s_{k-1}+(k-1)=(0+1+2+...+k-2)+k-1\\
+&=0+1+2+...+k-2+k-1\\
+&=\frac{(k-1)k}{2} \\
+&=\frac{k(k-1)}{2}
+\end{align*}
+$$
+그러므로
+$$
+m_k=\frac{k(k-1)}{2}\quad(k\ge1인\ 정수에\ 대하여)
+$$
 
 
 **5.7.3 Checking the Correctness of a Formula by Mathematical Induction**
+
+
+
+**예시 5.7.7 Using Mathematical Induction to Verify the Corectness of a Solution to a Recurrence Relation**
+
+$m_1,m_2,m_3$이 다음과 같은 sequence라고 정의되었다면
+$$
+\begin{align*}
+
+m_k&=2m_{k-1}+1\quad(k\ge2인\ 각각의\ 정수에\ 대하여) \\
+m_1&=1
+\end{align*}
+$$
+$n\ge1$인 모든 정수에 대하여 $m_n=2^n-1$이다.
+
+
+
+**Proof of Correctness**
+
+$m_1,m_2,m_3$이 다음과 같은 sequence로 정의되었다고 하자. $m_1=1$ 그리고 $k\ge2$인 각각의 정수에 대하여 $m_k=2m_{k-1}+1$. 그리고 $P(n)$이 다음과 같은 방정식이라고 하자.
+$$
+m_n=2^n-1
+$$
+**P(1)이 참임을 보여라:**
+
+다음이 참임을 보여야한다.
+$$
+m_1=2^1-1
+$$
+sequence의 정의에 의하여 $m_1$은 1이고, $2^-1=2-1=1$이므로 $P(1)$은 참이다.
+
+**$k\ge1$인 모든 정수에 대하여, $P(k)$가 참이면 $P(k+1)$도 참임을 보여라:**
+
+$k$가 $k\ge1$인 모든 정수이며, 다음이 참이라고 하자.
+$$
+m_k=2^k-1\quad(k\ge1인\ 모든\ 정수에\ 대하여)
+$$
+이때 다음이 참임을 증명해야 한다.
+$$
+m_{k+1}=2^{k+1}-1
+$$
+
+
+$k\ge1$이므로, $k+1\ge2$이다. 그러므로
+$$
+\begin{align*}
+m_{k+1}&=2m_{k}+1\\
+&=2(2^k-1)+1\\
+&=2^{k+1}-2+1\\
+&=2^{k+1}-1
+\end{align*}
+$$
+이는 $P(k+1)$의 우변과 같다.
 
 **5.7.4 Discovering That an Explicit Formula Is Incorrect**
 
@@ -904,6 +1079,8 @@ t^2-At-B=0\quad(5.8.2)
 $$
 
 
+
+
 **Definition[Characteristic equation of the relation]**
 
 주어진 second-order linear homogeneous recurrence relation with constant coefficients
@@ -913,6 +1090,32 @@ $$
 에 대하여, **characteristic equation of the relation**은 다음과 같다.
 $$
 t^2-At-B=0\quad(5.8.2)
+$$
+
+
+
+**예시 5.8.2 Using the Characteristic Equation to Find Solutions to a Recurrence Relation**
+
+sequence의 $k$번째 항이 $k-1$번째 항과 $k-2$번째 항의 두 배를 더한 것과 같은 recurrence relation이 있다고 하자. 즉,
+$$
+a_k=a_{k-1}+2a_{k-2}\quad(k\ge2인\ 각각의\ 정수에\ 대하여)
+$$
+$t$가 0이 아닐 때, 위 relation을 만족하고 다음의 form을 가지는 모든 sequence를 찾아라.
+
+**Solution**
+
+Lemma 5.8.1에 의해, 위 relation은 $t$가 characteristic equation을 만족하는 경우, 그리고 오직 이 경우에만 sequence $1, t,t^2,t^3,...,t^n,...$에 의해 만족된다.
+$$
+t^2-t-2=0
+$$
+
+$$
+t^2-t-2=(t-2)(t+1)
+$$
+
+이므로, $t$로 가능한 값은 2와 -1 뿐이다. 그러므로 다음의 sequcne가 위 relation에 대해 가능한 solution이다.
+$$
+1,2^2,2^3,...,2^n,...\quad1,(-1)^2,(-1)^3,...,(-1)^n,...\quad
 $$
 
 
@@ -983,6 +1186,56 @@ a_{k+1}&=Aa_k+Ba_{k-1} &a_0,\ a_1,\ a_2,...의\ 정의에\ 의하여\\
 $$
 
 
+
+**예시 5.8.4  A Formula for the Fibonacci Sequence**
+
+피보나치 수열 $F_0,F_1,F_2,...$가 다음의 recurrence relation을 만족한다.
+$$
+\begin{align*}
+F_k&=F_{k-1}+F_{k-2}\quad(k\ge2인\ 모든\ 정수에\ 대하여) \\
+F_0&=F_1=1
+\end{align*}
+$$
+이 sequence에 대한 explicit formula를 찾아라.
+
+
+
+피보나치 수열은 constant coefficients($A=1이고\ B=1$)를 가진 second-order linear homogeneous recurrence relation이므로, distinct roots theorem의 가설의 첫번째 part를 만족한다. 가설의 두번째 part를 만족한다는 것을 알기 위해서, 다음의 charcteristic equation을 시험해봐야한다.
+$$
+t^2-t-1=0
+$$
+quadratic formula에 의하여,
+$$
+t=\frac{-1\pm\sqrt{1^2-4\cdot(-1)}}{2\cdot(-1)}=\frac{-1\pm\sqrt{5}}{2}
+$$
+distinct-root theorem에 의해, 피보나치 수열은 다음과 같은 explicit formula를 가진다.
+$$
+F_n=C\left(\frac{-1+\sqrt{5}}{2}\right)^n+D\left(\frac{1-\sqrt{5}}{2}\right)^n\quad(n\ge0인\ 각각의\ 정수에\ 대하여)
+$$
+$C$와 $D$는 $F_0=F_1=1$이라는 사실에 의해 결정되는 값을 가진 수이다. $C$와 $D$를 찾기 위해,
+$$
+F_0=C\left(\frac{-1+\sqrt{5}}{2}\right)^0+D\left(\frac{1-\sqrt{5}}{2}\right)^0=C\cdot1+D\cdot1=C+D
+$$
+그리고
+$$
+\begin{align*}
+F_1&=C\left(\frac{1+\sqrt{5}}{2}\right)^1+D\left(\frac{1-\sqrt{5}}{2}\right)^1\\
+&=C\left(\frac{1+\sqrt{5}}{2}\right)+D\left(\frac{1-\sqrt{5}}{2}\right)
+\end{align*}
+$$
+따라서
+$$
+C=\frac{1+\sqrt{5}}{2\sqrt{5}}\quad이고\quad D=\frac{-(1-\sqrt{5})}{2\sqrt{5}}
+$$
+이것으로 formula를 치환하면
+$$
+\begin{align*}
+F_n&=\left(\frac{1+\sqrt{5}}{2\sqrt{5}}\right)\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{-(1-\sqrt{5})}{2\sqrt{5}}\right)\left(\frac{1-\sqrt{5}}{2}\right)^n\\
+&=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1}{\sqrt{5}}\right)\left(\frac{1-\sqrt{5}}{2}\right)^n
+\end{align*}
+$$
+
+
 **5.8.1 The Single-Root Case**
 
 **Lemma 5.8.4**
@@ -995,6 +1248,8 @@ $$
 $$
 a_k=Aa_{k-1}+Ba_{k-2}
 $$
+
+
 
 
 **Theorem 5.8.5 Single-Root Theorem**
@@ -1061,6 +1316,12 @@ $A$가 유한한 집합이고 $S$가 $A$에 대한 모든 문자열의 집합이
 
 
 
+**5.9.2 Proving Properties about Recursively Defined Sets**
+
+집합에 재귀적으로 정의되었을 때, **structural induction**이라고 불리는 버전의 mathematicla induction은 집합의 모든 객체가 주어진 property를 만족시키느니 사용될 수 있다.
+
+
+
 **Structural Induction for a Recursively Defined Set**
 
 $S$가 재귀적으로 정의된 집합이며, $P(x)$가 $S$의 객체가 만족할 수도, 만족하지 않을 수도 있는 property라고 하자. $S$의 모든 객체가 $P(x)$를 만족한다고 증명하기 위해서, 다음의 두 단계를 수행해야 한다.
@@ -1074,6 +1335,45 @@ $S$가 재귀적으로 정의된 집합이며, $P(x)$가 $S$의 객체가 만족
 ​			$y$가 $S$에 대한 recursion으로부터 규칙을 적용하여 $x$로부터 얻은 것이면, $P(y)$가 참임을 **보여라.**
 
 **Conclusion:** 그 어떤 객체도 base와 recursion으로부터 얻어진 객체 이외에 $S$에 포함되지 않으므로, step1과 step2는 $P(x)$가 $S$의 모든 객체 $x$에 대해 참임을 증명한다.
+
+
+
+**예시 5.9.5 A Property of the Set of Integers**
+
+$S$가 다음과 같이 재귀적으로 정의된 모든 정수의 집합이라고 하자.
+
+1. Base: 4는 집합에 속한다.
+2. Recursion: 주어진 $s$의 모든 정수에 대하여, $n+3$은 집합에 속한다.
+3. Restriction: base와 recursion으로부터 비롯되지 않은 어떤 정수도 $S$에 속하지 않는다.
+
+structural induction을 사용하여 $S$의 모든 정수 $n$에 대해, $n\ mod\ 3=1$임을 증명하라.
+
+
+
+**Proof (by structural induction)**
+
+$S$의 모든 주어진 정수 $n$에 대하여, $P(n)$이 $n\ mod\ 3=1$이라고 하자.
+
+**$S$에 대한 base에 있는 각각의 정수 $n$에 대하여 $P(n)$은 참임을 보여라:**
+
+$S$에 대한 base에 있는 유일한 객체가 4이고, $P(4)$는 $4=3\cdot1+1$이므로 $4\ mod\ 3=1$이고, 따라서 참이다.
+
+**$S$의 각각의 정수 $n$에 대하여, $P(n)$이 참이고 $m$이 $S$에 대한 recursion으로부터 파생된 규칙을 적용하여 얻은 것이라면, $P(m)$은 참임을 보여라.**
+
+$n$은 $P(n)$이 참인 $S$의 모든 정수라고 하자. $n\ mod\ 3=1$이라고 하자. $S$에 대한 recursion은 하나의 규칙으로 구성되었고, $n$에 규칙이 적용될 때 결론은 $n+3$이다. inductive step를 완전하게 하기위해, $P(n+3)$이 참임을 보여야한다. inductive hypothesis에 의하면,
+$$
+n=3k+1\quad(어떤\ 정수\ k에\ 대하여)
+$$
+이에 따르면
+$$
+\begin{align*}
+(n+1)\ mod\ 3&=[(3k+1)+3]mod\ 3\\
+&=(3k+4)mod\ 3\\
+&=[3(k+1)+1]mod\ 3\\
+&=1
+\end{align*}
+$$
+그러므로 $P(n+3)$이 참이다.
 
 
 
@@ -1140,7 +1440,7 @@ $S$에 대한 recursion과 base로부터 얻은 문자열 이외에는 $S$에 �
 
 
 
-**Theorem 5.9.3 Tjhe Concatenation of Any Tow Strings Is a String**
+**Theorem 5.9.3 The Concatenation of Any Tow Strings Is a String**
 
 $S$가 유한한 집합 $A$에 대한 모든 문자열의 집합이고 $u$와 $v$가 $S$의 모든 문자열이면, $uv$는 $S$의 문자열이다.
 
