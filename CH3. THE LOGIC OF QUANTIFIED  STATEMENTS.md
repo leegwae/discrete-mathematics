@@ -164,6 +164,8 @@ $P(x), Q(x)$는 predicate이며, $x$의 common domain은 $D$라고 한다.
 
 - universal statement의 부정의 보편적인 form은 negation의 정의와 universal statement, existential statement에 대한 truth values의 정의를 따른다.
 
+  
+
 **Theorem[3.2.1 Negation of a Universal Statement]**
 $$
 \forall x\mathrm {\ in\ }D,\ Q(x)
@@ -177,6 +179,8 @@ $$
 $$
 \sim (\forall x\mathrm {\ in\ }D,\ Q(x))\equiv \exist x\mathrm{\ in\ }D\mathrm{\ such\ that}\sim Q(x)
 $$
+
+
 
 
 **local equivalence for quantified statements**
@@ -199,6 +203,7 @@ $$
 $$
 \sim (\exist x\mathrm{\ in\ }D\mathrm{\ such\ that}\ Q(x)) \equiv \forall x\mathrm {\ in\ }D,\ \sim Q(x)
 $$
+
 
 
 **local equivalence for quantified statements**
@@ -307,7 +312,7 @@ $$
 $$
 
 $$
-\sim (\exist x\mathrm{\ such\ that}\ \exist y\mathrm{\ in\ }E, P(x,y))\equiv \exist x\mathrm{\ in\ }D\mathrm{\ such\ that\ }\exist y\mathrm{\ in\ }E\mathrm{\ such\ that} \sim P(x,y)
+\sim (\exist x\mathrm{\ such\ that}\ \forall y\mathrm{\ in\ }E, P(x,y))\equiv \forall x\mathrm{\ in\ }D,\ \exist y\mathrm{\ in\ }E\mathrm{\ such\ that} \sim P(x,y)
 $$
 
 

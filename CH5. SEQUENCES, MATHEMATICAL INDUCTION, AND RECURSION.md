@@ -102,13 +102,6 @@ $$
 
 
 
-**Recursive definition for factorial**
-$$
-
-$$
-
-
-
 **Definition[$n$ choose $r$]**
 
 $n$과 $r$이 $0\le r\le n$인 정수라고 하자.
@@ -783,13 +776,13 @@ $s$는 하나 혹은 모두 어떤 fixed 정수보다 큰 정수들을 포함한
 
 주어진 정수 $n$과 양의 정수 $d$에 대하여, 다음을 만족하는 정수 $q$와 $r$이 존재한다.
 $$
-n=dq+r\ 그리고\ 0\le r\le d
+n=dq+r\ 그리고\ 0\le r< d
 $$
 **Proof**: $S$이 $n-dk$와 같은 형태의 모든 nonnegative 정수들의 집합이라고 하자. $k$는 정수이다. 
 
-$n$이 nonnegative라면, $n-0\cdot =n\ge0$이므로 $n-0$은 $S$에 속한다. 또한, $n$이 nonnegative가 아니라도, $n-nd=n(1-d)\ge0$이므로 $n-nd$는 $S$에 속한다. 따라서 이 집합은 적어도 하나의 요소를 가진다. 이것은 $S$가 적어도 하나의 요소 $r$을 가진다는 well-ordering principle for the integers에 의하여 도출된다. 
+$n$이 nonnegative라면, $n-0\cdot d =n\ge0$이므로 $n-0$은 $S$에 속한다. 또한, $n$이 nonnegative가 아니라도, $n-nd=n(1-d)\ge0$이므로 $n-nd$는 $S$에 속한다. 따라서 이 집합은 적어도 하나의 요소를 가진다. 이것은 $S$가 적어도 하나의 요소 $r$을 가진다는 well-ordering principle for the integers에 의하여 도출된다. 
 
-$k$의 특정 명시적인 정수 값을 $q$라고 하면 $S$의 모든 정수는 $n-dk$과 같은 형태로 쓰일 수 있으므로 $n-dq=r$과 같이 쓸 수 있다. 양변에 $dq$를 더하면 $n=dq+r$이다.
+$k$의 특정 명시적인 정수 값을 $q$라고 하면 $S$의 모든 정수는 $n-dq$과 같은 형태로 쓰일 수 있으므로 $n-dq=r$과 같이 쓸 수 있다. 양변에 $dq$를 더하면 $n=dq+r$이다.
 
 $r\ge d$라고 가정했으므로, 다음은 참이다.
 $$
@@ -818,7 +811,7 @@ sequence $a_0, a_1, a_2,...$에 대한 **recurrence relation**은 각각의 항 
 
 모든 정수 $k\ge1$에 대하여, 다음과 같다고 하자.
 $$
-C_n=\frac{1}{n+1}\left(\frac{2n}{n}\right)
+C_n=\frac{1}{n+1}\left({2n \choose n}\right)
 $$
 모든 정수 $k\ge2$에 대하여 이 sequence가 recurrence relation $C_k=\frac{4k-2}{k+1}C_{k-1}$을 만족함을 증명하라.
 
@@ -1278,7 +1271,7 @@ $$
 
 
 
-**Recursive Definition for the Set of All Strings over al Finite Set**
+**Recursive Definition for the Set of All Strings over a Finite Set**
 
 $A$가 유한한 집합이라고 하자. $A$의 요소를 **Characters**라고 하고, **$A$에 대한 모든 문자열의 집합 $S$**를 다음과 같이 정의한다.
 
@@ -1318,7 +1311,7 @@ $A$가 유한한 집합이고 $S$가 $A$에 대한 모든 문자열의 집합이
 
 **5.9.2 Proving Properties about Recursively Defined Sets**
 
-집합에 재귀적으로 정의되었을 때, **structural induction**이라고 불리는 버전의 mathematicla induction은 집합의 모든 객체가 주어진 property를 만족시키느니 사용될 수 있다.
+집합에 재귀적으로 정의되었을 때, **structural induction**이라고 불리는 버전의 mathematical induction은 집합의 모든 객체가 주어진 property를 만족시키느니 사용될 수 있다.
 
 
 
@@ -1367,7 +1360,7 @@ $$
 이에 따르면
 $$
 \begin{align*}
-(n+1)\ mod\ 3&=[(3k+1)+3]mod\ 3\\
+(n+3)\ mod\ 3&=[(3k+1)+3]mod\ 3\\
 &=(3k+4)mod\ 3\\
 &=[3(k+1)+1]mod\ 3\\
 &=1
