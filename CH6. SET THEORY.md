@@ -188,7 +188,7 @@ $$
 $$
 
 
-### 6.1 Proving a Subset Relation
+### 6.2.1 Proving a Subset Relation
 
 *Starting Point*: $A$와 $B$가 집합이라고 하자.
 
@@ -200,7 +200,7 @@ $$
 
 
 
-### 6.2 Set Indentities
+### 6.2.2 Set Indentities
 
 **Theorem 6.2.2 [Set Identities]**
 
@@ -368,7 +368,7 @@ $$
 
 
 
-### 6.3 The Empty Set
+### 6.2.3 The Empty Set
 
 **Theorem 6.2.4 [A Set with No Elements Is a Subset of Every Set]**
 
@@ -397,4 +397,111 @@ $E$가 요소가 없는 집합이며, $A$가 집합이면, $E\subseteq A$라고 
 집합 $A,B,C$에 대하여, $A\subseteq B$이고 $B\subseteq C^c$이면, $A\cap C=\varnothing$이다.
 
 **Proof:** $A, B, C$가 $A\subseteq B$이고 $B\subseteq C^c$인 집합이라고 가정하자. $A\cap C=\varnothing$이 아니라고 가정하자. 즉, $A\cap C$에 속하는 요소 $x$가 있다고 하자. intersection의 정의에 의해, $x\in A$이고 $x\in C$이다. 그러면, $A\subseteq B$이므로, 부분집합의 정의에 의해 $x\in B$이다. 또한, $B\subseteq C^c$이므로, 부분집합의 정의에 의해 $X\in C^c$이다. complement의 정의에 의해 $x\notin C$임이 도출된다. 그러므로 $x \in C$이고 $x\notin C$이며, 이것은 모순이다. 따라서 $A\cap C$에 속하는 요소 $x$가 있다는 가정은 거짓이며, 따라서 $A\cap C=\varnothing$이다.
+
+
+
+## 6.3 Disproofs and Algegraic Proofs
+
+### 6.3.1 Disproving an Alleged Set Property
+
+### 6.3.2 Problem-Solving Strategy
+
+### 6.3.3 The Number of Subsets of a Set
+
+| Subsets of $X$ That Do Not Contain $z$ | Subsets of $X$ That Contiain $z$ |
+| -------------------------------------- | -------------------------------- |
+| $\varnothing$                          | $\varnothing \cup \{z\}=\{z\}$   |
+| $\{x\}$                                | $\{x\}\cup \{z\}=\{x,z\}$        |
+| $\{y\}$                                | $\{y\}\cup \{z\}=\{y,z\}$        |
+| $\{x,y\}$                              | $\{x,y\}\cup \{z\}=\{x,y,z\}$    |
+
+
+
+**Theorem 6.3.1**
+
+$n\ge0$에 대해, 집합 $X$가 $n$개의 요소를 가지면, $\mathscr{P}(X)$는 $2^n$개의 요소를 가진다.
+
+**Proof(by mathematical induction)**: $P(n)$이 다음과 같다고 하자.
+$$
+n개의\ 요소를\ 가진\ 집합은\ 2^n개의\ 부분집합을\ 가진다.
+$$
+**P(0)이 참임을 보여라**
+
+$P(0)$을 증명하기 위해, 다음을 보여야한다.
+$$
+0개의\ 요소를\ 가진\ 집합은\ 2^0개의\ 부분집합을\ 가진다.
+$$
+0개의 요소를 가진 유일한 집합 공집합이고, 공집합의 부분집합은 오직 그 스스로뿐이다. 그러므로, 0개의 요소를 가진 집합은 한 개의 부분집합을 가진다. $1=2^0$이므로, $P(0)$은 참이다.
+
+
+
+**$k\ge0$에 대하여, $P(k)$가 참이면 $P(k+1)$도 참임을 보여라**
+
+$k$가 다음과 같은 $k\ge0$인 정수라고 하자.
+$$
+k개의\ 요소를\ 가진\ 집합은\ 2^k개의\ 부분집합을\ 가진다.
+$$
+우리는 다음을 보여야 한다.
+$$
+k+1개의\ 요소를\ 가진\ 집합은\ 2^{k+1}개의\ 부분집합을\ 가진다.
+$$
+$X$가 $k+1$개의 요소를 가진 집합이라고 하자. $k+1\ge1$이므로, $X$에 속하는 요소 $z$를 고를 것이다. $X$의 모든 부분집합은 $z$를 포함하거나 그렇지 않을 것이다. 게다가, $z$를 포함하지 않는 $X$의 모든 부분집합은  $X-\{z\}$의 부분집합이다. $X-\{z\}$의 모든 부분집합 $A$는 $A\cup \{z\}$와 동일한, $z$를 포함하는 $X$의 부분집합 $B$와 일치할 수 있다. 결론적으로, $z$를 포함하지 않는 것만큼이나 $z$를 포함하는 $X$의 부분집합이 많이 있으며, 그러므로 $X-\{z\}$의 부분집합의 두 배 만큼이나 $X$의 부분집합이 있다. $X-\{z\}$이 $k$개의 요소를 가지므로, inductive hypothesis에 의해,
+$$
+X-\{z\}의\ 부분집합의\ 개수=2^k
+$$
+그러므로,
+$$
+\begin{align*}
+X의\  부분집합의\ 개수 &=2\cdot(X-\{z\}의\ 부분집합의\ 개수) \\
+&=2\cdot(2^k)\\
+&=2^{k+1}
+\end{align*}
+$$
+
+
+### 6.3.4 "Algebraic" Proofs of Set Identities
+
+**Example 6.3.2 Deriving a Set Difference Property**
+$$
+(A\cup B)-C=(A-C)\cup(B-C)
+$$
+
+$$
+\begin{align*}
+(A\cup B)-C &=(A\cup B)\cap C\\
+&=C^c \cap (A\cup B)\\
+&=(C^c\cap A) \cup (C^c\cap B) \\
+&=(A\cap C^c) \cup (B\cap C^c) \\
+&=(A-C)\cup(B-C)
+\end{align*}
+$$
+
+**Example 6.3.3 Deriving a Set Identitiy Using Properties of $\varnothing$**
+$$
+A-(A\cap B)=A-B
+$$
+
+$$
+\begin{align*}
+A-(A\cap B)&=A\cap(A\cap B)^c \\
+&=A\cap(A^c \cup B^c) \\
+&= (A\cap A^c)\cup(A\cap B^c)\\
+&=\varnothing \cup (A\cap B^c) \\
+&=(A\cap B^c)\cup \varnothing\\
+&=A\cap B^c\\
+&=A-B\\
+\end{align*}
+$$
+
+**Example 6.3.4 Deriving a Genenralized Associative Law**
+$$
+((A_1\cup A_2)\cup A_3)\cup A_4=A_1\cup((A_2\cup A_3)\cup A_4)
+$$
+
+$$
+\begin{align*}
+((A_1\cup A_2)\cup A_3)\cup A_4&=(A_1\cup(A_2\cup A_3))\cup A_4\\
+&=A_1\cup((A_2\cup A_3)\cup A_4)
+\end{align*}
+$$
 
