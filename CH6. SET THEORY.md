@@ -149,3 +149,252 @@ $$
 
 주어진 집합 $A$에 대하여, $A$의 **power set(멱집합)**은 $\mathscr{P}(X)$로 표기하며, $A$의 모든 부분집합의 집합이다.
 
+
+
+## 6.2 Properties of Sets
+
+**Theorem 6.2.1 [Some Subset Relations]**
+
+1. Inclusion of Intersection: 집합 $A$와 $B$에 대하여,
+   $$
+   (a)\ A\cap B\subseteq A\quad 그리고\quad (b)\ A\cap B\subseteq B
+   $$
+   
+
+2. Inclustion in Union: 집합 $A$와 $B$에 대하여,
+
+$$
+(a)\ A\subseteq A \cup B\quad (b)\ B\subseteq A\cup B
+$$
+
+3. Transitivie Property of Subsets: 집합 $A$, $B$, 그리고 $C$에 대하여,
+   $$
+   A\subseteq B\ 그리고\ B\subseteq C이면,\ A\subseteq C
+   $$
+
+
+
+**Procedural Versions of Set Definitions**
+
+$X$와 $Y$가 전체 집합 $U$의 부분집합이며 $x$가 $y$가 $U$의 요소라고 하자.
+$$
+\begin{align*}
+1.&\ x\in X\cup Y\Leftrightarrow x\in X\ 혹은\ x\in Y \\
+2.&\ x\in X\cap Y\Leftrightarrow x\in X\ 그리고\ x\in Y \\
+3.&\ x\in X- Y\Leftrightarrow x\in X\ 그리고\ x\notin Y \\
+4.&\ x\in X^c\Leftrightarrow x\notin X \\
+5.&\ (x,y)\in X\times Y \Leftrightarrow x\in X\ 그리고\ y\in Y
+\end{align*}
+$$
+
+
+### 6.1 Proving a Subset Relation
+
+*Starting Point*: $A$와 $B$가 집합이라고 하자.
+
+*To Show*: $A\cap B\subseteq A$
+$$
+\forall x,\ x\in A\cap B이면,\ x\in A이다.
+$$
+먼저, $x$가 $A\cap B$의 요소라고 **가정한다.** 그리고 $x$가 $A$에 속함을 **보인다.**
+
+
+
+### 6.2 Set Indentities
+
+**Theorem 6.2.2 [Set Identities]**
+
+아래의 모든 집합이 전체 집합 $U$의 부분집합이라고 하자.
+
+1. *Commuatiative Laws*: 집합 $A$와 $B$에 대하여,
+
+$$
+(a)\ A\cup B=B\cup A\quad그리고\ (b)\ A\cap B=B\cap A
+$$
+
+2. *Associative Laws*: 집합 $A, B,C$에 대하여,
+   $$
+   \begin{align*}
+   (a)&\ (A\cup B)\cup C=A\cup(B\cup C)\ 그리고\\
+   (b)&\ (A\cap B)\cap C=A\cap(B\cap C)
+   \end{align*}
+   $$
+   
+
+3. *Distributive Laws*: 집합 $A,B,C$에 대하여,
+   $$
+   \begin{align*}
+   (a)&\ A\cup (B\cap C)=(A\cup B)\cap(A\cup C)\ 그리고\\
+   (b)&\ A\cap (B\cup C)=(A\cap B)\cup(A\cap C)
+   \end{align*}
+   $$
+   
+
+4. *Identity Laws*: 집합 $A$에 대하여,
+   $$
+   (a)\ A\cup\varnothing=A\quad그리고\quad(b)\ A\cap U=A
+   $$
+   
+
+5. *Complement Laws*: 집합 $A$에 대하여,
+   $$
+   (a)\ A\cup A^c=U\quad 그리고\quad (b)\ A\cap A^c=\varnothing
+   $$
+   
+
+6. *Double Complement Law*: 집합 $A$에 대하여,
+   $$
+   (A^c)^c=A
+   $$
+   
+
+7. *Idempotent Laws*: 집합 $A$에 대하여,
+   $$
+   (a)\ A\cup A=A\quad그리고\quad(b)\ A\cap A =A
+   $$
+   
+
+8. *Universal Bound Laws*: 집합 $A$에 대하여,
+   $$
+   (a)\ A\cup U=U\quad그리고\quad(b)\ A\cap\varnothing=\varnothing
+   $$
+   
+
+9. *De Morgan's Laws*: 집합 $A$와 $B$에 대하여,
+   $$
+   (a) (A\cup B)^c=A^c\cap B^c\quad그리고\quad(b)\ (A\cap B)^c=A^c\cup B^c
+   $$
+
+10. *Absorption Laws*: 집합 $A$와 $B$에 대하여,
+    $$
+    (a)\ A\cup(A\cap B)=A\quad그리고\quad(b)\ A\cap(A\cup B)=A
+    $$
+
+11. *Complements of $U$ and $\varnothing$*:
+    $$
+    (a)\ U^c=\varnothing\quad그리고\quad(b)\varnothing^c=U
+    $$
+    
+
+12. *Set Difference Law*: 집합 $A$와 $B$에 대하여,
+    $$
+    A-B=A\cap B^c
+    $$
+
+
+
+**Basic Method for Proving That Sets Are Equal**
+
+집합 $X$와 $Y$가 주어졌을 때, $X=Y$를 증명하려면,
+
+1. $X\subseteq$ Y을 증명하라.
+2. $Y\subseteq X$을 증명하라.
+
+
+
+**Theorem 6.2.2(3)(a) A Distributive law for Sets**
+
+
+
+**Theorem 6.2.2(9)(a) A De Morgan’s law for Sets**
+
+집합 $A$와 $B$에 대하여, $(A\cup B)^c=A^c\cap B^c$
+
+**Proof**: $A$와 $B$가 집합이라고 하자.
+
+**$(A\cup B)^c=A^c\cap B^c$임을 증명하라:**
+
+$x\in(A\cup B)^c$라고 가정하자. complement의 정의에 의하여,
+$$
+x\notin A\cup B
+$$
+한편 $x\in A\cup B$는 다음을 뜻한다.
+$$
+x가\ A에\ 속하거나\ x가\ B에\ 속하는\ 것은\ 거짓이다.
+$$
+드 모르간의 법칙에 의하여, 이것은 다음을 암시한다.
+$$
+x\ 가\ A에\ 속하지\ 않고,\ x가\ B에\ 속하지\ 않는다.
+$$
+또한 다음과 같이 쓸 수 있다.
+$$
+x\notin A\quad x\notin B
+$$
+따라서 complement의 정의에 의해 $x\in A^c$이고 $x\in B^c$이다. intersection의 정의에 의해, $x\in A^c\cap B^c$이다. 그러므로 부분집합의 정의에 의해 $(A\cup B)^c\subseteq A^c\cap B^c$이다.
+
+**$A^c \cap B^c \subseteq (A\cup B)^c$을 증명하라:**
+
+$x\in A^c\cap B^c$이라고 가정하자. intersection의 정의에 의하여, $x\in A^c$ 그리고 $x\in B^c$이며, complement의 정의에 의해,
+$$
+x\notin A\quad그리고\ x\notin B
+$$
+달리 말하여,
+$$
+x는\ A에\ 속하지\ 않으며,\ x는\ B에\ 속하지\ 않다.
+$$
+드 모르간의 법칙에 의하여, 이것은 다음을 암시한다.
+$$
+x\ 가\ A에\ 속하지\ 않고,\ x가\ B에\ 속하지\ 않는다.
+$$
+이는 union의 정의에 의하여 다음과 같이 쓸 수 있다.
+$$
+x\notin A\cup B
+$$
+그러나, complement의 정의에 의해, $x\in (A\cup B)^c$이다. 부분집합의 정의에 의해 $A^c\cap B^c \subseteq (A\cup B)^c$이다.
+
+
+
+**Theorem 6.2.3 Intersection and Union with a Subset**
+
+집합 $A$와 $B$에 대하여, $A\subseteq B$라면,
+$$
+(a)\ A\cap B=A\quad(b) A\cup B=B
+$$
+**Proof**
+
+**Part(a):** $A$와 $B$가 $A\subseteq B$인 집합이라고 가정하자. (a)를 증명하려면 $A\cap B\subseteq A$이고 $A\subseteq A\cap B$임을 보여야한다. $A\cap B \subseteq A$는 inclusion of intersection property에 의해 증명되었다. $A\subseteq A\cap B$를 보이려면, $x$가 $A$의 요소임을 가정하자. $A\subseteq B$라고 가정하였으므로, $x$는 부분집합의 정의에 의하여 $B$의 요소이기도 하다. 그러므로.
+$$
+x\in A\quad그리고\quad x\in B
+$$
+그러므로 intersection의 정의에 의하여
+$$
+x\in A\cap B
+$$
+
+
+**Proof:**
+
+**Part(b)** 해봐라.
+
+
+
+### 6.3 The Empty Set
+
+**Theorem 6.2.4 [A Set with No Elements Is a Subset of Every Set]**
+
+$E$가 요소가 없는 집합이며, $A$가 집합이면, $E\subseteq A$라고 하자.
+
+**Proof(by cotradiction)**: 부정을 취해보자. 요소가 없는 집합 $E$와 집합 $A$가 $E\subseteq A$라고 하자. 그러면 부분집합의 정의에 의해 $A$의 요소가 아닌 $E$의 요소가 있다. 그러나 $E$가 요소 없는 집합이므로 그러한 요소가 없다. 이는 모순이다.
+
+
+
+**Corollary 6.2.5 Uniqueness of the Empty Set**
+
+요소가 없는 집합은 유일하다.
+
+**Proof**: $E_1$과 $E_2$가 요소가 없는 집합이라고 하자. Theorem 6.2.4에 의해, $E_1$은 요소가 없으므로 $E_1\subseteq E_2$이다. 또한 $E_2$는 요소가 없으므로 $E_2\subseteq E_1$이다. 그러므로 set equality의 정의에 의해 $E_1=E_2$이다.
+
+
+
+**Element Method for Proving a Set Equals the Empty Set**
+
+집합 $X$가 공집합 $\varnothing$과 같다는 것을 증명하려면, $X$가 요소가 없다는 것을 증명하면 된다. 이를 위해, $X$가 요소가 있다고 가정하여 모순을 이끌어낸다.
+
+
+
+**Proposition 6.2.6**
+
+집합 $A,B,C$에 대하여, $A\subseteq B$이고 $B\subseteq C^c$이면, $A\cap C=\varnothing$이다.
+
+**Proof:** $A, B, C$가 $A\subseteq B$이고 $B\subseteq C^c$인 집합이라고 가정하자. $A\cap C=\varnothing$이 아니라고 가정하자. 즉, $A\cap C$에 속하는 요소 $x$가 있다고 하자. intersection의 정의에 의해, $x\in A$이고 $x\in C$이다. 그러면, $A\subseteq B$이므로, 부분집합의 정의에 의해 $x\in B$이다. 또한, $B\subseteq C^c$이므로, 부분집합의 정의에 의해 $X\in C^c$이다. complement의 정의에 의해 $x\notin C$임이 도출된다. 그러므로 $x \in C$이고 $x\notin C$이며, 이것은 모순이다. 따라서 $A\cap C$에 속하는 요소 $x$가 있다는 가정은 거짓이며, 따라서 $A\cap C=\varnothing$이다.
+
