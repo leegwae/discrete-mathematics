@@ -160,7 +160,6 @@ $$
    (a)\ A\cap B\subseteq A\quad 그리고\quad (b)\ A\cap B\subseteq B
    $$
    
-
 2. Inclustion in Union: 집합 $A$와 $B$에 대하여,
 
 $$
@@ -220,7 +219,6 @@ $$
    \end{align*}
    $$
    
-
 3. *Distributive Laws*: 집합 $A,B,C$에 대하여,
    $$
    \begin{align*}
@@ -229,37 +227,31 @@ $$
    \end{align*}
    $$
    
-
 4. *Identity Laws*: 집합 $A$에 대하여,
    $$
    (a)\ A\cup\varnothing=A\quad그리고\quad(b)\ A\cap U=A
    $$
    
-
 5. *Complement Laws*: 집합 $A$에 대하여,
    $$
    (a)\ A\cup A^c=U\quad 그리고\quad (b)\ A\cap A^c=\varnothing
    $$
    
-
 6. *Double Complement Law*: 집합 $A$에 대하여,
    $$
    (A^c)^c=A
    $$
    
-
 7. *Idempotent Laws*: 집합 $A$에 대하여,
    $$
    (a)\ A\cup A=A\quad그리고\quad(b)\ A\cap A =A
    $$
    
-
 8. *Universal Bound Laws*: 집합 $A$에 대하여,
    $$
    (a)\ A\cup U=U\quad그리고\quad(b)\ A\cap\varnothing=\varnothing
    $$
    
-
 9. *De Morgan's Laws*: 집합 $A$와 $B$에 대하여,
    $$
    (a) (A\cup B)^c=A^c\cap B^c\quad그리고\quad(b)\ (A\cap B)^c=A^c\cup B^c
@@ -275,7 +267,6 @@ $$
     (a)\ U^c=\varnothing\quad그리고\quad(b)\varnothing^c=U
     $$
     
-
 12. *Set Difference Law*: 집합 $A$와 $B$에 대하여,
     $$
     A-B=A\cap B^c
@@ -400,7 +391,7 @@ $E$가 요소가 없는 집합이며, $A$가 집합이면, $E\subseteq A$라고 
 
 
 
-## 6.3 Disproofs and Algegraic Proofs
+## 6.3 Disproofs and Algebraic Proofs
 
 ### 6.3.1 Disproving an Alleged Set Property
 
@@ -504,4 +495,187 @@ $$
 &=A_1\cup((A_2\cup A_3)\cup A_4)
 \end{align*}
 $$
+
+
+
+## 6.4 Boolean Algebras, Russell's Paradox, and the Halting Problem
+
+TABLE 6.4.1
+
+| Logical Equivalences                                         | Set Properties                                               |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| $p, q, r$은 statement variable                               | $A,B,C$는 집합                                               |
+| $a.\ p\or q\equiv q\or p$<br />$b.\ p\and q\equiv q\and p$   | $a.\ A\cup B\equiv B\cup A$<br />$b.\ A\cap B\equiv B\cap A$ |
+| $a.\ p\and (q\and r)\equiv (p\and q)\and r$<br />$b.\ p\or (q\or r)\equiv (p\or q)\or r$ | $a.\ A\cap (B\cap C)\equiv (A\cap B)\cap C$<br />$b.\ A\cup (B\cup C)\equiv (A\cup B)\cup C$ |
+| $a.\ p\and (q\or r)\equiv (p\and q)\or(p\and r)$<br />$b.\ p\or (q\and r)\equiv (p\or q)\and(p\or r)$ | $a.\ A\cap (B\cup C)\equiv (A\cap B)\cup(A\cap C)$<br />$b.\ A\cup (B\cap C)\equiv (A\cup B)\cap(A\cup C)$ |
+| $a.\ p\or c\equiv p$<br />$b.\ p\and t\equiv p$              | $a.\ A\cup \varnothing\equiv A$<br />$b.\ A\cap U\equiv A$   |
+| $\sim(\sim p)\equiv p$                                       | $(A^c)^c\equiv A$                                            |
+| $a.\ p\or p \equiv p$ <br />$b.\ p\and p \equiv p$           | $a.\ A\cup A \equiv A$ <br />$b.\ A\cap A \equiv A$          |
+| $a.\ p\or t \equiv t$<br />$b.\ p\and c \equiv c$            | $a.\ A\cup t \equiv t$<br />$b.\ A\cap \varnothing \equiv \varnothing$ |
+| $a.\ \sim (p \or q) \equiv \sim p \and \sim q$<br />$b.\ \sim (p \and q) \equiv \sim p \or \sim q$ | $a.\ (A \cup B)^c \equiv A^c \cap B^c$<br />$b.\ (A \cap B)^c \equiv A^c \cup B^c$ |
+| $a.\ p \or(p\and q) \equiv p$<br />$b.\ p \and(p\or q) \equiv p$ | $a.\ A \cup(A\cap B) \equiv A$<br />$b.\ A \cap(A\cup B) \equiv A$ |
+| $a.\ \sim t \equiv c$<br />$b.\ \sim c = t$                  | $a.\ U^c\equiv \varnothing$<br />$b.\ \varnothing^c = U$     |
+
+
+
+**Definition and Axioms for a Boolean Algebra**
+
+**Boolean algebra**는 $+$, $\cdot$으로 표기되는 두 연산자로 이루어져, $a$와 $b$에 대하여 $a+b$ 그리고 $a\cdot b$ 모두 $B$에 속하는 그러한 집합 $B$이다. 다음의 공리를 따른다.
+
+1. *Commutative Laws*: $B$에 속하는 $a$와 $b$에 대하여,
+   $$
+   (a)\ a+b=b+a\quad그리고\quad (b)\ a\cdot b = b\cdot a
+   $$
+   
+
+2. *Associative Laws*: $B$에 속하는 $a$와 $b$, $c$에 대하여,
+   $$
+   (a)\ (a+b)+c=a+(b+c)\quad그리고\quad (b)\ (a\cdot b)\cdot c = a\cdot(b\cdot c)
+   $$
+   
+
+3. *Distributive Laws*: $B$에 속하는 $a$와 $b$, $c$에 대하여,
+   $$
+   (a)\ a+(b\cdot c) = (a+b)\cdot (a+c)\quad그리고\quad (b)\ a\cdot (b+c)=(a\cdot b)+(a\cdot c)
+   $$
+   
+
+4. *Identitiy Laws*: $B$에 속하는 각각의 $a$에 대하여 다음이 성립하는 별개의 요소 0과 1이 $B$에 속한다.
+   $$
+   (a)\ a+0=a\quad그리고\quad (b)\ a\cdot 1=a
+   $$
+   
+
+5. *Complement Laws:* $B$에 속하는 $a$에 대하여, 다음이 성립하는 ($\bar{a}$으로 표기하고 $a$의 **complement** 혹은 **negation**이라고 하는) 요소가 $B$에 속한다.
+   $$
+   (a)\ a+\bar{a}=1\quad그리고\quad(b)\ a\cdot\bar{a}=0
+   $$
+   
+
+**Theorem 6.4.1 Properties of Boolean Algebra**
+
+$B$가 Boolean algbra라고 하자.
+
+1. *Uniqueness of the Complement Laws*: $B$의 모든 $a$와 $x$에 대하여, $a+x=1$이고 $a\cdot x =0$이면 $x=\bar{a}$이다.
+
+2. *Uniqueness of 0, 1*: $B$의 모든 $a$에 대하여 $a+x=a$를 만족하는 그러한 $x$가 $B$에 존재하면, $x=0$이다. $B$의 모든 $a$에 대하여 $a\cdot y=a$를 만족하는 그러한 $y$가 $B$에 존재하면, $y=1$이다. 
+
+3. *Double Complement Laws*: 모든 $a\in B$에 대하여, $\overline{\bar{(a)}}=a$
+
+4. *Idempotent Laws*: 모든 $a\in B$에 대하여,
+   $$
+   (a)\ a+a=a\quad그리고\quad (b)\ a\cdot a=a
+   $$
+   
+
+5. *Universal Bound Laws:* 모든 $a\in B$에 대하여,
+   $$
+   (a)\ a+1=1\quad그리고\quad(b)\ a\cdot 0=0
+   $$
+   
+
+6. *De morgan's Laws*: 모든 $a, b\in B$에 대하여,
+   $$
+   (a)\ \overline{a+b}=\bar{a}\cdot\bar{b}\quad그리고\quad(b)\ \overline{a\cdot b} = \bar{a} + \bar{b}
+   $$
+   
+
+7. *Absorption Laws*: 모든 $a, b\in B$에 대하여,
+   $$
+   (a)\ (a+b)\cdot a= a\quad그리고\quad(b)\ (a\cdot b)+a=a
+   $$
+   
+
+8. *Complements of 0, 1*:
+   $$
+   (a)\ \bar{0}=1\quad그리고\quad(b)\ \bar{1}=0
+   $$
+
+
+
+**Proof**
+
+*Uniqueness of the Complement Laws*
+
+$a$가 $B$이 요소이며 다음의 가설, $a+x=1$과 $a\cdot x=0$을 만족한다고 하자.
+$$
+\begin{align*}
+x&=x\cdot 1\\
+&=x\cdot(a+\bar{a})\\
+&=x\cdot a + x\cdot\bar{a}\\
+&=a\cdot x + x\cdot\bar{a} \\
+&=0+x\cdot\bar{a}\\
+&=a\cdot\bar{a}+x\cdot\bar{a}\\
+&=(a\cdot\bar{a})(\bar{a}\cdot x)\\
+&=\bar{a}(a+x)\\
+&=\bar{a}+1\\
+&=\bar{a}
+\end{align*}
+$$
+
+
+**duality principle**
+$$
+(a)\ a+0=a\quad그리고\quad(b)\ a\cdot 1=a
+$$
+
+
+**Theorem 6.4.1(3) Double Compelement Law**
+
+Boolean algebra $B$에 속하는 모든 요소 $a$에 대하여, $\overline{\bar{(a)}}=a$
+
+**Proof**
+
+$B$가 Boolean algbra이고 $a$가 $B$의 요소라고 하자. 그러면
+$$
+\begin{align*}
+\bar{a}+a&=a+\bar{a} =1 \\
+\bar{a}\cdot a &= a\cdot\bar{a}=0
+\end{align*}
+$$
+그러므로 $a$는 $\bar{a}$의 complemeent의 의해 만족되는 $\bar{a}$에 관한 두 방정식을 만족한다. $a$의 complement가 유일하므로, $\overline{\bar{(a)}}=a$
+
+
+
+### 6.4.1 Russell's Paradox
+
+많은 집합은 그 자신의 요소가 아니다. 예를 들어, 모든 정수의 집합은 정수가 아니며, 모든 말의 집합은 말이 아니다. 그러나, 그 스스로의 요소가 되는 집합의 가능성을 떠올릴 수 있다. 예를 들어, 모든 추상적인 idea이 집합은 추상적인 idea로 생각될 수 있다. 만약 프로퍼티의 모든 묘사를 집합의 프로퍼티를 정의하는데 사용하는 것을 허용한다면, $S를 그 자신의 요소가 아닌 모든 집합의 집합이라고 하자.
+$$
+S=\{A|A는\ 집합이고\ A\notin A\}
+$$
+$S$는 그 자신의 요소인가?
+
+답은 예 그리고 아니오 둘 다 있다. $S\in S$라고 하자. $S$는 $S$에 대해 정의된 프로퍼티를 만족한다. 이것은 $S\in S$라는 가정에 모순되며 $S\notin S$를 보인다. 한편, $S$는 $S\notin S$인 그러한 집합이라고 하자. $S$는 $S\in S$를 암시하는 $S$에 대한 프러퍼티의 정의를 만족한다. 그러므로 $S\in S$와 $S\notin S$는 둘 다 참이다. statement는 참이거나 거짓이지만 둘 다일 수는 없으므로 이것은 불가능하다. 
+
+
+
+### 6.4.2 The Halting Problem
+
+**Theorem 6.4.2**
+
+알고리즘 $X$와 input으로서 데이터 집합 $D$이 있다고 하자. 그리고 $X$가 $D$로 실행될 때, $X$가 유한한 단계에서 종료되는지 아닌지 나타내도록 "halts" 혹은 "loops forever"을 output으로 가진다고 하자. 이러한 컴퓨터 알고리즘은 없다.
+
+**Proof(by contradiction)**
+
+알고리즘 `CheckHalt`에 대해, $X$는 알고리즘, 데이터 셋 $D$는 입력값이라고 하자.
+
+```
+CheckHalt(X, D) prints
+	"halts"				// 만약 X가 D로 실행될 때, 유한한 단계에서 종료된다면,
+or
+	"loops forever"		// 그렇지 않다면
+```
+
+```
+Test(X)
+	loops forever if CheckHalt(X, X) prints "halts"
+or
+	stops if CheckHalt(X, X) prints "loops forever"
+```
+
+만약 `Test(Test)`가 유한한 단계 이후 종료된다면, `CheckHalt(Test, Test)`는 "halts"이므로 `Test(Test)`는 루프를 영원히 돈다. 
+
+한편, `Test(Test)`가 유한한 단계 이후 종료되지 않는다면, `CheckHalt(Test, Test)`는 "loops forever"를 프린트하고 `Test(Test)`는 종료된다.
+
+따라서 `Test(Test)`는 영원히 루프를 돌면서 종료된 것이기도 하다. 이것은 모순이다. 그러나 `Test`의 존재는 종료에 대해 알고리즘과 데이터 셋을 검사하는 알고리즘 `CheckHalt`의 존재의 가정으로부터 논리적으로 도출된 것이다.
 
