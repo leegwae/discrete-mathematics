@@ -265,5 +265,103 @@ $x\in X$라고 가정하자. $y=F(x)$라고 하자. $y \in Y$이며, $F^{-1}$의
 
 
 
+## 7.3 Composition of Functions
 
+**Definition[composition]**
+
+$f:X\rightarrow Y$이고 $g:Y'\rightarrow Z$가 $f$의 범위가 $g$의 domain의 부분집합인 특성을 가진 함수라고 하자. 새로운 함수 $g\circ f:X\rightarrow Y$를 다음과같이 정의한다:
+$$
+(g\circ f)(x)=g(f(x))\quad(각각의\ x\in X에\ 대하여)
+$$
+이때 $g\circ f$는 $g$ circle $f$라고 읽으며, $g(f(x))$는 $x$의 $f$의 $g$라고 읽는다. $g\circ f$는 **$f$와 $g$의 composition(합성)**이라고 한다.
+
+
+
+**Theorem 7.3.1 Composition with an  Identity Function**
+
+$f$가 집합 $X$부터 집합 $Y$까지의 함수이며 $I_X$가 $X$에 대한 identity function, $I_Y$가 $Y$에 대한 identity function이면,
+$$
+(a)f\circ I_X=f\quad그리고\quad(b)I_Y\circ f=f
+$$
+**Proof**
+
+**Part(a)**: $f$가 집합 $X$부터 집합 $Y$까지의 함수이며 $I_X$가 $X$에 대한 identity function라고 가정하자. $X$의 각각의 $x$에 대하여,
+$$
+(f\circ I_X)(x)=f(I_X(x))=f(x)
+$$
+그러므로, equality of functions의 정의에 의하여, $f\circ I_X=f$는 참이다.
+
+**Part(b)**: 직접 해보라
+
+
+
+**Theorem 7.3.2 Composition of a Function with Its Inverse**
+
+$f:X\rightarrow Y$가 one-to-one이고 onto 함수이며, 역함수 $f^{-1}:Y\rightarrow X$를 가진다면,
+$$
+(a)f\circ I_X=f\quad그리고\quad(b)I_Y\circ f=f
+$$
+**Proof**
+
+**Part(a)**: $f:X\rightarrow Y$가 one-to-one이고 onto 함수이며, 역함수 $f^{-1}:Y\rightarrow X$를 가진다고 한다. $x$가 $X$에 속하는 요소라고 하자. 그러면 함수의 합성의 정의에 의하여,
+$$
+(f^{-1}\circ f)(x)=f^{-1}(f(x))
+$$
+이때 $z=f^{-1}(f(x))$라고 가정하자. 역함수의 정의에 의해,
+$$
+f(z)=f(x)
+$$
+$f$가 one-to-one이고 이것은 $z=x$임을 암시하기 때문이다.
+
+$z=f^{-1}(f(x))$도 치환에 의하여
+$$
+f^{-1}(f(x))=x
+$$
+혹은, 동등하게,
+$$
+(f^{-1}\circ f)(x)=x
+$$
+$x$가 $X$의 요소이며 $I_X(x)=x$이므로, $f^{-1}\circ f=I_X$임을 증명한다.
+
+**Part(b)**: 직접 해보라.
+
+
+
+### 7.3.1 Composition of One-to-One Functions
+
+**Theorem 7.3.3**
+
+$f:X\rightarrow Y$그리고 $g:Y\rightarrow Z$가 모두 one-to-one 함수이면, $g\circ f$는 one-to-one이다.
+
+**Proof**
+
+$f:X\rightarrow Y$그리고 $g:Y\rightarrow Z$가 모두 one-to-one function라고 가정하자. $x_1$과 $x_2$가 다음과 같은 $X$의 요소라고 가정하자.
+$$
+(g\circ f)(x_1)=(g\circ f)(x_2)
+$$
+합성 함수의 정의에 의하여,
+$$
+g(f(x_1))=g(f(x_2))
+$$
+$g$는 one-to-one이므로, $f(x_1)=f(x_2)$이다.
+
+$f$는 one-to-one이므로, $x_1=x_2$이다.
+
+따라서 $g\circ f$는 one-to-one이다.
+
+
+
+### 7.3.2 Composition of Onto Functions
+
+**Theorem 7.3.4**
+
+$f:X\rightarrow Y$ 그리고 $g:Y\rightarrow Z$가 모두 onto 함수이면, $g\circ f$은 onto이다.
+
+**Proof**
+
+$f:X\rightarrow Y$ 그리고 $g:Y\rightarrow Z$가 모두 onto 함수라고 가정하자. $z$가 $Z$의 요소이다. $g$가 onto이므로, $g(y)=z$인 $Y$의 요소 $y$가 있다. 그리고 $f$가 onto이므로, $f(x)=y$인 $X$의 요소 $x$가 있다. 그러므로 다음과 같은 $X$의 요소 $x$가 있다.
+$$
+(g\circ f)(x)=g(f(x))=g(y)=z
+$$
+그러므로 $g\circ f$는 onto이다.
 
