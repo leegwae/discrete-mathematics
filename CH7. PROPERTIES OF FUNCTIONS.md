@@ -101,3 +101,169 @@ $$
 
 이다. $f(A)$는 **$A$의 image**라고 부르며, $f^{-1}$은 **$C$의 inverse image**라고 부른다.
 
+
+
+## 7.2 One-to-One, Onto, and Inverse Functions
+
+### 7.2.1 One-to-One Functions
+
+**Definition[one-to-one]**
+
+$F$가 집합 $X$부터 집합 $Y$까지의 함수라고 하자. $F$는 모든 요소 $x_1$그리고 $x_2$가 $X$에 속하는 경우, 그리고 오직 이 경우에만 **one-to-one**(**일대일**; 혹은** **injective**)이다.
+$$
+F(x_1)=F(x_2)이면,\ x_1=x+2 \\
+x_1\neq x_2이면,\ F(x_1)\neq F(x_2)
+$$
+위 두 문장은 동치이다.
+
+기호화하면
+$$
+F:X\rightarrow Y는\ 일대일대응이다\Leftrightarrow \forall x_1,x_2 \in X,\ F(x_1)=F(x_2)이면\ x_1=x_2
+$$
+
+
+### 7.2.2 One-to-One Functions on Infinite Sets
+
+$f$가 일대일임을 증명하려면 method of direct proof를 사용한다.
+
+$x_1, x_2$가 $f(x_1)=f(x_2)$를 만족하는 $X$의 요소라고 **가정한다**.
+
+$x_1=x_2$라고 **보인다**.
+
+일대일이 아님을 증명하려면 다음과 같이 한다.
+
+$f(x_1)=f(x_2)$이지만 $x_1 \neq x_2$인 $X$의 요소 $x_1$과 $x_2$를 **찾는다.**
+
+
+
+### 7.2.3 Application: Hash Functions
+
+**Definition[Hash Function]**
+
+**hash function(해쉬 함수)**는 아주 큰, 아마 무한한 데이터의 집합부터 작고 고정된 크기의 정수의 집합까지의 함수로 정의되었다.
+
+
+
+- 두 개의 입력값이 **collide**하면, 즉, 같은 출력값을 가진다. 다양한 방법이 이러한 **collision**을 피하기 위해 사용된다.
+
+
+
+### 7.2.4 Onto Functions
+
+**Definition[onto]**
+
+$F$가 집합 $X$부터 집합 $Y$까지의 함수라고 하자. $F$는 $Y$에 속하는 요소 $y$가 주어졌을 때, $y=F(x)$라는 특성으로 $X$에 속하는 $x$를 찾을 수 있는 경우, 그리고 오직 이 경우에만 **onto**(혹은 **surjective**)이다. 기호화하면:
+$$
+F:X\rightarrow Y는\ \mathrm{onto}이다\quad\Leftrightarrow\quad \forall y \in Y,\ F(x)=y인\ 그러한\  \exists x \in X
+$$
+
+- 공역과 치역이 같은 함수이다.
+
+
+
+### 7.2.5 Onto Functions on Infinite Sets
+
+$F$가 onto라는 것을 증명하려면, method of generalizing form generic particular를 사용한다.
+
+$y$가 $Y$의 요소라고 **가정한다**.
+
+$F(x)=y$인 $x$가 $X$에 있음을 **보인다**.
+
+$F$가 onto가 아니라는 것을 증명하려면, 다음과 같이 한다.
+
+$X$의 모든 $x$에 대하여 $y\neq F(x)$인 $y$가 $Y$에 속하는지 **찾는다**
+
+
+
+### 7.2.6 Relations between Exponential and Logarithmic Functions
+
+양의 수 $b\ne1$에 대하여, **exponential function with base $b$(밑이 $b$인 지수 함수)**는 $\mathrm{exp}_b$라고 표기하며, $R$부터 $R^+$까지의 함수이며 다음과 같이 정의된다: 모든 실수 $x$에 대하여,
+$$
+\mathrm{exp}_b(x)=b^x
+$$
+이때 $b^0=1$이며 $b^{-x}=1/b^x$이다.
+
+
+
+**Laws of Exponents**
+
+$b$와 $c$가 양의 실수이고 $y$와 $v$가 실수이면, 다음의 exponents의 법칙은 참이다.
+$$
+\begin{align*}
+b^ub^v &=b^{u+v}&7.2.1\\
+(b^u)^v&=b^{uv}&7.2.2\\
+\frac{b^u}{b^v}&=b^{u-v}&7.2.3\\
+(bc)^u&=b^uc^u&7.2.4
+\end{align*}
+$$
+
+
+**Theorem 7.2.1 Properties of Logarithms**
+
+$b\ne1$이고 $c\ne1$인 양의 실수 $b,c,x$와 실수 $a$에 대하여:
+
+1. $log_b(xy)=log_bx+log_by$
+2. $log_b\left(\frac{x}{y}\right)=log_bx-log_by$
+3. $log_b(x^a)=alog_bx$
+4. $log_cx=\frac{log_bx}{log_bc}$
+
+
+
+**Examples 7.2.7 Computing Logarithms with Base 2 on a Calculator**
+
+- **common logarithms**는 log라고 표기하며, 밑으로 10을 가진다.
+- **natural logarithms**는 ln으로 표기하며, 밑으로 $e$를 가진다.
+
+
+
+### 7.2.7 One-to-One Correspondences
+
+**Definition[one-to-one correspondence]**
+
+집합 $X$부터 집합 $Y$까지의 **one-to-one correspondence**(**일대일대응**; 혹은 **bijection**)는 $F:X\rightarrow Y$가 one-to-one이면서 onto인 함수이다.
+
+
+
+### 7.2.8 Inverse Functions
+
+**Theorem 7.2.2**
+
+$F:X\rightarrow Y$가 일대일대응이라고 가정하자; 즉, $F$가 one-to-one이면서 onto라고 하자. $F^{-1}:Y\rightarrow X$가 다음과 같이 정의된다: 주어진 $Y$의 요소 $y$에 대하여,
+$$
+F^{-1}(y)=F(x)가\ y와\ 같은\ 그러한\ 유일한\ x
+$$
+혹은 동등하게,
+$$
+F^{-1}(y)=x\Leftrightarrow y=F(x)
+$$
+**Definition[inverse function]**
+
+Theorem 7.2.2의 $F^{-1}$는 $F$이 **inverse function(역함수)**이다.
+
+
+
+**Theorem 7.2.3**
+
+$X$와 $Y$가 집합이고 $F:X\rightarrow Y$가 one-to-one이면서 onto이면, $F^{-1}:Y\rightarrow X$도 one-to-one이면서 onto이다.
+
+**Proof**  
+
+(1) $F^{-1}$는 one-to-one이다.
+
+$F^{-1}(y_1)=F^{-1}(y_2)인 그러한 $ $y_1$과 $y_2$가 $Y$이 요소라고 하자. $x=F^{-1}(y_1)=F^{-1}(y_2)$라고 하자. $x\in X$이며, $F^{-1}$의 정의에 이ㅡ해,
+$$
+\begin{align*}
+F(x)&=y_1 &x=F^{-1}(y_1)이므로\\
+F(x)&=y_2 &x=F^{-1}(y_2)이므로\\
+\end{align*}
+$$
+결론적으로, $y1,\ y2$가 각각 $F(x)$와 같으므로 $y_1=y_2$이다.
+
+(2) $F^{-1}$는 onto이다.
+
+$x\in X$라고 가정하자. $y=F(x)$라고 하자. $y \in Y$이며, $F^{-1}$의 정의에 의해, $F^{-1}(y)=x$이다.
+
+
+
+
+
