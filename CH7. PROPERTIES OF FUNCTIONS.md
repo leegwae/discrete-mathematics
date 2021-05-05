@@ -365,3 +365,43 @@ $$
 $$
 그러므로 $g\circ f$는 onto이다.
 
+
+
+## 7.4 Cardinality with Applications to Computability
+
+**Definition**
+
+$A$와 $B$가 집합이라고 하자. $A$는 $A$부터 $B$까지 일대일하는 경우, 그리고 오직 이 경우에만 **has the same cardinality as B**라고 한다. 다른 말로, $A$는 $A$부터 $B$까지의 함수 $f$가 one-to-one하고 onto인 경우, 그리고 오직 이 경우에만 has the same cardinality as $B$라고 한다.
+
+
+
+**Theorem 7.4.1 Properties of Cardinality**
+
+집합 $A,\ B,\ C$에 대하여,
+
+1. **Reflexive property of cardinality**: $A$는 $A$와 같은 cardinality를 가진다.
+2. **Symmetric property of cardinality**: $A$가 $B$와 같은 cardinality를 가지면, $B$는 $A$와 같은 cardinality를 가진다. 
+3. **Transitive property of cardinality**: $A$가 $B$와 같은 cardinality를 가지고 $B$가 $C$와 같은 cardinality를 가지면, $A$는 $C$와 같은 cardinality를 가진다.
+
+
+
+**Definition**
+
+$A$와 $B$는 $A$가 $B$와 같은 cardinality를 가지거나 $B$가 $A$와 같은 cardinality를 가지는 경우, 그리고 오직 이 경우에만 **같은 cardinality**를 가진다고 한다.
+
+
+
+### 7.4.1 Countable Sets
+
+**Definition**
+
+집합은 공집합이거나 어떤 양의 정수 $n$에 대해 ${1,2,...,n}$과 같은 형태의 집합이고 일대일대응할 수 있을 때 **유한(finite)**하다고 한다. 집합은 양의 정수의 집합 $Z^+$과 같은 cardinality를 가지고 있는 경우, 그리고 오직 이 경우에만 **countably infinite**라고 한다. 집합은 유한하거나 countably infinite인 경우, 그리고 오직 이 경우에만 **countable**이라고 한다. countable하지 않은 집합은 **uncountable**하다고 한다.
+
+
+
+### 7.4.2 The Search for Larger Infinites: The Cantor Diagonalization Process
+
+
+
+### 7.4.3 Application: Cardinality and COmputability
+
