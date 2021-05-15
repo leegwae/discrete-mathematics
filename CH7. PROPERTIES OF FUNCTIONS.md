@@ -109,16 +109,16 @@ $$
 
 **Definition[one-to-one]**
 
-$F$가 집합 $X$부터 집합 $Y$까지의 함수라고 하자. $F$는 모든 요소 $x_1$그리고 $x_2$가 $X$에 속하는 경우, 그리고 오직 이 경우에만 **one-to-one**(**일대일**; 혹은** **injective**)이다.
+$F$가 집합 $X$부터 집합 $Y$까지의 함수라고 하자. $F$는 모든 요소 $x_1$그리고 $x_2$가 $X$에 속하는 경우, 그리고 오직 이 경우에만 **one-to-one**(**일대일**; 혹은 **injective**)이다.
 $$
-F(x_1)=F(x_2)이면,\ x_1=x+2 \\
+F(x_1)=F(x_2)이면,\ x_1=x_2 \\
 x_1\neq x_2이면,\ F(x_1)\neq F(x_2)
 $$
 위 두 문장은 동치이다.
 
 기호화하면
 $$
-F:X\rightarrow Y는\ 일대일대응이다\Leftrightarrow \forall x_1,x_2 \in X,\ F(x_1)=F(x_2)이면\ x_1=x_2
+F:X\rightarrow Y는\ 일대일이다\Leftrightarrow \forall x_1,x_2 \in X,\ F(x_1)=F(x_2)이면\ x_1=x_2
 $$
 
 
@@ -154,7 +154,7 @@ $f(x_1)=f(x_2)$이지만 $x_1 \neq x_2$인 $X$의 요소 $x_1$과 $x_2$를 **찾
 
 $F$가 집합 $X$부터 집합 $Y$까지의 함수라고 하자. $F$는 $Y$에 속하는 요소 $y$가 주어졌을 때, $y=F(x)$라는 특성으로 $X$에 속하는 $x$를 찾을 수 있는 경우, 그리고 오직 이 경우에만 **onto**(혹은 **surjective**)이다. 기호화하면:
 $$
-F:X\rightarrow Y는\ \mathrm{onto}이다\quad\Leftrightarrow\quad \forall y \in Y,\ F(x)=y인\ 그러한\  \exists x \in X
+F:X\rightarrow Y는\ \mathrm{onto}이다\quad\Leftrightarrow\quad \forall y \in Y,\ F(x)=y인\ 그러한\  \exists x \in X가\ 있다.
 $$
 
 - 공역과 치역이 같은 함수이다.
@@ -369,9 +369,14 @@ $$
 
 ## 7.4 Cardinality with Applications to Computability
 
+- **cardinal number**: 집합의 크기를 나타내는 수
+- **ordinal number**: 순서를 나타내는 수
+
+
+
 **Definition**
 
-$A$와 $B$가 집합이라고 하자. $A$는 $A$부터 $B$까지 일대일하는 경우, 그리고 오직 이 경우에만 **has the same cardinality as B**라고 한다. 다른 말로, $A$는 $A$부터 $B$까지의 함수 $f$가 one-to-one하고 onto인 경우, 그리고 오직 이 경우에만 has the same cardinality as $B$라고 한다.
+$A$와 $B$가 집합이라고 하자. $A$는 $A$부터 $B$까지 일대일대응하는 경우, 그리고 오직 이 경우에만 **has the same cardinality as B**라고 한다. 다른 말로, $A$는 $A$부터 $B$까지의 함수 $f$가 one-to-one하고 onto인 경우, 그리고 오직 이 경우에만 has the same cardinality as $B$라고 한다.
 
 
 
@@ -401,7 +406,9 @@ $A$와 $B$는 $A$가 $B$와 같은 cardinality를 가지거나 $B$가 $A$와 같
 
 ### 7.4.2 The Search for Larger Infinites: The Cantor Diagonalization Process
 
+번역하기??
 
 
-### 7.4.3 Application: Cardinality and COmputability
+
+### 7.4.3 Application: Cardinality and Computability
 

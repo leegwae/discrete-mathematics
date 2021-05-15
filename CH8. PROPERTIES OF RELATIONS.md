@@ -230,3 +230,167 @@ $$
 
 ### 8.3.5 A Definition for Rational Numbers
 
+**Example 8.3.12 Rational Numbers Are Really Equivalnce Classes**
+
+$A$가 두번째 요소가 nonzero인 정수의 모든 ordered pair라고 하자. 기호화하면:
+$$
+A=Z\times(Z-\{0\})
+$$
+$A$에 대한 relation $R$를 다음과 같이 정의한다: $A$에 속하는 모든 pairs $(a,b)$ 그리고 $(c,d)$에 대하여,
+$$
+(a,b)\ R\ (c,d) \Leftrightarrow\ ad=bc
+$$
+**Prove**
+
+(1) $R$이 equivlance relation을 증명하라.
+
+(2) $R$의 distinct equivalence classes를 기술하라.
+
+
+
+## 8.5 Partial Order Relations
+
+### 8.5.1 Antisymmetry
+
+**Definition**
+
+$R$이 집합 $A$에 대한 relation이라고 하자. $R$은 다음과 같은 경우, 그리고 오직 이 경우에만 **antisymmetric**하다.
+
+
+
+$R$은 다음과 같은 경우, 그리고 오직 이 경우에만 ***not*** **antisymmetric**하다.
+
+
+
+### 8.5.2 Partial Order Relations
+
+**Definition[Partial Order Relation]**
+
+$R$이 집합 $A$에 대한 relation이라고 하자. $R$은 reflexive, antisymmetric, transitive인 경우, 그리고 오직 이 경우에만 **partial order relation**이다.
+
+
+
+**Notation**
+
+- $\preceq$: general partial order relation
+- $x\preceq y$: $x$는 $y$보다 작거나 같다. 혹은 $y$는 $x$는 크거나 같다.
+
+
+
+### 8.5.3 Lexciographic Order
+
+- $A$가 partial order relation을 가진다면, *dictionary* 혹은 *lexcicographic* order는 다음과 같은 정의로 나타낸 set of strings over $A$로 정의될 수 있다.
+
+
+
+**Theorem 8.5.1 Lexicographic Order**
+
+$A$가 partial order relation $R$을 가지는 집합이라고 하고, $S$가 set of strings over $A$라고 하자. $S$에 대한 relation $\preceq$는 다음과 같이 정의한다:
+
+$s$와 $t$가 각각 길이가 $m$과 $n$인 $S$의 string이라고 하자. $m$과 $n$은 양의 정수이다. 그리고 $s_m$과 $t_m$이 $s$와 $t$에 대한 $m$번째 문자라고 하자.
+
+1. $m\le n$이고 $s$와 $y$의 첫음 $m$ 문자가 같다면, $s\preceq t$이다.
+2. $s$와 $y$의 처음 $m-1$ 문자가 같으며, $s_m\ R\ t_m$이고 $s_m\neq t_m$이면 $s\preceq t$이다.
+3. $\lambda$가 null string이면 $\lambda \preceq s$이다.
+
+이 세 조건 외에 $\preceq$에 의해 연관되는 strings가 없다면, $\preceq$는 $S$에 대한 partial order relation이다.
+
+
+
+**Definition**
+
+정리 8.5.1의 partial order relation은 **lexicographic order for $S$**라고 불리며, 이것은 $A$에 대한 partial order $R$에 대응한다.
+
+
+
+### 8.5.4 Hasse Diagrams
+
+- Hasse diagram: 모든 유한한 집합에 대해 정의된 partial order relation에 대하여, 다음과 같은 특징이 모두 만족된 directed graph를 간단하게 한 diagram
+  - (1) 모든 점들에는 루프가 있다.
+  - (2) 모든 화살표는 위쪽을 가리킨다.
+  - (3) 화살표가 한 점에서 두번째 점, 두번째 점에서 세번째 점, ㅊ첫번째 점에서 세번째 점까지 있을 때마다 화살표가 있다.
+
+Hasse diagram을 그리는 방법은 다음과 같다: relation의 directed graph에서, 모든 화살표가 위로 가도록 점을 찍는다. 그리고 다음을 제거한다.
+
+1. 모든 점들에 있는 loop
+2. transitive property에 의해 존재가 암시된 모든 화살표
+3. 화살표의 방향 지시 기호
+
+
+
+### 8.5.5 Partially and Totally Ordered Sets
+
+**Definition[Comparable]**
+
+$\preceq$가 집합 $A$에 대한 partial order relation이라고 하자. 집합 $A$의 요소 $a$와 $b$는 $a\preceq b$이거나 $b\preceq a$인 경우, 그리고 오직 이 경우에만 **comparable**하다고 한다. 그렇지 않은 경우, $a$와 $b$는 **nonomparable**하다.
+
+
+
+**Definition[Total Order Relation]**
+
+$R$이 집합 $A$에 대해 partial order relation하고, $A$의 두 요소 $a$와 $b$가 $a\ R\ b$하거나 $b\ R\ a$이라면, $R$은 $A$에 대해 **total order relation**이다.
+
+
+
+- 집합 $A$는 $\preceq$가 $A$에 대한 partial order relation인 경우, 그리고 오직 이 경우에만 relation $\preceq$에 관하여 **partially ordered set**(혹은 **poset**)이라고 한다.
+- 집합 $A$는 $A$가 $\preceq$에 관하여 partially ordered하거나 $\preceq$가 total order인 경우, 그리고 오직 이 경우에만 **totally ordered set**이라고 한다.
+
+
+
+**Definition[length of a chain]**
+
+$A$가 relation $\preceq$에 관하여 partially ordered라고 하자. $A$의 부분집합 $B$는 $B$의 각각의 요소의 쌍에 있는 요소가 comparable한 경우, 그리고 오직 이 경우에만 **chain**이라고 한다. 달리 말하여, $B$의 모든 $a$와 $b$에 대하여 $a\preceq b$나 $b\preceq a$이다. **length of a chain(체인의 길이)**는 chain의 요소의 개수보다 한 개 적다.
+
+
+
+**Definition**
+
+$A$가 relation $\preceq$에 관하여 partially ordered라고 하자.
+
+1. $A$의 요소 $a$는 $A$의 각각의 요소 $b$에 대하여, $b\preceq a$이거나 $b$와 $a$가 not comparable한 경우, 그리고 오직 이 경우에만 **maximal element of $A$**라고 한다.
+2. $A$의 요소 $a$는 $A$의 각각의 요소 $b$에 대하여, $b\preceq a$인 경우, 그리고 오직 이 경우에만 **greatest element of $A$**라고 한다.
+3. $A$의 요소 $a$는 $A$의 각각의 요소 $b$에 대하여, a$\preceq b$이거나 $b$와 $a$가 not comparable한 경우, 그리고 오직 이 경우에만 **minimal element of $A$**라고 한다
+4. $A$의 요소 $a$는 $A$의 각각의 요소 $b$에 대하여, $a\preceq b$인 경우, 그리고 오직 이 경우에만 **least element of $A$**라고 한다.
+
+
+
+### 8.5.6 Topological Sorting
+
+**Definition[Compatible]**
+
+주어진  집합 $A$에 대한 partial order relation $\preceq$와 $\preceq^\prime$에 대하여, $\preceq^\prime$은 $A$의 모든 $a$와 $b$에 대해 $a\preceq b$이라면 $a\preceq^\prime b$인 경우, 그리고 오직 이 경우에만 $\preceq$와 **compatible**하다.
+
+
+
+**Definition[Topological Sorting]**
+
+주어진  집합 $A$에 대한 partial order relation $\preceq$와 $\preceq^\prime$에 대하여, $\preceq ^ \prime$은 $\preceq^\prime$이 $\preceq$와 compatible한 total order인 경우, 그리고 오직 이 경우에만 **topological sorting**이다.
+
+
+
+**Construting a Topological Sorting**
+
+$\preceq$가 비어있지 않고 무한한 집합 $A$에 대한 partial order이라고 하자. topological sorting을 구성하려면,
+
+1. 모든 minimal element $x$를 $A$에서 찾아라.
+2. 집합 $A^\prime:=A-\{x\}$이다.
+3. $A\prime \neq \varnothing$인 동안 다음 단계들을 반복한다.
+   1. $A^\prime$에서 모든 minimal element를 찾아라.
+   2. $x\preceq ^\prime y$를 정의하라.
+   3. 집합 $A:=A^\prime -{y}$그리고 $x:=y$
+
+
+
+### 8.5.7 An Application
+
+
+
+### 8.5.8 PERT and CPM
+
+- PERT(Program Evalutaion and Review Technique)
+- CPM(Critical Path Method)
+
+
+
+
+

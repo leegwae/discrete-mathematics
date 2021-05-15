@@ -108,8 +108,6 @@
 
 8.3 Equivalence Relations	505
 
-8.4 Modular Arithmetic with Applications to Cryptography	524
-
 8.5 Partial Order Relations	546
 
  
