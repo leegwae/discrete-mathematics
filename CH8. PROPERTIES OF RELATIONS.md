@@ -370,7 +370,7 @@ $A$가 relation $\preceq$에 관하여 partially ordered라고 하자.
 
 **Construting a Topological Sorting**
 
-$\preceq$가 비어있지 않고 무한한 집합 $A$에 대한 partial order이라고 하자. topological sorting을 구성하려면,
+$\preceq$가 비어있지 않고 유한한 집합 $A$에 대한 partial order이라고 하자. topological sorting을 구성하려면,
 
 1. 모든 minimal element $x$를 $A$에서 찾아라.
 2. 집합 $A^\prime:=A-\{x\}$이다.
