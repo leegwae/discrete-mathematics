@@ -259,7 +259,9 @@ $R$이 집합 $A$에 대한 relation이라고 하자. $R$은 다음과 같은 �
 
 
 $R$은 다음과 같은 경우, 그리고 오직 이 경우에만 ***not*** **antisymmetric**하다.
-
+$$
+a\ R\ b\ 그리고\ b\ R\ a이고\ a\neq b인\ 그러한\ a와\ b가\ A에\ 속한다.
+$$
 
 
 ### 8.5.2 Partial Order Relations
