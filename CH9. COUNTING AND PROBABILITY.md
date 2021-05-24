@@ -225,3 +225,189 @@ N(X)=N(f^{-1}(y_1))+N(f^{-1}(y_2))+...+N(f^{-1}(y_m))\ge m
 $$
 (각각의 항은 1보다 크다.) 집합들 중 하나인 $N(f^{-1}(y_i))$가 한 개 이상의 요소를 가지면, 위 항등식에서 $m$개의 항의 합은 $m$보다 크다. 그런데 $N(X)=m$이므로, 이 경우는 옳지 않다. 그러므로 각각의 집합 $f^{-1}(y_i)$가 정확히 한 개의 요소를 가며, 따라서 $f$는 일대일이다.
 
+
+
+## 9.5 Counting Subsets of a Set: Combinations
+
+**Definition[$r$-combination]**
+
+$n$와 $r$이 $r \le n$인 0이 아닌 정수라고 하자. $n$개의 요소를 가진 집합의 **$r$-combination**은 $n$개의 요소를 가진 $r$의 부분집합이다.
+
+**Definition[${n \choose k}$]**
+
+${n \choose k}$은 $n$개에서 $r$개를 선택한다고 읽으며, $n$개의 요소의 집합으로부터 구성된 크기가 $r$인 부분집합의 수를 표기한다.
+
+
+
+- **ordered selection**: 요소가 선택될 때 순서가 고려된다.
+- **unordered selection**: 요소가 선택될 때 순서가 고려되지 않는다.
+
+
+
+**Theorem 9.5.1 Computational Formula for ${n \choose k}$**
+
+$n$개의 요소의 집합으로부터 구성된 크기가 $r$인 부분집합의 수는 다음 공식으로 얻을 수 있다.
+$$
+\begin{align*}
+{n \choose k}&=\frac{P(n,r)}{r!} \\
+&=\frac{n!}{r!(n-r)!}
+\end{align*}
+$$
+이때 $n$와 $r$은 $r \le n$인 0이 아닌 정수이다.
+
+
+
+**Theorem 9.5.2 Permutations with Sets of Indistinguishable Objects**
+
+다음과 같은 $n$ 객체로 이루어진 컬렉션이 있다고 하자.
+
+$n_1$은 type 1이고 다른 것과 구별할 수 없다.
+
+$n_2$은 type 1이고 다른 것과 구별할 수 없다.
+
+...
+
+$n_k$은 type 1이고 다른 것과 구별할 수 없다.
+
+그리고 $n_1+n_2+...+n_k=n$이라고 하자. 그렇다면 $n$ 객체의 구분할 수 없는 수는
+$$
+{n \choose n_1}{n-n_1 \choose n_2}{n-n_1-n_3 \choose n_3}...{n-n_1-n_3-...-n_{k-1} \choose n_4} \\
+=\frac{n!}{n_1!n_2!...n_k!}
+$$
+
+
+### 9.5.1  Some Advice about Counting
+
+
+
+## 9.6 $r$-Combinations with Repetition Allowed
+
+**Definition and Notation**
+
+*반복해서 뽑을 수 있는 $r$*-combination, 혹은 *$n$개의 요소를 가진 집합 $X$로부터 선택한 크기가 $r$인 multiset*은 반복이 허용된 $X$로부터 취한 요소의 순서없는 selection이다. $X=\{x_1,x_2,...,x_n\}$이면. 반복이 허용된 $r$-combintation이나, 크기가 $r$인 multiset을 각각의 $x_{ij}$는 $X$에 속하고 어떤 $x_{ij}$는 서로 같은 $[x_1,x_2,...,x_i]$로 쓴다.
+
+
+
+**Theorem 9.6.1**
+
+$n$개의 요소를 가진 집합으로부터 선택된, 반복이 허용된 $r$-combinations(혹은 크기가 $r$인 multiset)의 개수는 다음과 같다.
+$$
+{r+n-1 \choose r}
+$$
+이것은 반복이 허용된 채로, $n$개의 카테고리의 객체들로부터 $r$개의 객체를 선택하는 방법의 수와 동일하다.
+
+
+
+**Exampe 9.6.3 Counting Triples $(i,j,k)$ with $1\le i \le j \le k \le n$** 
+$$
+\begin{align*}
+{3+(n-1) \choose 3}&={n+2 \choose 3} = \frac{(n+2)!}{3!(n+2-3)!} \\
+&=\frac{(n+2)(n+1)n(n-1!)}{(n-1)!} = \frac{n(n+1)(n+2)}{6}
+\end{align*}
+$$
+
+
+### 9.6.1 Remark: Deciding Which Formula to Use
+
+| _                         | 순서를 고려할 경우 | 순서를 고려하지 않을 경우 |
+| ------------------------- | ------------------ | ------------------------- |
+| 반복이 허용될 경우        | $n^k$              | ${k+n-1 \choose k}$       |
+| 반복이 허용되지 않을 경우 | $P(n,k)$           | ${n \choose k}$           |
+
+
+
+## 9.7 Pascal's Formula and the Binomial Theorem
+
+수정중
+
+
+
+## 9.8 Probability Axioms and Expected Value
+
+**Probability Axioms**
+
+$S$가 sample space라고 하자. $S$의 모든 사건의 집합부터 실수의 집합까지의 **probability function** $P$는 다음의 세 가지 공리를 만족한다: 모든 $S$의 사건 $A$와 $B$에 대하여,
+
+1. $0\le P(A)\le1$
+2. $P(\varnothing)=0$ 그리고 $P(S)=1$
+3. $A$와 $B$가 disjoint하면(즉, $A\cap B=\varnothing$), $A$와 $B$의 합집합의 probability는
+
+$$
+P(A\cup B)=P(A)+P(B)
+$$
+
+
+
+**Probablility of the Complement of an Event**
+
+$A$가 sample space $S$의 사건이라고 하면,
+$$
+P(A^c)=1-P(A)
+$$
+
+
+**Probability of a General Union of Two Events**
+
+$S$가 sample space이고 $A$와 $B$가 $S$의 사건이면,
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B)
+$$
+
+
+### 9.8.1 Expected Value
+
+**Definition[expected value]**
+
+experiment, 혹은 random process의 가능한 결과를 각각 $p_1,p_2,...,p_n$의 확률을 가진 실수 $a_1,a_2,...,a_n$이라고 하자. process의 **expected value**는
+$$
+\sum_{k=1}^n a_kp_k=a_1p_1 + a_2p_2+...+a_np_n
+$$
+
+
+## 9.9 Conditional Probability, Bayes' Formula, and independent Events
+
+### 9.9.1 Conditional Probility
+
+**Definition**
+
+$A$와 $B$가 sample space $S$에 속하는 사건이라고 하자. $P(A)\neq 0$이면, **$A$가 주어졌을 때 $B$의 조건부 확률**은 $P(B|A)$로 표기하며, 다음과 같다.
+$$
+P(B|A)=\frac{P(A\cap B)}{P(A)}
+$$
+
+
+### 9.9.2 Bayes' Theorem
+
+**Theorem 9.9.1 Bayes' Theorem**
+
+sample space $S$가 mutually disjoint events $B_1, B_2, ..., B_n$의 합집합이라고 하자. $A$가 $S$에 속하는 사건이고, $A$와 각각의 $B_k$가 $1\le k\le n$인 각각의 정수 $k$에서 0이 아닌 확률을 가진다고 하자.
+$$
+P(B_k|A)=\frac{P(A|B_k)P(B_k)}{P(A|B_1)P(B_1)+P(A|B_2)P(B_2)+...+P(A|B_n)P(B_n)}
+$$
+
+
+### 9.9.3 Independent Events
+
+**Definition[independent]**
+
+$A$와 $B$가 sample space $S$에 속하는 사건이면, 다음과 같은 경우, 그리고 오직 이 경우에만 $A$와 $B$는 **independent(독립적)**이다.
+$$
+p(A\cap B)=P(A)\cdot P(B)
+$$
+
+
+**Definition**
+
+$A$와 $B$ 그리고 $C$가 sample space $S$에 속하는 사건이라고 하자. 세 사건은 이들이 조건 1-3을 만족할 때, 그리고 오직 이 경우에만 **pairwise independent**하다. 네 조건을 모두 만족할 때, 그리고 오직 이 경우에만 **mutually independent**하다.
+
+1. $P(A\cap B)=P(A)\cdot P(B)$
+2. $P(A\cap C)=P(A)\cdot P(C)$
+3. $P(B\cap C)=P(B)\cdot P(C)$
+4. $P(A\cap B\cap C)=P(A)\cdot P(B)\cdot P(C)$
+
+
+
+**Definition[mutually independent]**
+
+sample space $S$에 속하는 사건 $A_1,A_2,...,A_n$은 사건들의 모든 집합의 교집합의 확률이 부분집합의 사건의 확률의 곱인 경우, 그리고 오직 이 경우에만 **mutually independent**하다.
+
