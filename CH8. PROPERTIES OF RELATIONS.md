@@ -8,7 +8,7 @@
 
 ### 8.1.1 The Inverse of a Relation
 
-**Definition**
+**Definition[inverse relation]**
 
 $R$이 $A$부터 $B$까지의 집합이라고 하자. 또한 $R^{-1}$이 $B$부터 $A$까지의 inverse relation이며, 다음과 같다고 하자.
 $$
@@ -30,7 +30,7 @@ $$
 
 ### 8.1.3 N-ary Relations and Relational Databases
 
-**Definition**
+**Definition[$n$-ary relation]**
 
 주어진 집합들 $A_1,\ A_2,\ ...,\ A_n$에 대하여, $A_1\times A_2\times ...\times A_n$에 대한 **$n$-ary relation** $R$은 $A_1\times A_2\times ...\times A_n$의 부분집합이다. 2-ary, 3-ary, 4-ary relation은 **binary**, **ternary**, 그리고 **quaternary relations**라고 부른다.
 
@@ -42,9 +42,9 @@ $$
 
 $R$이 집합 $A$에 대한 relation이라고 하자.
 
-1. $R$은 모든 $x\in A,\ x\ R\ x$에 대하여, 그리고 오직 이 경우에만 **reflexive**라고 한다.
-2. $R$은 모든 $x\in A,\ x\ R\ x$에 대하여 $x\ R\ y$이면 $y\ R\ x$인 경우, 그리고 오직 이 경우에만 **symmetric**하다.
-3. $R$은 모든 $x,\ y,\ z\ \in A,\ x\ R\ x$에 대하여 $x\ R\ y$이고 $y\ R\ z$이면 $x\ R\ z$인 경우, 그리고 오직 이 경우에만 **transitive**하다.
+1. $R$은 모든 $x\in A$에 대하여 $x\ R\ x$인 경우, 그리고 오직 이 경우에만 **reflexive**라고 한다.
+2. $R$은 모든 $x,y\in A $에 대하여 $x\ R\ y$이면 $y\ R\ x$인 경우, 그리고 오직 이 경우에만 **symmetric**하다.
+3. $R$은 모든 $x,\ y,\ z\ \in A$에 대하여 $x\ R\ y$이고 $y\ R\ z$이면 $x\ R\ z$인 경우, 그리고 오직 이 경우에만 **transitive**하다.
 
 
 
@@ -59,6 +59,8 @@ $R$이 집합 $A$에 대한 relation이라고 하자.
 ### 8.2.1 Properties of Relations on Infinite Sets
 
 **Example 8.2.2 Properties of Equality**
+
+relation $R$을 다음과 같이 정의하면,
 $$
 x\ R\ y\quad\Leftrightarrow\quad x=y
 $$
@@ -99,7 +101,7 @@ $$
 
 ### 8.2.2 The Transitive Closure of a Relation
 
-**Definition[Transitive Colsure]**
+**Definition[Transitive Closure]**
 
 $A$가 집합이고 $R$이 $A$에 대한 relation이라고 하자.$R$의 **transitive closure**는 다음의 세 특징을 만족하는 $A$에 대한 relation $R^t$라고 한다.
 
@@ -117,7 +119,7 @@ $A$가 집합이고 $R$이 $A$에 대한 relation이라고 하자.$R$의 **trans
 
 
 
-**Definition**
+**Definition [relation induced by the parition $R$]**
 
 주어진 집합 $A$의 partition에 대하여, **relation induced by the parition** $R$은 $A$에 대해 다음과 같이 정의된다: 모든 $x,\ y\in A$에 대하여,
 $$
@@ -174,7 +176,7 @@ $A$가 집합이고 $R$이 $A$에 대한 relation이라고 하자. $R$은 $R$이
 
 ### 8.3.3 Equivalence Classes of an Equivalence Relation
 
-**Definition**
+**Definition[equivalence class]**
 
 $A$가 집합이고 $R$이 $A$에 대한 equivalence relation이라고 하자. $A$의 각각의 요소 $a$에 대하여, **$a$의 equivalence class**는 $[a]$로 표기하며 **class of $a$**라고 축약하여 부른다. 이것은 $x$가 $R$에 의하여 $a$와 연관되는 그러한 $A$에 속하는 모든 요소 $x$의 집합이다. 기호화하면:
 $$
@@ -256,8 +258,9 @@ $$
 
 $R$이 집합 $A$에 대한 relation이라고 하자. $R$은 다음과 같은 경우, 그리고 오직 이 경우에만 **antisymmetric**하다.
 
-
-
+$$
+\mbox{A의 모든 a와 b에 대하여, }a\ R\ b\ 그리고\ b\ R\ a이면\ a=b
+$$
 $R$은 다음과 같은 경우, 그리고 오직 이 경우에만 ***not*** **antisymmetric**하다.
 $$
 a\ R\ b\ 그리고\ b\ R\ a이고\ a\neq b인\ 그러한\ a와\ b가\ A에\ 속한다.

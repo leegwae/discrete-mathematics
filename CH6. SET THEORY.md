@@ -18,9 +18,9 @@ A\subseteq B\Leftrightarrow \forall x,\ x\in A이면\ x\in B
 $$
 부정은 existential로 쓸 수 있다.
 $$
-A\nsubseteq B\Leftrightarrow \exists x\ 그러한\ x\in A이고\ x\in B가\ 있다.
+A\nsubseteq B\Leftrightarrow \exists x\ x\in A이고\ x\notin B가\ 존재한다.
 $$
-집합의 진부분집합은 그것의 containing set과 같지 않다. 즉:
+집합의 **진부분집합(proper set)**은 그것의 containing set과 같지 않다. 즉:
 $$
 \begin{align*}
 &A는\ B의\ 진부분집합이다.\Leftrightarrow \\
@@ -63,7 +63,7 @@ $A$와 $B$가 가 전체 집합 $U$의 부분집합이라고 하자.
 
 1. $A$와 $B$의 **union(합집합)**은 $A\cup B$라고 표기하며, 적어도 $A$와 $B$ 중 하나에 속하는 모든 요소의 집합이다.
 2. $A$와 $B$의 **intersection(교집합)**은 $A\cap B$라고 표기하며, $A$와 $B$에 모두 공통인 모든 요소의 집합이다.
-3. $B$에서 $A$의 차 집합은 (혹은 $B$안의 $A$의 **relative compelement**)는 $B-A$로 표기하며, $B$에는 있지만 $A$에 있지 않은 모든 요소의 집합이다.
+3. $B$에서 $A$의 **차집합(difference)**은 (혹은 $B$안의 $A$의 **relative compelement**)는 $B-A$로 표기하며, $B$에는 있지만 $A$에 있지 않은 모든 요소의 집합이다.
 4. $A$의 **complement(여집합)**은 $A^c$로 표기하며, $A$에 속하지 않는 $U$의 모든 집합이다. 
 
 기호화하면,
@@ -82,18 +82,17 @@ $$
 주어진 실수 $a$와 $b$가 $a\le b$에 대하여:
 $$
 \begin{align*}
-(a,b)&=\{x\in R|\ a<x< b\}	&(a,b)=\{x\in R|\ a\le x\le b\} \\
-(a,b]&=\{x\in R|\ a<x\le b\}	&(a,b]=\{x\in R|\ a\le x< b\}
+(a,b)&=\{x\in R|\ a<x< b\}	&[a,b]=\{x\in R|\ a\le x\le b\} \\
+(a,b]&=\{x\in R|\ a<x\le b\}	&[a,b]=\{x\in R|\ a\le x< b\}
 \end{align*}
 $$
 기호 $\infty$와 $-\infty$는 왼쪽이나 오른쪽으로 제한되지 않은 간격을 나타내는데 사용한다.
 $$
 \begin{align*}
-(a,\infty)&=\{x\in R|x>a\} &(a,\infty]=\{x\in R|x\ge a\} \\
+(a,\infty)&=\{x\in R|x>a\} &[a,\infty)=\{x\in R|x\ge a\} \\
 (-\infty, b)&=\{x\in R|x<b\} &(-\infty, b]=\{x\in R|x\le b\} \\
 \end{align*}
 $$
-
 
 **Definition[Unions and Intersections of an Indexed Collection of Sets]**
 
@@ -147,7 +146,7 @@ $$
 
 **Definition[power set]**
 
-주어진 집합 $A$에 대하여, $A$의 **power set(멱집합)**은 $\mathscr{P}(X)$로 표기하며, $A$의 모든 부분집합의 집합이다.
+주어진 집합 $A$에 대하여, $A$의 **power set(멱집합)**은 $\mathscr{P}(A)$로 표기하며, $A$의 모든 부분집합의 집합이다.
 
 
 
@@ -205,7 +204,7 @@ $$
 
 아래의 모든 집합이 전체 집합 $U$의 부분집합이라고 하자.
 
-1. *Commuatiative Laws*: 집합 $A$와 $B$에 대하여,
+1. *Commutative Laws*: 집합 $A$와 $B$에 대하여,
 
 $$
 (a)\ A\cup B=B\cup A\quad그리고\ (b)\ A\cap B=B\cap A
@@ -247,7 +246,7 @@ $$
    (a)\ A\cup A=A\quad그리고\quad(b)\ A\cap A =A
    $$
    
-8. *Universal Bound Laws*: 집합 $A$에 대하여,
+8. 미*Universal Bound Laws*: 집합 $A$에 대하여,
    $$
    (a)\ A\cup U=U\quad그리고\quad(b)\ A\cap\varnothing=\varnothing
    $$
@@ -278,7 +277,7 @@ $$
 
 집합 $X$와 $Y$가 주어졌을 때, $X=Y$를 증명하려면,
 
-1. $X\subseteq$ Y을 증명하라.
+1. $X\subseteq Y$ 을 증명하라.
 2. $Y\subseteq X$을 증명하라.
 
 
@@ -299,7 +298,7 @@ $x\in(A\cup B)^c$라고 가정하자. complement의 정의에 의하여,
 $$
 x\notin A\cup B
 $$
-한편 $x\in A\cup B$는 다음을 뜻한다.
+한편 $x\notin A\cup B$는 다음을 뜻한다.
 $$
 x가\ A에\ 속하거나\ x가\ B에\ 속하는\ 것은\ 거짓이다.
 $$
@@ -365,7 +364,7 @@ $$
 
 $E$가 요소가 없는 집합이며, $A$가 집합이면, $E\subseteq A$라고 하자.
 
-**Proof(by cotradiction)**: 부정을 취해보자. 요소가 없는 집합 $E$와 집합 $A$가 $E\subseteq A$라고 하자. 그러면 부분집합의 정의에 의해 $A$의 요소가 아닌 $E$의 요소가 있다. 그러나 $E$가 요소 없는 집합이므로 그러한 요소가 없다. 이는 모순이다.
+**Proof(by cotradiction)**: 부정을 취해보자. 요소가 없는 집합 $E$와 집합 $A$가 $E\nsubseteq A$라고 하자. 그러면 부분집합의 정의에 의해 $A$의 요소가 아닌 $E$의 요소가 있다. 그러나 $E$가 요소 없는 집합이므로 그러한 요소가 없다. 이는 모순이다.
 
 
 
@@ -459,7 +458,7 @@ $$
 
 $$
 \begin{align*}
-(A\cup B)-C &=(A\cup B)\cap C\\
+(A\cup B)-C &=(A\cup B)\cap C^c\\
 &=C^c \cap (A\cup B)\\
 &=(C^c\cap A) \cup (C^c\cap B) \\
 &=(A\cap C^c) \cup (B\cap C^c) \\
@@ -511,7 +510,7 @@ TABLE 6.4.1
 | $a.\ p\or c\equiv p$<br />$b.\ p\and t\equiv p$              | $a.\ A\cup \varnothing\equiv A$<br />$b.\ A\cap U\equiv A$   |
 | $\sim(\sim p)\equiv p$                                       | $(A^c)^c\equiv A$                                            |
 | $a.\ p\or p \equiv p$ <br />$b.\ p\and p \equiv p$           | $a.\ A\cup A \equiv A$ <br />$b.\ A\cap A \equiv A$          |
-| $a.\ p\or t \equiv t$<br />$b.\ p\and c \equiv c$            | $a.\ A\cup t \equiv t$<br />$b.\ A\cap \varnothing \equiv \varnothing$ |
+| $a.\ p\or t \equiv t$<br />$b.\ p\and c \equiv c$            | $a.\ A\cup U \equiv U$<br />$b.\ A\cap \varnothing \equiv \varnothing$ |
 | $a.\ \sim (p \or q) \equiv \sim p \and \sim q$<br />$b.\ \sim (p \and q) \equiv \sim p \or \sim q$ | $a.\ (A \cup B)^c \equiv A^c \cap B^c$<br />$b.\ (A \cap B)^c \equiv A^c \cup B^c$ |
 | $a.\ p \or(p\and q) \equiv p$<br />$b.\ p \and(p\or q) \equiv p$ | $a.\ A \cup(A\cap B) \equiv A$<br />$b.\ A \cap(A\cup B) \equiv A$ |
 | $a.\ \sim t \equiv c$<br />$b.\ \sim c = t$                  | $a.\ U^c\equiv \varnothing$<br />$b.\ \varnothing^c = U$     |
@@ -527,30 +526,25 @@ TABLE 6.4.1
    (a)\ a+b=b+a\quad그리고\quad (b)\ a\cdot b = b\cdot a
    $$
    
-
 2. *Associative Laws*: $B$에 속하는 $a$와 $b$, $c$에 대하여,
    $$
    (a)\ (a+b)+c=a+(b+c)\quad그리고\quad (b)\ (a\cdot b)\cdot c = a\cdot(b\cdot c)
    $$
    
-
 3. *Distributive Laws*: $B$에 속하는 $a$와 $b$, $c$에 대하여,
    $$
    (a)\ a+(b\cdot c) = (a+b)\cdot (a+c)\quad그리고\quad (b)\ a\cdot (b+c)=(a\cdot b)+(a\cdot c)
    $$
    
-
 4. *Identitiy Laws*: $B$에 속하는 각각의 $a$에 대하여 다음이 성립하는 별개의 요소 0과 1이 $B$에 속한다.
    $$
    (a)\ a+0=a\quad그리고\quad (b)\ a\cdot 1=a
    $$
    
-
 5. *Complement Laws:* $B$에 속하는 $a$에 대하여, 다음이 성립하는 ($\bar{a}$으로 표기하고 $a$의 **complement** 혹은 **negation**이라고 하는) 요소가 $B$에 속한다.
    $$
    (a)\ a+\bar{a}=1\quad그리고\quad(b)\ a\cdot\bar{a}=0
    $$
-   
 
 **Theorem 6.4.1 Properties of Boolean Algebra**
 
@@ -567,25 +561,21 @@ $B$가 Boolean algbra라고 하자.
    (a)\ a+a=a\quad그리고\quad (b)\ a\cdot a=a
    $$
    
-
 5. *Universal Bound Laws:* 모든 $a\in B$에 대하여,
    $$
    (a)\ a+1=1\quad그리고\quad(b)\ a\cdot 0=0
    $$
    
-
 6. *De morgan's Laws*: 모든 $a, b\in B$에 대하여,
    $$
    (a)\ \overline{a+b}=\bar{a}\cdot\bar{b}\quad그리고\quad(b)\ \overline{a\cdot b} = \bar{a} + \bar{b}
    $$
    
-
 7. *Absorption Laws*: 모든 $a, b\in B$에 대하여,
    $$
    (a)\ (a+b)\cdot a= a\quad그리고\quad(b)\ (a\cdot b)+a=a
    $$
    
-
 8. *Complements of 0, 1*:
    $$
    (a)\ \bar{0}=1\quad그리고\quad(b)\ \bar{1}=0
@@ -606,15 +596,16 @@ x&=x\cdot 1\\
 &=a\cdot x + x\cdot\bar{a} \\
 &=0+x\cdot\bar{a}\\
 &=a\cdot\bar{a}+x\cdot\bar{a}\\
-&=(a\cdot\bar{a})(\bar{a}\cdot x)\\
+&=(a\cdot\bar{a})+(\bar{a}\cdot x)\\
 &=\bar{a}(a+x)\\
 &=\bar{a}+1\\
 &=\bar{a}
 \end{align*}
 $$
 
-
 **duality principle**
+
+dual identity
 $$
 (a)\ a+0=a\quad그리고\quad(b)\ a\cdot 1=a
 $$
@@ -629,8 +620,10 @@ Boolean algebra $B$에 속하는 모든 요소 $a$에 대하여, $\overline{\bar
 $B$가 Boolean algbra이고 $a$가 $B$의 요소라고 하자. 그러면
 $$
 \begin{align*}
-\bar{a}+a&=a+\bar{a} =1 \\
-\bar{a}\cdot a &= a\cdot\bar{a}=0
+\bar{a}+a&=a+\bar{a} &\mbox{commutative law of +에 의하여}\\
+&=1 &\mbox{complement law for 1에 의하여}\\
+\bar{a}\cdot a &= a\cdot\bar{a} &\mbox{commutative law for $\cdot$에 의하여}\\
+&=0 &\mbox{complement law for 0에 의하여}	
 \end{align*}
 $$
 그러므로 $a$는 $\bar{a}$의 complemeent의 의해 만족되는 $\bar{a}$에 관한 두 방정식을 만족한다. $a$의 complement가 유일하므로, $\overline{\bar{(a)}}=a$
@@ -639,7 +632,7 @@ $$
 
 ### 6.4.1 Russell's Paradox
 
-많은 집합은 그 자신의 요소가 아니다. 예를 들어, 모든 정수의 집합은 정수가 아니며, 모든 말의 집합은 말이 아니다. 그러나, 그 스스로의 요소가 되는 집합의 가능성을 떠올릴 수 있다. 예를 들어, 모든 추상적인 idea이 집합은 추상적인 idea로 생각될 수 있다. 만약 프로퍼티의 모든 묘사를 집합의 프로퍼티를 정의하는데 사용하는 것을 허용한다면, $S를 그 자신의 요소가 아닌 모든 집합의 집합이라고 하자.
+많은 집합은 그 자신의 요소가 아니다. 예를 들어, 모든 정수의 집합은 정수가 아니며, 모든 말의 집합은 말이 아니다. 그러나, 그 스스로의 요소가 되는 집합의 가능성을 떠올릴 수 있다. 예를 들어, 모든 추상적인 idea이 집합은 추상적인 idea로 생각될 수 있다. 만약 프로퍼티의 모든 묘사를 집합의 프로퍼티를 정의하는데 사용하는 것을 허용한다면, $S$를 그 자신의 요소가 아닌 모든 집합의 집합이라고 하자.
 $$
 S=\{A|A는\ 집합이고\ A\notin A\}
 $$
