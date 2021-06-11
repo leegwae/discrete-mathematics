@@ -147,7 +147,7 @@ $$
 
 **Generalized Pigeonhole Principle**
 
-요소가 $n$개인 유한 집합 $X$부터 요소가 $m$개인 유한 집합 $Y$까지의 함수와 양의 정수 $k$에 대하여, $km<n$이면, $y$가 $X$의 서로 다른 요소 중 적어도 $k+1$개에서 image를 가지는 그러한 $y\in Y$ 가 있다.
+요소가 $n$개인 유한 집합 $X$부터 요소가 $m$개인 유한 집합 $Y$까지의 함수와 양의 정수 $k$에 대하여, $km<n$이면, $y$가 $X$의 서로 다른 요소 중 적어도 $k+1$개에서 그 요소들의 image인 그러한 $y\in Y$ 가 있다.
 
 
 
@@ -165,7 +165,7 @@ $$
 
 **Theorem 9.4.1 The Pigeonhole Principle**
 
-요소가 $n$개인 유한 집합 $X$부터 요소가 $m$개인 유한 집합 $Y$까지의 함수와 양의 정수 $k$에 대하여, $n>m$이면 $f$는 일대일(one-to-one)이 아니다.
+요소가 $n$개인 유한 집합 $X$부터 요소가 $m$개인 유한 집합 $Y$까지의 함수에 대하여, $n>m$이면 $f$는 일대일(one-to-one)이 아니다.
 
 **Proof**: $f$가 요소가 $n$개인 유한 집합 $X$부터 요소가 $m$개인 유한 집합 $Y$까지의 함수이며, $n>m$이라고 하자. $Y$의 요소들을 $y_1,\ y_2,...,y_m$이라고 표기한다. 각각의 $y_i$에 대하여 inverset image set(역함수)는 $f^{-1}(y_i)=\{x\in X |f(x)=y_i\}$이다. $Y$의 모든 요소에 대한 inverser image set의 collection은 다음과 같다:
 $$
@@ -318,8 +318,42 @@ $$
 
 ## 9.7 Pascal's Formula and the Binomial Theorem
 
-수정중
+### 9.7.1 Pascal's Formula
 
+$$
+{n+1 \choose k}={n \choose r-1}+{n \choose r}
+$$
+
+
+
+### 9.7.2 The Binomial Theorem
+
+- $a+b$와 같은 두 항의 합을 **binomial**이라고 한다.
+- binomial theorem은 $(a+b)^n$에 대한 공식을 제공한다.
+
+
+
+**Theoerem 9.7.2 [Binomial Theorem]**
+
+실수 $a$, $b$와 nonnegative 정수 $n$에 대하여
+$$
+\begin{align*}
+(a+b)^n&=\sum_{k=0}^n{n \choose k}a^{n-k}b^k\\
+&=a^n+{n\choose 1}a^{n-1}b^1 + {n\choose 2}a^{n-2}b^2+\cdots+{n\choose n-1}a^1 b^{n-1}+b^n
+\end{align*}
+$$
+
+
+**Definition**
+
+실수 $a$와 nonnegative integer $n$에 대하여, $a$의 **nonnegative integer powers**는 다음과 같이 정의된다.
+$$
+a^n=
+\begin{cases}
+1, & \mbox{n=0} \\
+a\cdot a^{n-1}, & \mbox{n>0}
+\end{cases}
+$$
 
 
 ## 9.8 Probability Axioms and Expected Value

@@ -10,7 +10,7 @@
 
 **Definition[inverse relation]**
 
-$R$이 $A$부터 $B$까지의 집합이라고 하자. 또한 $R^{-1}$이 $B$부터 $A$까지의 inverse relation이며, 다음과 같다고 하자.
+$R$이 $A$부터 $B$까지의 relation이라고 하자. 또한 $R^{-1}$이 $B$부터 $A$까지의 inverse relation이며, 다음과 같다고 하자.
 $$
 R^{-1}=\{(y,\ x)\in B\times A|(x,y)\in R\}
 $$
@@ -183,6 +183,13 @@ $$
 [a]=\{x\in A|\ x\ R\ a\}
 $$
 
+- 위 정의의 procedural version
+
+$$
+\mbox{모든 }x\in A\mbox{에 대하여, }x\in [a]\Leftrightarrow x\ R\ a
+$$
+
+
 
 **Lemma 8.3.2**
 
@@ -192,11 +199,10 @@ $A$가 집합이고 $R$이 $A$에 대한 equivalence relation이라고 하자. �
 
 **Lemma 8.3.3**
 
-$A$가 집합이고 $R$이 $A$에 대한 equivalence relation이라고 하자. 그러면
+$A$가 집합이고 $R$이 $A$에 대한 equivalence relation이며, $a$와 $b$가 $A$의 요소라고 하면
 $$
 [a]\cap [b]=\varnothing\quad 이거나\quad\ [a]=[b]
 $$
-
 
 **Theorem 8.3.4 The partition Induced by an Equivalence Relation**
 
