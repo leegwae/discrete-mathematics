@@ -1,0 +1,265 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\graphicspath{ {./images/} }
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+\usepackage{kotex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{tcolorbox}
+
+
+\begin{document}
+\lhead{이산수학\\Assignment #1}
+\rhead{SPRING 2021}
+\begin{verbatim}
+학번: 2018640020
+이름: 이준영
+01분반/02분반 여부: 01분반
+\end{verbatim}
+\newline
+
+14.
+\begin{addmargin}[1em]{2em}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c| } 
+ \hline
+ p & q & \sim p & p \wedge \sim q & \sim p \vee (p \wedge \sim q) & p \wedge q & (p \wedge q) \vee (\sim p \vee (p \wedge \sim q)) \\ 
+  \hline
+  
+ T & T & F & F & F & T & T \\
+  \hline
+ T & F & F & T & T & F & T \\
+ \hline
+ F & T & T & F & T & F & T \\
+ \hline
+ F & F & T & F & T & F & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\end{addmargin}
+\bigskip
+
+15.
+\begin{addmargin}[1em]{2em}
+tautology이다.
+
+\end{addmargin}
+\bigskip
+
+16.
+\begin{addmargin}[1em]{2em}
+tautology는 statement variable로 치환된 개별적인 statement의 진리값에 상관없이, 언제나 참인 statement form이다. 14번의 truth table로 미루어보았을 때, statement variable p와 q의 진리값으로 가능한 모든 경우에 있어 이 statement form의 진리값은 참이므로, tautology이다.
+
+\end{addmargin}
+\bigskip
+
+17.
+\begin{addmargin}[1em]{2em}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| } 
+ \hline
+p & q & r & \sim p & \sim p \wedge q & q \wedge r & (\sim p \wedge q) \wedge (q \wedge r) & \sim q & ((\sim p \wedge q) \wedge (q \wedge r)) \wedge \sim q \\ 
+  \hline
+ T & T & T & F & F & T & F & F & F\\
+  \hline
+ T & T & F & F & F & F & F & F & F\\
+ \hline
+ T & F & T & F & F & F & F & T & F\\
+ \hline
+ T & F & F & F & F & F & F & T & F\\
+ \hline
+ F & T & T & T & T & T & T & F & F\\
+ \hline
+ F & T & F & T & T & F & F & F & F\\
+ \hline
+ F & F & T & T & F & F & F & T & F\\
+ \hline
+ F & F & F & T & F & F & F & T & F\\
+ \hline
+\end{tabular}
+\end{center}
+
+\end{addmargin}
+\bigskip
+
+18.
+\begin{addmargin}[1em]{2em}
+contradication이다.
+
+\end{addmargin}
+\bigskip
+
+19.
+\begin{addmargin}[1em]{2em}
+contradication은 statement variable로 치환된 개별적인 statement의 진리값에 상관없이, 언제나 거짓인 statement form이다. 17번의 truth table로 미루어보았을 때, statement variable p와 q, 그리고 r의 진리값으로 가능한 모든 경우에 있어 이 statement form의 진리값은 거짓이므로, contradication이다.
+
+\end{addmargin}
+\bigskip
+
+20.
+\begin{addmargin}[1em]{2em}
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c| } 
+ \hline
+ p & q & r & p \wedge q \to \sim r & p \vee \sim q & \sim q \to p & \sim r \\ 
+  \hline
+ T & T & T & F & T & T & F\\
+  \hline
+ T & T & F & T & T & T & T\\
+ \hline
+ T & F & T & T & T & T & F\\
+ \hline
+ T & F & F & T & T & T & T\\
+ \hline
+ F & T & T & T & F & T & F\\
+ \hline
+ F & T & F & T & F & T & T\\
+ \hline
+ F & F & T & T & T & F & F\\
+ \hline
+ F & F & F & T & T & F & T\\
+ \hline
+\end{tabular}
+\end{center}
+네번째부터 여섯번째 column은 전제, 일곱번째 column은 결론을 나타낸다.
+
+\end{addmargin}
+\bigskip
+
+21.
+\begin{addmargin}[1em]{2em}
+valid하지 않다.
+
+\end{addmargin}
+\bigskip
+
+22.
+\begin{addmargin}[1em]{2em}
+argument form이 valid하다는 것은 전제가 모두 참이라면 결론 역시 참이라는 것을 뜻한다. 그런데 20번의 truth table의 4번째 row는 전제가 모두 참이지만 결론이 거짓인 경우를 보여주고 있다. 따라서 이 argument form은 valid하지 않다.
+
+\end{addmargin}
+\bigskip
+
+23.
+\begin{addmargin}[1em]{2em}
+\(V\) : all who can tell a valid argument from an invalid one.
+
+\(D\) : all discrete mathematics students
+
+\(T\) : all thoughtful people.
+
+\def\firstcircle{(0,0) circle (3cm)}
+\def\secondcircle{(0:0.5cm) circle (1.5cm)}
+
+\begin{tikzpicture}
+    \draw \firstcircle;
+    \draw \secondcircle;
+    \node at (0.4,0) {\LARGE\(D\)};
+    \node at (-1.0,1.5) {\LARGE\(V\)};
+    \node at (0.0, -3.5){(a) Major premise};
+    \begin{scope}
+      \clip \firstcircle;
+      \clip \secondcircle;
+    \end{scope}
+\end{tikzpicture}
+\bigskip
+
+\begin{tikzpicture}
+    \draw \firstcircle;
+    \draw \secondcircle;
+    \node at (0.4,0) {\LARGE\(T\)};
+    \node at (-1.0,1.5) {\LARGE\(V\)};
+    \node at (0.0, -3.5){(b) Minor premise};
+    \begin{scope}
+      \clip \firstcircle;
+      \clip \secondcircle;
+    \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+    \draw \firstcircle;
+    \draw \secondcircle;
+    \node at (0.4,0) {\LARGE\(D\)};
+    \node at (-1.0,1.5) {\LARGE\(T\)};
+    \node at (0.0, -3.5){(c) Conclusion};
+    \begin{scope}
+      \clip \firstcircle;
+      \clip \secondcircle;
+    \end{scope}
+\end{tikzpicture}
+
+\end{addmargin}
+\bigskip
+
+24.
+\begin{addmargin}[1em]{2em}
+valid하지 않다.
+
+\end{addmargin}
+\bigskip
+
+25.
+\begin{addmargin}[1em]{2em}
+argument form이 valid하다는 것은 전제가 모두 참이라면 결론 역시 참이라는 것을 뜻한다. 그런데 23번의 다이어그램을 통해 \(x \in V\)이면서 \(x \in D\) 이고,  \(x \notin T\) 인 어떤 \(x\) 가 존재할 수 있다는 것을 알 수 있다. 따라서 전제가 모두 참이면서 결론이 거짓일 수 있으므로, valid 하지 않다.
+
+\end{addmargin}
+\bigskip
+
+26.
+\begin{addmargin}[1em]{2em}
+negation of universal statement의 정의에 따르면, (1)와 같은 형태의 universal statement의 negation은 (2)와 같은 형태의 statement와 logically equivalent하다.
+
+\begin{align*}
+&\forall x\mathrm{\ in\ }D,\ Q(x) &(1) \\
+&\exists x\mathrm{\ in\ }D \mathrm{\ such\ that\ }\sim Q(x) &(2) \\
+\end{align*}
+
+그러므로 주어진 form의 좌변은 다음과 같이 나타낼 수 있다.
+\begin{align*}
+&\sim(\forall x,\mathrm{if\ }P(x)\mathrm{\ then\ }Q(x)) \equiv \exists x\mathrm{\ such\ that\ }\sim (\mathrm{if\ }P(x)\mathrm{\ then\ }Q(x))) &(a) \\
+\end{align*}
+
+한편, if-staement의 negation은 logically equivalent한 and statement로 표현할 수 있다.
+\begin{align*}
+&\sim(\mathrm{if\ }P(x)\mathrm{\ then\ }Q(x)) \equiv P(x)\mathrm{\ and\ }\sim Q(x) &(b) \\
+\end{align*}
+
+(b)의 우변으로 (a)의 우변를 바꾸면 다음과 같다.
+\begin{align*}
+&\sim(\forall x,\mathrm{if\ }P(x)\mathrm{\ then\ }Q(x)) \equiv \exists x\mathrm{\ such\ that\ }P(x)\mathrm{\ and\ }\sim Q(x) &(c) \\
+\end{align*}
+\end{addmargin}
+\bigskip
+\end{document}
+

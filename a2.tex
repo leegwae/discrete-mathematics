@@ -1,0 +1,349 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\graphicspath{ {./images/} }
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+\usepackage{kotex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{tcolorbox}
+
+
+\begin{document}
+\lhead{이산수학\\Assignment #2}
+\rhead{SPRING 2022}
+\begin{verbatim}
+학번: 2018640020
+이름: 이준영
+01분반/02분반 여부: 01분반
+\end{verbatim}
+\newline
+14. 
+\begin{addmargin}[1em]{2em}
+
+property $P(n)$이 다음과 같은 항등식이라고 하자. 
+\[\frac{1}{3} = \frac{1+3+5+...+(2n-1)}{(2n+1)+(2n+3)+...+(2n+(2n-1))}\]
+
+우선 $P(1)$이 참임을 보여야 한다. 그러기 위해서는 다음이 참임을 보여야한다.
+\[\frac{1}{3} = \frac{2\cdot 1 - 1}{2\cdot 1 + (2\cdot 1 - 1)}\]
+우변을 계산하면 아래와 같다.
+\[\frac{2\cdot 1 - 1}{2\cdot 1 + (2\cdot 1 - 1)} = \frac{1}{2 + 1} = \frac{1}{3}\] 
+따라서 $P(1)$은 참이다.
+\newline
+
+다음으로, $k\ge 1$을 만족하는 모든 정수 $k$에 대하여, $P(k)$가 참이면 $P(k+1)$ 또한 참임을 보여야 한다. 
+$k\ge 1$을 만족하는 모든 정수 $k$에 대하여, $P(k)$가 참이라고 가정하자. P(k)는 다음과 같은 항등식이다.
+\[\frac{1}{3} = \frac{1+3+5+...+(2k-1)}{(2k+1)+(2k+3)+...+(2k+(2k-1))}\]
+증명해야 할 $P(k+1)$는 다음과 같다.
+\begin{align*}
+\frac{1}{3} &= \frac{1+3+5+...+(2(k+1)-1)}{(2(k+1)+1)+(2(k+1)+3)+...+(2(k+1)+(2(k+1)-1))} \\
+\end{align*}
+위 항등식의 우변을 정리하면 아래와 같다.
+\begin{align*}
+\frac{1+3+5+...+(2(k+1)-1)}{(2(k+1)+1)+(2(k+1)+3)+...+(2(k+1)+(2(k+1)-1))} &= \frac{\sum_{n=1}^{k+1}(2n-1)}{\sum_{n=k+2}^{2(k+1)}(2n-1)} \\
+&= \frac{\sum_{n=1}^{k+1}(2n-1)}{\sum_{n=1}^{2(k+1)}(2n-1) - \sum_{n=1}^{k+1}(2n-1)} \\
+&= \frac{\frac{2(k+1)(k+2)}{2} - (k+1)}{\frac{2\cdot 2(k+1)\cdot (2(k+1)+1)}{2} - 2(k+1) - (\frac{2(k+1)(k+2)}{2} - (k+1))} \\
+&= \frac{(k+1)(k+2-1)}{2(k+1)(2(k+1)+1 - 1)-(k+1)(k+2-1)} \\
+&= \frac{(k+1)^2}{4(k+1)^2-(k+1)^2} \\
+&= \frac{(k+1)^2}{3(k+1)^2} \\
+&= \frac{1}{3}
+\end{align*}
+따라서, 주어진 statement는 $n\ge 1$에서 참이다. 
+\end{addmargin}
+\bigskip
+
+15.
+\begin{addmargin}[1em]{2em}
+$g_1, g_2, g_3,...$가 다음과 같이 정의된 sequence라고 하자.
+\begin{align*}
+g_1 &= 3, g_2 =5 \\
+g_k &= 3g_{k-1} - 2g_{k-2} (\mathrm{for\ every\ integer\ } k\ge 3)
+\end{align*}
+또한, property $P(n)$이 다음과 같다고 하자.
+\[g_n=2^n+1\]
+
+우선 $P(1), P(2)$이 참임을 보여야 한다. 그러기 위해서는 다음이 참임을 보여야 한다.
+\[g_1 = 2^1 + 1\]
+\[g_2 = 2^2 + 1\]
+$g_1, g_2, g_3,...$의 정의에 의하여 $g_1 = 3$, $g_2 = 5$이다. 또한 $2^1 + 1 = 2 + 1 = 3$, $2^2 + 1 = 4 + 1 = 5$이므로, $g_1$과 $g_2$의 값은 formula에 의해 주어진 값과 일치한다. 따라서 $P(1)$과 $P(2)$는 참이다.
+\newline
+
+다음으로, $k \ge 2$를 만족하는 모든 정수 $k$에 대하여, 1부터 $k$까지의 각각의 정수 i에서 $P(i)$가 참이면, $P(k+1)$도 참임을 보여야한다.
+\newline
+정수 $k$가 $k \ge 2$을 만족하고, 다음의 참이라고 가정한다.
+\[g_i = 2^i+1\quad (\mathrm{for\ each\ integer\ } 1\le i \le k)\]
+증명해야 할 $P(k+1)$은 다음과 같다.
+\[g_{k+1} = 2^{k+1}+1\]
+$k \ge 2$이므로 $k+1 \ge 3$이다. 그러므로
+\begin{align*}
+g_{k+1} &= 3g_{k} - 2g_{k-1} \\
+&= 3(2^k + 1) - 2(2^{k-1} + 1) \\
+&= 3\cdot2^k - 2^k + 3 - 2 \\
+&= (3-1)2^k + 1 \\
+&= 2\cdot2^k + 1 \\
+&= 2^{k+1} + 1 \\
+\end{align*}
+따라서, 주어진 statement는 $n\ge 1$에서 참이다. 
+\end{addmargin}
+\bigskip
+
+16.
+\begin{addmargin}[1em]{2em}
+sequence $a_1, a_2, a_3,...$가 다음과 같이 정의되었다고 하자.
+\begin{align*}
+    a_1 &= 1, a_2 =3 \\
+    a_k &= a_{k-1} - a_{k-2} (\mathrm{for\ every\ integer\ } k\ge 3)
+\end{align*}
+또한, property $P(n)$이 다음과 같다고 하자.
+\[a_n \le \left( \frac{7}{4} \right)^n\]
+
+우선, $P(1), P(2)$가 참임을 보여야 한다. 그러기 위해서는 다음이 참임을 보여야 한다.
+\[a_1 \le \left( \frac{7}{4} \right)^1\]
+\[a_2 \le \left( \frac{7}{4} \right)^2\]
+$a_1, a_2, a_3,...$의 정의에 의하여, $a_1 =1, a_2=3$이다. 또한 $\left( \frac{7}{4} \right)^1 = \frac{7}{4}$이고 $\left( \frac{7}{4} \right)^2=\frac{7_2}{4_2}=\frac{49}{16}$이다. 그러므로, $a_1=1 \le \left( \frac{7}{4} \right)^1=\frac{7}{4}$이고 $a_2=3 \le \left( \frac{7}{4} \right)^2=\frac{49}{16}$이다. 따라서 $P(1), P(2)$는 참이다.
+\newline
+
+다음으로, $k\ge 2$인 모든 정수 $k$에 대하여, 1부터 k까지의 각각의 정수 $i$에서 $P(i)$가 참이면, $P(k+1)$도 참임을 보여야한다.
+\newline
+정수 $k$가  $k\ge 2$를 만족하며, 다음이 참이라고 가정한다.
+\[a_i \le \left ( \frac{7}{4}\right)^i\quad(\mathrm{for\ each\ integer\ }1\le i \le k)\]
+증명해야 할 $P(k+1)$은 다음과 같다.
+\[a_{k+1} \le \left( \frac{7}{4} \right)^{k+1}\]
+$k\ge 2$ 이므로, $k+1\ge 3$이다. 그러므로
+\begin{align*}
+    a_{k+1} &= a_k - a_{k-1} \\
+    &\le \left( \frac{7}{4} \right)^{k} - \left( \frac{7}{4} \right)^{k-1} = \left( \frac{7}{4} \right)^{k-1}\cdot\left( \frac{7}{4} \right) - \left( \frac{7}{4} \right)^{k-1} = \left( \frac{7}{4}-1 \right) \cdot \left( \frac{7}{4} \right)^{k-1} =\left( \frac{3}{4} \right) \codt \left( \frac{7}{4} \right)^{k-1} \\
+    &\le \left( \frac{49}{16} \right) \cdot \left( \frac{7}{4} \right)^{k-1} = \left( \frac{7}{4} \right)^2 \cdot \left( \frac{7}{4} \right)^{k-1} = \left( \frac{7}{4} \right)^{2+(k-1)} = \left( \frac{7}{4} \right)^{k+1} \\
+\end{align*}
+$a_{k+1} \le \left( \frac{7}{4} \right)^{k+1}$이고, 따라서 주어진 statement는 $n\ge 1$에서 참이다. 
+\end{addmargin}
+\bigskip
+
+17.
+\begin{addmargin}[1em]{2em}
+n이 홀수 정수라고 하자. 홀수의 정의에 의해,
+\[n = 2k + 1\]
+이때 $k$는 정수이다.
+한편, ceiling의 정의에 의하여,
+\[\lceil \frac{n^2}{4} \rceil = m \]
+이때 $m$은 정수이며, $m - 1 < \lceil \frac{n^2}{4} \rceil \le m$이다.
+$n$을 $2k+1$로 치환하면 다음과 같다.
+\begin{align*}
+    \lceil \frac{n^2}{4} \rceil &= \lceil \frac{(2k+1)^2}{4} \rceil \\
+    &=\lceil \frac{4k^2+4k+1}{4} \rceil \\
+    &=\lceil \frac{4k(k+1)+1}{4} \rceil \\
+    &=\lceil k(k+1) + \frac{1}{4} \rceil \\
+\end{align*}
+이때 $k(k+1)$은 정수와 정수의 합을 곱한 것이므로 정수이고, $1/4$는 실수이다.
+\begin{align*}
+    0 &< \frac{1}{4} \le 1 \\
+    k(k+1)+ 0 &< k(k+1) + \frac{1}{4} \le k(k+1)+1 \\
+\end{align*}
+정수와 실수의 합은 실수이므로, ceiling의 정의에 따라
+\begin{align*}
+    \lceil \frac{n^2}{4} \rceil = \lceil k(k+1) + \frac{1}{4} \rceil &= k(k+1) + 1 \\
+    &= \frac{4\cdot(k(k+1)+1)}{4} \\
+    &= \frac{4k(k+1)+4}{4} \\
+    &= \frac{4k^2+4k+4}{4} \\
+    &= \frac{(4k^2+4k+1)+3}{4} \\
+    &= \frac{(2k+1)^2+3}{4} \\
+    &= \frac{n^2+3}{4} \\
+\end{align*}
+$\lceil \frac{n^2}{4} \rceil = \frac{n^2+3}{4}$이므로, 주어진 statement는 참이다.
+\end{addmargin}
+\bigskip
+
+18.
+\begin{addmargin}[1em]{2em}
+$n$을 정수라고 하자.
+\newline
+
+(a) $n$이 짝수 정수인 경우: 짝수의 정의에 의하여,
+\[n=2k\]
+이때, $k$는 정수이다.
+\[k \le \frac{n}{2}=\frac{2k}{2}=k < k+1\]
+이므로, floor의 정의에 따라
+\[\lfloor \frac{n}{2} \rfloor = k\]
+또한,
+\[k-1 < \frac{n}{2}=\frac{2k}{2}=k \le k\]
+이므로, ceiling의 정의에 따라
+\[\lceil \frac{n}{2} \rceil = k\]
+$k = \frac{n}{2}$이므로
+\[\lfloor \frac{n}{2} \rfloor + \lceil \frac{n}{2} \rceil = k + k = \frac{n}{2} + \frac{n}{2} = \frac{n}{2}\cdot 2 = n\]
+따라서 $n$이 짝수인 경우, 주어진 statement는 참이다.
+\newline
+
+(b) j$n$이 홀수 정수인 경우: 홀수의 정의에 의하여,
+\[n=2k + 1\]
+이때, $k$는 정수이다.
+\[k \le \frac{n}{2}=\frac{2k+1}{2}= k + \frac{1}{2}< k+1\]
+이므로, floor의 정의에 따라
+\[\lfloor \frac{n}{2} \rfloor = k\]
+또한,
+\[k < \frac{n}{2}=\frac{2k+1}{2}= k + \frac{1}{2} \le k+1\]
+이므로, ceiling의 정의에 따라
+\[\lceil \frac{n}{2} \rceil = k+1\]
+$k = \frac{n-1}{2}$이므로
+\[\lfloor \frac{n}{2} \rfloor + \lceil \frac{n}{2} \rceil = k + (k + 1) = \frac{n-1}{2} + (\frac{n-1}{2} + 1) = \frac{n-1}{2}\cdot 2 + 1 = (n - 1) + 1 = n\]
+따라서 $n$이 홀수인 경우, 주어진 staetemnt는 참이다.
+\newline
+
+$n$이 짝수이든 홀수이든 $\lfloor \frac{n}{2} \rfloor + \lceil \frac{n}{2} \rceil = n$이므로, 주어진 statement는 참이다.
+\end{addmargin}
+\bigskip
+
+19.
+\begin{addmargin}[1em]{2em}
+모든 양의 실수의 $r$과 $s$에 대해, $\sqrt{r+s}=\sqrt{r} + \sqrt{s}$가 참이라고 가정하자.
+위 항등식의 양변을 제곱하면 다음과 같다.
+\begin{align*}
+    (\sqrt{r + s})^2 &= (\sqrt{r} + \sqrt{s})^2 \\
+    r + s &= (\sqrt{r})^2 + 2\sqrt{r}\sqrt{s} + (\sqrt{s})^2 \\
+    &= r + s + 2\sqrt{r}\sqrt{s} \\
+\end{align*}
+양변에서 $r+s$를 빼고, 2로 나눈 뒤 제곱하면 다음과 같다.
+\begin{align*}
+    (r + s) - (r + s) &= r + s + 2\sqrt{r}\sqrt{s} - (r + s)\\
+    0 &= 2\sqrt{r}\sqrt{s} \\
+    0 &= \sqrt{r}\sqrt{s} \\
+    0^2 &= (\sqrt{r}\sqrt{s})^2 \\
+    0 &= (\sqrt{r})^2(\sqrt{s})^2 \\
+    &= rs
+\end{align*}
+$rs$는 양의 실수의 곱이니 양의 실수이다. 즉 $0 = rs$이면서 $0 < rs$이다. 이는 모순이므로, 주어진 statement는 거짓이다. 따라서 $\sqrt{r+s}\ne\sqrt{r} + \sqrt{s}$이다.
+\end{addmargin}
+\bigskip
+
+20.
+\begin{addmargin}[1em]{2em}
+정수 $a$에 대하여, $a$가 홀수이면 $a^3$도 홀수라고 가정하자. 홀수의 정의에 따라,
+\[a=2k+1\]
+이때 k는 정수이다. 이것으로 $a^3$을 치환하면
+\begin{align*}
+    a^3 &= (2k+1)^3 \\
+    &= (2k)^3 + 3(2k)^2\cdot 1 + 3\cdot 1^2\cdot 2k + 1^3 \\
+    &= 8k^3 + 12k^2 + 6k + 1 \\
+    &= 2(4k^3 + 6k^2 + 3k) + 1
+\end{align*}
+$m = 4k^3 + 6k^2 + 3k$라고 하자. $a^3 = 2m + 1$이므로, 홀수의 정의에 따라 $a^3$은 홀수이다.
+따라서, 주어진 statement는 참이다.
+\end{addmargin}
+\bigskip
+
+21.
+\begin{addmargin}[1em]{2em}
+$\sqrt[3]{2}$가 유리수라고 가정하자. 또한 m과 n은 common factor를 가지지 않는 정수라고 가정하자. 유리수의 정의에 따라,
+\[\sqrt[3]{2} = \frac{m}{n}\]
+이때, n은 0이 아닌 정수이다. 위 항등식의 양변을 세제곱하고 $n^3$으로 곱하면
+\begin{align*}
+    (\sqrt[3]{2})^3 &= \left (\frac{m}{n} \right)^3 \\
+    2 &= \frac{m^3}{n^3} \\
+    2n^3 &= m^3
+\end{align*}
+$2n^3=m^3$이므로 $m^3$은 짝수이고, 20번에서 증명한 바에 의해 $m$은 짝수이다. 한편 짝수의 정의에 따라, $m=2k$라고 하자. k는 정수이다.
+\begin{align*}
+    2n^3 &= m^3 \\
+    2n^3 &= (2k)^3 \\
+    2n^3 &= 8k^3 \\
+    n^3 &= 4k^3 \\
+\end{align*}
+$n^3 = 4k^3 = 2\cdot 2k^3$이므로 $n^3$은 짝수이고, 20번에서 증명한 바에 의해 $n$은 짝수이다.
+\newline
+즉, $m$과 $n$은 common factor가 없는 정수이면서, common factor로 2를 가지는 정수이다. 이는 모순이므로, 주어진 statement는 거짓이다. 따라서 $\sqrt[3]{2}$는 무리수이다.
+\end{addmargin}
+\bigskip
+
+22.
+\begin{addmargin}[1em]{2em}
+d = 4, n = 6인 경우 예시가 될 수 있다.
+\newline
+
+먼저, $d = 2\cdot 2$이므로 소수의 정의에 따라 소수가 아니다. 
+$n^2=6\cdot 6 = 36 = 4 \cdot 9$이므로 divisible의 정의에 따라 $d|n^2$이다.
+\newline
+
+한편, $n$이 4로 divisible하다고 가정하자. divisible의 정의에 따라
+\[n=4k\]
+이때, k는 정수이다. $n=6$이므로
+\begin{align*}
+    4k &= 6 \\
+    k &= \frac{6}{4} \\
+    k &= \frac{3}{2} \\
+\end{align*}
+$k = \frac{3}{2}$이므로, $k$는 정수가 아니다. 즉, $k$는 정수이면서가 정수가 아니다. 이는 모순이므로, $n$은 4로 divisible하지 않다.
+\newline
+
+따라서 $d=4, n=6$이 주어진 statement의 예시가 될 것이다.
+\end{addmargin}
+\bigskip
+
+23.
+\begin{addmargin}[1em]{2em}
+$\sqrt{5}$가 유리수라고 가정하자. $m$과 $n$이 common factor를 가지지 않는 정수라고 가정하자. 유리수의 정의에 따라,
+\[\sqrt{5} = \frac{m}{n}\]
+이때, $n\ne 0$이다. 위 항등식의 양변을 제곱하고, $n^2$로 곱하면 다음과 같다.
+\begin{align*}
+    (\sqrt{5})^2 &= \left (\frac{m}{n} \right ) \\
+    5 &= \frac{m^2}{n^2} \\ 
+    5n^2 &= m^2 \\
+\end{align*}
+$m^2$는 5로 divisible하므로, $m$도 5로 divisible하다. 
+\newline
+
+(만약 $m$이 5로 divisible하지 않고, 정수 $d$로 divisible하다고 하자.
+\[m=dy\]
+$y$는 정수이며, $d \ne 0, d \ne 5$이고 $y \nmid 5$이다. 한편 $m^2$는 5로 divisible하므로, divisible의 정의에 따라
+\[m^2=5x\]
+이때, $x$는 정수이다. $m$을 $dy$로 치환하면
+\begin{align*}
+    m^2&=(dy)^2\\
+    5x&=d^2y^2\\
+    x &= \frac{d\cdot d\cdot y\cdot y}{5}
+\end{align*}
+$d, y$는 5가 아니므로(5로 divisible하지 않으므로) $x$는 정수가 아니다. 즉, $x$는 정수이면서 정수가 아니다. 이는 모순이므로, $m^2$가 5로 divisible하면, $m$도 5로 divisible하다. )
+\newline
+
+그리하여 divisible의 정의에 따라, 
+\[m=5k\]
+이때, $k$는 정수이다. $5n^2=m^2$의 우변을 치환하면
+\begin{align*}
+    5n^2 &= m^2 \\
+    5n^2 &= 25k^2 \\
+    n^2 &= 5k^2 \\
+\end{align*}
+$n^2$는 5로 divisible하므로, $n$도 5로 divisible하다. ($m^2$가 5로 divisibile할 때 $m$이 5로 divisible한 것과 같은 원리이다)
+\newline
+즉, $m$과 $n$은 common factor를 가지지 않는 정수이면서, common factor로 5를 가지는 정수이기도 하다. 이는 모순이므로, 주어진 statement는 거짓이다. 따라서 $\sqrt{5}$는 무리수이다.
+\end{addmargin}
+\bigskip
+
+\end{document}
