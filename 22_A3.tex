@@ -1,0 +1,331 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\graphicspath{ {./images/} }
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+\usepackage{kotex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{tcolorbox}
+
+
+\begin{document}
+\begin{verbatim}
+\end{verbatim}
+\newline
+1.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=10cm, height=8cm]{1.jpg}
+
+\end{addmargin}
+\bigskip
+
+2.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=10cm, height=8cm]{2.jpg}
+
+\end{addmargin}
+\bigskip
+
+3.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=10cm, height=8cm]{3.jpg}
+
+\end{addmargin}
+\bigskip
+
+4.
+\begin{addmargin}[1em]{2em}
+$\{ \{\varnothing\}, \{(a,x)\}, \{(a,y)\}, \{(b,x)\}, \{(b,y)\}, \\
+\{(a,x), (a, y)\}, \{(a,x), (b, x)\}, \{(a,x), (b, y)\}, \{(a,y), (b, x)\}, \{(a,y), (b, y)\}, \{(b,x), (b, y)\}, \\
+\{(a,x), (a, y), (b,x)\}, \{(a,x), (a, y), (b,y)\}, \{(a,x), (b, x), (b,y)\}, \{(a,y), (b, x), (b,y)\}, \\
+\{(a,x), (a, y), (b,x), (b, y)\}
+\}$
+
+\end{addmargin}
+\bigskip
+
+5.
+\begin{addmargin}[1em]{2em}
+yes.
+
+\end{addmargin}
+\bigskip
+
+6.
+\begin{addmargin}[1em]{2em}
+먼저, $A\times (B\cap C) \subseteq ((A\times B)\cap (A\times C))$임을 증명하자.
+$(a, b)\in (A\times (B\cap C))$라고 할 때, cartesian product의 정의에 의해 $a\in A$, $b\in (B\cap C)$이다. 한편 itersection의 정의에 의해 $b\in B$이고 $b\in C$이다. 따라서 cartesian product의 정의에 의해 $(a,b)\in (A\times B)$이고 $(a,b)\in (A\times C)$이다. 또한 itersection의 정의에 의해 $(a,b)\in ((A\times B)\cap (A\times C))$이므로, 부분집합의 정의에 의하여 $A\times (B\cap C) \subseteq ((A\times B)\cap (A\times C))$이다. \\
+다음으로 $A\times (B\cap C) \supseteq ((A\times B)\cap (A\times C))$임을 증명하자.
+$(x,y)\in ((A\times B)\cap (A\times C))$라고 할 때, intersection의 정의에 의해 $(x,y)\in (A\times B)$이고 $(x,y)\in (A\times C)$이다. 또한 cartesian proudct의 정의에 의해 $x\in A$, $y\in B$ 그리고 $y\in C$이다. 이때 intersection의 정의에 의해 $y\in B\cap C$이다. 따라서 $(x,y)\in (A\times (B\cap C))$이므로, 부분집합의 정의에 의해 $A\times (B\cap C) \supseteq ((A\times B)\cap (A\times C))$이다. \\
+따라서 주어진 문장은 참이다.
+
+\end{addmargin}
+\bigskip
+
+7.
+\begin{addmargin}[1em]{2em}
+$A\cap C = \varnothing$이라고 가정하자. 또한, $(A\times B)\cap (C\times D)$에 속하는 원소가 존재한다고 가정한다. 이 원소를 $(x, y)$라 하자. intersection의 정의에 의해, $(x,y) \in (A\times B)$이고 $(x, y) \in (C\times D)$이다. 이때 cartesian product의 정의에 의해, $x\in A$, $x\in C$ 그리고 $y\in B$, $y\in D$이다. 즉, $x \in A\cap C$이면서 $A\cap C = \varnothing$이다. 이는 모순이므로 $A\cap C = \varnothing$이면 $(A \times B) \cap (C \times D) = \varnothing$이다.
+
+\end{addmargin}
+\bigskip
+
+8.
+\begin{addmargin}[1em]{2em}
+\begin{align*}
+    (A-B)-(B-C)&=(A\cap B^c)-(B\cap C^c) \\
+    &=(A\cap B^c)\cap(B\cap C^c)^c \\
+    &=(A\cap B^c)\cap(B^c\cup C) \\
+    &=((A\cap B^c)\cap B^c)\cup((A\cap B^c)\cap C) \\
+    &=(A\cap B^c\cap B^c)\cup((A\cap B^c)\cap C) \\
+    &=(A\cap B^c)\cup((A\cap B^c)\cap C) \\
+    &=A\cap B^c \\
+    &=A-B \\
+\end{align*}
+\end{addmargin}
+\bigskip
+
+9.
+\begin{addmargin}[1em]{2em}
+\begin{align*}
+    ((A\cap(B\cup C))\cap (A-B))\cap(B\cup C^c) &= (A\cap(B\cup C)\cap (A-B))\cap(B\cup C^c) \\
+    &= A\cap(B\cup C)\cap (A-B)\cap(B\cup C^c) \\
+    &= A\cap(A-B)\cap((B\cup C)\cap (B\cup C^c)) \\
+    &= A\cap(A-B)\cap (B\cup (C\cap C^c)) \\
+    &= A\cap(A-B)\cap (B\cup \varnothing) \\
+    &= A\cap(A-B)\cap B \\
+    &= A\cap(A\cap B^c)\cap B \\
+    &= A\cap A\cap B^c\cap B \\
+    &= (A\cap A)\cap B^c\cap B \\
+    &= A\cap B^c\cap B \\
+    &= A\cap (B^c\cap B) \\
+    &= A\cap \varnothing \\
+    &= \varnothing \\
+\end{align*}
+\end{addmargin}
+\bigskip
+
+10.
+\begin{addmargin}[1em]{2em}
+집합 $A,B$가 있다고 하자.\\
+먼저 $\mathsrc{P}(A\cap B)\subseteq \mathsrc{P}(A)\cap \mathsrc{P}(B)$를 증명하도록 한다. $A\cap B \subseteq A$이므로 $\mathsrc{P}(A\cap B)\subseteq \mathsrc{P}(A)$이며, $A\cap B \subseteq B$이므로 $\mathsrc{P}(A\cap B)\subseteq \mathsrc{P}(B)$이다. 그러므로 intersection의 정의에 따라,  $\mathsrc{P}(A\cap B)\subseteq \mathsrc{P}(A)\cap \mathsrc{P}(B)$이다. \\
+그다음으로 $\mathsrc{P}(A\cap B)\supseteq \mathsrc{P}(A)\cap \mathsrc{P}(B)$를 증명하도록 한다. 어떤 집합 $X$에 대하여 $X \in \mathsrc{P}(A)\cap \mathsrc{P}(B)$라고 하자. intersection의 정의에 의해, $X\in \mathsrc{P}(A)$이고 $X\in \mathsrc{P}(B)$이다.  이때 power set의 정의에 따라, $X\subseteq A$이고 $X\subseteq B$이며, intersection의 정의에 따라 $X\subseteq A\cap B$이다. 그러므로 $X\in \mathsrc{P}(A\cap B)$이다. 즉,  $\mathsrc{P}(A\cap B)\supseteq \mathsrc{P}(A)\cap \mathsrc{P}(B)$이다.\\
+따라서 $\mathsrc{P}(A\cap B)=\mathsrc{P}(A)\cap \mathsrc{P}(B)$이다.
+\end{addmargin}
+\bigskip
+
+11.
+\begin{addmargin}[1em]{2em}
+commutative law
+\end{addmargin}
+\bigskip
+
+12.
+\begin{addmargin}[1em]{2em}
+distribute law
+\end{addmargin}
+\bigskip
+
+13.
+\begin{addmargin}[1em]{2em}
+identity law
+\end{addmargin}
+\bigskip
+
+14.
+\begin{addmargin}[1em]{2em}
+commutative law
+\end{addmargin}
+\bigskip
+
+15.
+\begin{addmargin}[1em]{2em}
+distribute law
+\end{addmargin}
+\bigskip
+
+16.
+\begin{addmargin}[1em]{2em}
+commutative law
+\end{addmargin}
+\bigskip
+
+17.
+\begin{addmargin}[1em]{2em}
+집합 $A$와 $X=\{B|B\subseteq A,B\notin B\}$인 집합 $X$가 있다고 하자. 집합 $X$는 집합 $A$의 모든 부분집합을 요소로 가지므로 $X=\mathsrc{P}(A)$이다. 한편, 집합 $X$의 정의에 따라 $X\notin X$이고, $X$는 $A$의 부분집합이 아니다. 즉, $X\nsubseteq A$이다. 따라서 $X=\mathsrc{P}(A)$이므로 $\mathsrc{P}(A)\nsubseteq A$이다.
+\end{addmargin}
+\bigskip
+
+18.
+\begin{addmargin}[1em]{2em}
+no
+
+\end{addmargin}
+\bigskip
+
+19.
+\begin{addmargin}[1em]{2em}
+$f(n)$이 $S$에 속하지 않는 어떤 정수 $n$이 집합 $S$에 속하기 때문이다. 가령 2,147,483,647은 집합 $S$에 속하나 $f(2,147,483,647)=2,147,483,647^2$은 $S$에 속하지 않는다.
+\end{addmargin}
+\bigskip
+
+20.
+\begin{addmargin}[1em]{2em}
+$\{a\}$
+\end{addmargin}
+\bigskip
+
+21.
+\begin{addmargin}[1em]{2em}
+$\{a, d\}$
+\end{addmargin}
+\bigskip
+
+22.
+\begin{addmargin}[1em]{2em}
+$\{1, 2, 3\}$
+\end{addmargin}
+\bigskip
+
+23.
+\begin{addmargin}[1em]{2em}
+$\varnothing$
+\end{addmargin}
+\bigskip
+
+24.
+\begin{addmargin}[1em]{2em}
+$\{1,2,3,4\}$
+\end{addmargin}
+\bigskip
+
+25.
+\begin{addmargin}[1em]{2em}
+$\{1, 2, 3, 5, 6, 7, 9, 15, 17, 18, 21\}$
+\end{addmargin}
+\bigskip
+
+26.
+\begin{addmargin}[1em]{2em}
+$G$가 one-to-one이 아니라고 가정하자. 이때 $G(a)=G(b)$인 임의의 서로 다른 실수 $a, b$가 있다고 하자. $G(a)=4a-5, G(b)=4b-5$이므로 $4a-5=4b-5$이다. 이 항등식의 양변에 5를 더하고 4로 나누면 $a=b$가 된다. 즉, $a$와 $b$는 서로 다른 실수이면서 같다. 이는 모순이므로, $G$는 one-to-one 함수이다.
+\end{addmargin}
+\bigskip
+
+27.
+\begin{addmargin}[1em]{2em}
+$G$가 onto가 아니라고 가정하자. 즉, 임의의 실수 $n$에 대하여 $G(n)$이 실수가 아니다. 
+이때 어떤 실수 $a$에 대하여, 함수 $G$의 정의에 따라 $G(a)=b$에서 $b$는 실수가 아닌 수다. 한편 함수 $G$의 정의에 따라 $b=4a-5$이며, $b$는 실수의 곱과 차이므로 실수이다. 즉, $b$는 실수가 아니면서 실수이다. 이는 모순이므로, $G$는 onto이다. 
+\end{addmargin}
+\bigskip
+
+28.
+\begin{addmargin}[1em]{2em}
+함수 $f:R\rightarrow R$가 onto이고, c가 nonzero 실수라고 하자. 임의의 실수 $y$에 대해, 실수의 나눗셈은 실수이므로 $\frac{y}{c}\in R$이다. 함수 $f$는 onto이므로, $f(x)=\frac{y}{c}$를 만족하는 어떤 실수 $x\in R$이 존재한다. 항등식의 양변을 $c$로 곱하면 $c\dot f(x)=y$이며, $c\circ f$의 정의에 의하여 $c\dot f(x)=(c\circ f)(x)=y$이다. 따라서 임의의 실수 $y$에 대하여 $c(f(x))=y$를 만족하는 실수 $x$가 존재하므로, $c\circ f$는 onto이다.
+
+\end{addmargin}
+\bigskip
+
+29.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=10cm, height=8cm]{29.jpg} \\
+위 예시에서 $g\circ f$는 one-to-one이지만, $g$는 one-to-one이 아니다.
+\end{addmargin}
+\bigskip
+
+30.
+\begin{addmargin}[1em]{2em}
+$f:X\rightarrow Y$와 $g:Y\rightarrow Z$가 함수이고, $g\circ f$가 onto라고 하자. 또한 어떤 수 $z$에 대하여 $z\in Z$라고 가정한다. $g\circ f$가 onto이므로, $g\circ f=g(f(x))=z$를 만족하는 어떤 수 $x\in X$가 존재한다. 이때 $f(x)=y$라 한다면, 함수 $g$의 정의에 따라 $y\in Y$이고, $g(y)=z$이다. 즉 $g(y)=z$를 만족하는 $y\in Y$가 존재한다. 그러므로 함수 $g$는 onto이다.
+\end{addmargin}
+\bigskip
+
+31.
+\begin{addmargin}[1em]{2em}
+$12$
+\end{addmargin}
+\bigskip
+
+32.
+\begin{addmargin}[1em]{2em}
+함수 $f:X\rightarrow Y$ one-to-one이고 onto이며, inverse function이 $f^{-1}=Y\rightarrow X$라고 하자. $f(x)=y$에 대하여 함수 $f$의 정의에 따라 $x \in X$이고 $y \in Y$이다. 또한 inverse function $f^{-1}$의 정의에 따라 $f^{-1}(y)=x$가 성립한다. 따라서 \\
+\[ (f\circ f^{-1})(y)=f(f^{-1}(y))=f(x)=y\]
+이다. 즉, $f\circ f^{-1}$은 $Y$부터 $Y$까지의 함수이며, identity function의 정의에 따라 $Y$에 대한 identity function $I_Y$이다.
+\end{addmargin}
+\bigskip
+
+33.
+\begin{addmargin}[1em]{2em}
+$X$가 집합이며, $f:X\rightarrow X$, $g:\rightarrow X$, $h:\rightarrow X$가 함수라고 하자. 또한 $h$가 one-to-one이며 $h\circ f=h\circ g$라 가정한다. \\ $x\in X$에 대하여, $(h\circ f)(x)=(h\circ g)(x)$이며, composition of function이 정의에 따라 $h(f(x))=h(g(x))$이다. 이때 $f(x)=a$와 $g(x)=b$에 대해 $a$와 $b$가 서로 다른 수라고 가정하자. 함수 $f$와 함수 $g$의 정의에 따라 $a\in X$이고 $b\in X$이다. 그런데 $h(f(x))=h(g(x))$이므로 $h(a)=h(b)$이고 $h$는 one-to-one이므로 $a$와 $b$는 같은 수이다. 즉, $a$와 $b$는 서로 다른 수이면서 같다. 이는 모순이므로, $a$와 $b$는 같다. 따라서 임의의 수 $x\in X$에 대해 함수 $f(x)$와 $g(x)$가 같은 수 $a\in X$를 가지므로, $f=g$이다.
+
+
+\end{addmargin}
+\bigskip
+
+34.
+\begin{addmargin}[1em]{2em}
+$Z^{nonneg}$와 $Z^{nonneg}\times Z^{\nonneg}$가 same cardinality를 가지려면 $Z^{nonneg}$부터 $Z^{nonneg}\times Z^{\nonneg}$까지의 함수가 one-to-one correspondence여야 한다. $f: Z^{nonneg}\rightarrow Z^{nonneg}\times Z^{\nonneg}$가 함수라고 가정한다. 주어진 diagram에 따라 $f(0)=(0,0)$, $f(1)=(1,0)$, $f(2)=(0,1)$, $f(3)=(2,0)$, $f(4)=(1,1)$, $f(5)=(0,2)$, $\cdots$로 정의한다. 이에 따라 $f$는 one-to-one이고 onto이다. 따라서 $Z^{nonneg}$와 $Z^{nonneg}\times Z^{\nonneg}$는 same cardinality를 가진다.
+\end{addmargin}
+\bigskip
+
+35.
+\begin{addmargin}[1em]{2em}
+두 집합 $A,B$가 countably infinite라고 하자. countably infinite의 정의에 따라, one-to-one correspondence $f:Z^+\rightarrow A$와 $g:Z^+\rightarrow A$가 있다.\\
+먼저 $A\cap B =\varnothing$인 경우, $h:Z^+ \rightarrow A\cup B$를 다음과 같이 정의한다고 하자. $x\ge 1$를 만족하는 $x$에 대하여, \\
+h(x)=
+\begin{cases}
+f\left(\frac{x}{2}\right) & \mbox{x는\ 짝수} \\
+g\left(\frac{x+1}{2}\right) & \mbox{x는\ 홀수}
+\end{cases} \\
+$y$가 $A\cup B$에 속한다고 하자. $A\cap B=\varnothing$이므로 $y\in A$이거나, $y\in B$일 거다. $y\in A$라면, $f(a)=y$를 만족하는 $a\in Z^+$가 존재한다. $x=2a$라고 할 때,
+\[h(x)=h(2a)=f(\frac{2a}{2})=f(a)=y\]
+이다. \\
+이제 $y\in B$라면, $g(b)=y$를 만족하는 $b\in Z^+$가 존재한다. $b=2b-1$라고 할 때,
+\[h(x)=h(2b-1)=g(\frac{(2b-1)+1}{2})=g(b)=y\]
+이다. 따라서 $h$는 onto이다.\\
+서로 다른 양의 정수 $a\in Z+^$, $b\in Z+^$에 대해 $h(a)=h(b)$라고 하자. 그런데 $f$와 $g$는 one-to-one correspondence이므로 $a=b$이다. 즉, $a,b$는 서로 다른 양의 정수이면서 같다. 이는 모순이므로, $a,b$는 같은 수이며, $h$는 one-to-one이다. \\
+$h$는 one-to-one이면서 onto이므로 $h$는 one-to-one correspondence이다. 또한 $Z^+$와 $A\cup B$는 same cardinality를 가진다. 즉, $A\cup B$는 countably infinite하다. \\
+$A\cap B\neq \varnothing$인 경우, $C=B-A$라고 하자. 이때 $A\cap C=\varnothing$이다. \\
+$C$가 countably infinite하다면, 두 disjoint한 countably infinite 집합의 합집합은 countably infinite하므로 $A\cup C=A\cup B$도 countably infinite하다. \\
+\end{addmargin}
+\bigskip
+
+36.
+\begin{addmargin}[1em]{2em}
+모든 irrational number의 집합이 countable하다고 하자. 그렇다면 rational number의 집합 역시 countable하다. 모든 실수의 집합은 모든 rational number의 집합과 irrational number의 집합의 합집합이다. 이때 rational number의 집합과 irrational number의 집합은 모두 countable이므로, 실수의 집합 역시 countable이다. 그런데 실수의 집합은 infinite하다. 즉 실수의 집합은 countable하면서 infinite하므로, 이는 모순이다. 따라서 irrational number의 집합은 uncountable하다.
+\end{addmargin}
+\bigskip
+
+37.
+\begin{addmargin}[1em]{2em}
+함수가 one-to-one correspondence라면 inverse function을 가질 수 있다. 즉, 함수는 one-to-one이면서 onto하다면 inverse function을 가질 수 있다. 따라서 hash function이 one-to-one이면서 onto하다면 inverse funtion이다.
+\end{addmargin}
+\bigskip
+\end{document}
