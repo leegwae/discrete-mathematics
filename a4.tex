@@ -1,0 +1,309 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{multicol}
+\usepackage{bm}
+\usepackage{listings}
+\PassOptionsToPackage{usenames,dvipsnames}{color}  %% Allow color names
+\usepackage{pdfpages}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{framed}
+\usepackage{wasysym}
+\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{scrextend}
+\graphicspath{ {./images/} }
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+\usepackage{kotex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage{tcolorbox}
+
+
+\begin{document}
+\lhead{이산수학\\Assignment #4}
+\rhead{SPRING 2022}
+\newline
+
+1.
+\begin{addmargin}[1em]{2em}
+%Write your answer here
+$R=\{(3,4), (3,5), (3,6), (4, 5), (4,6),(5,6)\}\\
+R^{-1}=\{(4,3), (5,3),(6,3),(5,4),(6,4),(6,5)\}$
+\end{addmargin}
+\bigskip
+
+2.
+\begin{addmargin}[1em]{2em}
+$O$가 $Z$에 대해 다음과 같이 정의된다고 가정하자: 모든 $m,n \in Z$에 대하여, $m\ O\ n\ \Leftrightarrow\ m-n\mbox{는 홀수이다.}$ \\
+임의의 $m\in Z$에 대하여, $m-m=0=2\cdot 0$이므로 짝수의 정의에 따라 $m-m$은 짝수이다. 따라서 $O$는 reflexive하지 않다. \\
+임의의 $m,n\in Z$에 대하여, $m\ O\ n$이라고 가정하자. 홀수의 정의에 따라 $m-n=2k+1(k\mbox{는 임의의 정수})$이다. 이 항등식의 양변에 -1를 곱하면 $n-m=-2k-1=-2(k+1)+1=2(-k-1)+1$이다. 정수의 차는 정수이므로, 홀수의 정의에 따라 $n-m$은 홀수이다. 따라서 $O$는 symmetric하다. \\
+임의의 $m,n,l\in Z$에 대하여, $m\ O\ n$이고 $n\ O\ l$이라고 가정하자. 즉, 임의의 정수 $i,j$에 대하여 $m-n=2i+1$이고 $n-l=2j+1$이다. 이를 $m-l$에 대하여 정리하면 $m-l=(2i+1)-(2j+1)=2i-2j=2(i-j)$이다. 정수의 차는 정수이므로, 짝수의 정의에 따라 $m-l$은 짝수이다. 따라서 $O$는 transitive하지 않다.
+\end{addmargin}
+\bigskip
+
+3.
+\begin{addmargin}[1em]{2em}
+$R$이 $A$에 대한 reflexive relation이라고 하자. $x\in A$에 대하여, $R$이 reflexive하므로 $x\ R\ x$이다. 또한 relation의 정의에 의해 $(x, x)\in R$이다. 따라서, inverse relation의 정의에 의해 $(x, x)\in R^{-1}$이다. 그러므로 $R$이 reflexive하다면 $R^{-1}$은 reflexive하다.
+\end{addmargin}
+\bigskip
+
+4.
+\begin{addmargin}[1em]{2em}
+$R$이 $A$에 대한 symmetric relation이라고 하자. $x, y \in A$에 대하여, $(x,y)\in R$라고 가정하면 inverse relation의 정의에 의해 $(y, x)\in R^{-1}$이다. 한편, $R$은 symmetric하므로 $(y, x)\in R$이고 inverse relation의 정의에 의하여 $(x, y)\in R^{-1}$이다. 즉 $(y, x)\in R^{-1}$이고 $(x, y)\in R^{-1}$이므로 $R^{-1}$은 symmetric하다.
+따라서 $R$이 symmetric하다면 $R^{-1}$은 symmetric하다. 
+\end{addmargin} 
+\bigskip
+
+5.
+\begin{addmargin}[1em]{2em}
+$R$이 $A$에 대한 transitive relation이라고 하자. 또한 $x, y,z \in A$에 대하여, $(x,y)\in R$이고 $(y,z)\in R$이라고 가정한다. inverse relation의 정의에 의하여, $(y,x)\in R^{-1}$이고 $(z,y)\in R^{-1}$이다. 이때 $R$은 transitive하므로, $(x, z) \in R$이고 inverse relation의 정의에 의하여 $(z, x) \in R^{-1}$이다. 즉, $(z,y)\in R^{-1}$이고 $(y,x)\in R^{-1}$이며, $(z, x) \in R^{-1}$이다. 
+따라서 $R$이 transitive하다면, $R^{-1}$도 transitive하다.
+\end{addmargin}
+\bigskip
+
+6.
+\begin{addmargin}[1em]{2em}
+$[7]=[4]=[9]$ \\
+$[24]=[27]$ \\
+$[26]=[17]$
+
+\end{addmargin}
+\bigskip
+
+7.
+\begin{addmargin}[1em]{2em}
+point의 집합을 $P$라고 하고, $R$이 $P$에 대해 다음과 같이 정의된 relation이라고 하자. ($x,y\in P$이고 $c$는 small positive number이다.) \\
+$x\ R\ y \Leftrightarrow x\mbox{와}\ y\mbox{ 사이의 거리는 }c\mbox{와 같거나 작다}$\\
+임의의 $p,q,r\in P$가 다음과 같은 point라고 하자: $p(x_1,y_1)$, $q(x_2,y_2)$, $r(x_3,y_3)$.\\
+$p$와 $p$ 사이의 거리는 $\sqrt{(x_1-x_1)^2+(y_1-y_1)^2}=0$으로, $c$보다 작으므로 relation $R$의 정의에 의해 $(x,x)\in R$이다. 따라서 reflexive의 정의에 따라 $R$은 reflexive하다. \\
+$p\ R\ q$라고 하자. 즉 $p$와 $q$ 사이의 거리($\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$)는 $c$보다 작거나 같다. 한편 $q$와 $p$ 사이의 거리($\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$)는 $p$와 $q$ 사이의 거리($\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$)와 같으므로, $q\ R\ p$이다. 따라서 symmetric의 정의에 따라 $R$은 symmetric하다. \\
+$p\ R\ q$이고 $q\ R\ r$이라고 하자. 즉 $p$와 $q$ 사이의 거리($\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$)와, $q$와 $r$ 사이의 거리($\sqrt{(x_2-x_3)^2+(y_2-y_3)^2}$)는 $c$보다 작거나 같다. 그런데 $p, q, r$이 하나의 선 위에 있다고 하자. $p$에서 $r$ 사이에 $q$가 있는 경우, $p$와 $r$ 사이의 거리는 $p$에서 $q$ 사이의 거리와 $q$와 $r$ 사이의 거리의 합이다. 이 값은 $c$보다 클 수 있으므로, $(p,r)\notin R$이다. 따라서 $R$은 transitive하지 않다.\\
+$R$이 transitive하지 않으므로 equivalence relation의 정의에 따라 $R$은 equivalence realtion이 아니다.
+\end{addmargin}
+\bigskip
+
+8.
+\begin{addmargin}[1em]{2em}
+$A=\{a,b,c,d\}$이며 $R$은 다음과 같이 정의된 relation이라고 하자: 
+\[R = \{(a, a), (b, b), (c, c), (d, d), (c, b), (a, d), (b, a), (b, d), (c, d), (c, a) \} \]
+$(a,a), (b,b), (c,c), (d,d)\in R$이므로, reflexive의 정의에 따라 $R$은 reflexive하다. 또한 모든 서로 다른 $x,y\in A$에 대하여 $(x,y)\in R$이면서 $(y,x)\in R$이지 않으므로, $R$은 antisymmetric하다. 마지막으로 모든 서로 다른 $x,y,z\in A$에 대하여 $(x,y)\in R$이고 $(y,z)\in R$이면 $(x,z)\in R$이므로 $R$은 transitive하다. 따라서 partial order relation의 정의에 의하여 $R$은 $A$에 대해  partial order relation이다. \\
+한편 모든 $x,y\in A$에 대하여 $(x,y)\in R$나 $(y,x)\in R$을 만족하므로, $R$은 $A$에 대하여 total order relation이다.
+
+\end{addmargin}
+\bigskip
+
+9.
+\begin{addmargin}[1em]{2em}
+12번
+\end{addmargin}
+\bigskip
+
+10.
+\begin{addmargin}[1em]{2em}
+$\frac{364}{1000}$
+\end{addmargin}
+\bigskip
+
+11.
+\begin{addmargin}[1em]{2em}
+그렇다. 알파벳은 26글자이고 두 개의 이니셜에 대해 $26^2 = 676$개의 경우가 가능하다. pigeonhole principle에 따라, 적어도 같은 이니셜을 가지는 경우가 존재한다.
+\end{addmargin}
+\bigskip
+
+12.
+\begin{addmargin}[1em]{2em}
+\begin{align*}
+    \sum_{k=0}^n{n \choose k}5^k &= \sum_{k=0}^n{n \choose k}1^{n-k} 5^k \\
+    &=(1+5)^n \\
+    &=6^n \\
+\end{align*}
+\end{addmargin}
+\bigskip
+
+13.
+\begin{addmargin}[1em]{2em}
+0.7
+\end{addmargin}
+\bigskip
+
+14.
+\begin{addmargin}[1em]{2em}
+$\frac{1}{12}$
+\end{addmargin}
+\bigskip
+
+15.
+\begin{addmargin}[1em]{2em}
+0.57647058823
+\end{addmargin}
+\bigskip
+
+16.
+\begin{addmargin}[1em]{2em}
+0.9991416309
+\end{addmargin}
+\bigskip
+
+17.
+\begin{addmargin}[1em]{2em}
+\begin{bmatrix}
+0 & 1 & 1 & 0 \\
+1 & 0 & 2 & 1 \\
+1 & 2 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+0 & 1 & 1 & 0 \\
+1 & 0 & 2 & 1 \\
+1 & 2 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+\end{bmatrix} = 
+\begin{bmatrix}
+2 & 2 & 2 & 2 \\
+2 & 6 & 2 & 3 \\
+2 & 2 & 6 & 3 \\
+2 & 3 & 3 & 3 \\
+\end{bmatrix}
+\\
+\\
+2
+\end{addmargin}
+\bigskip
+
+18.
+\begin{addmargin}[1em]{2em}
+\begin{bmatrix}
+0 & 1 & 1 & 0 \\
+1 & 0 & 2 & 1 \\
+1 & 2 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+2 & 2 & 2 & 2 \\
+2 & 6 & 2 & 3 \\
+2 & 2 & 6 & 3 \\
+2 & 3 & 3 & 3 \\
+\end{bmatrix} = 
+\begin{bmatrix}
+4 & 8 & 8 & 6 \\
+8 & 9 & 17 & 11 \\
+8 & 17 & 9 & 11 \\
+6 & 11 & 11 & 9 \\
+\end{bmatrix}
+\\
+\\
+6
+\end{addmargin}
+\bigskip
+
+19.
+\begin{addmargin}[1em]{2em}
+
+\end{addmargin}
+\bigskip
+
+20.
+\begin{addmargin}[1em]{2em}
+그렇다.
+우선 그래프 $C$는 9개의 vertex와 12개의 edge를 가지는 connected graph라고 하자. 먼저 $n$개의 vertex를 가진 tree는 $n-1$개의 edge를 가지므로, tree의 정의에 의해 $C$는 tree가 아니다. 그런데 circuit을 가지지 않는 connected graph인 경우, 그리고 오직 이 경우에만 tree이다. 즉, tree가 아닌 connected graph인 $C$는 circuit을 가진다.
+\end{addmargin}
+\bigskip
+
+21.
+\begin{addmargin}[1em]{2em}
+3
+\end{addmargin}
+\bigskip
+
+22.
+\begin{addmargin}[1em]{2em}
+5
+\end{addmargin}
+\bigskip
+
+23.
+\begin{addmargin}[1em]{2em}
+$v_2$
+\end{addmargin}
+\bigskip
+
+24.
+\begin{addmargin}[1em]{2em}
+$v_{17}$, $v_{18}$, $v_{19}$
+\end{addmargin}
+\bigskip
+
+25.
+\begin{addmargin}[1em]{2em}
+10
+\end{addmargin}
+\bigskip
+
+26.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=10cm, height=6cm]{26.jpg}
+\end{addmargin}
+\bigskip
+
+28.
+\begin{addmargin}[1em]{2em}
+https?://[a-z]\{2,5\}(.[a-z]\{2,3\})\{1,3\}
+\end{addmargin}
+\bigskip
+
+30.
+\begin{addmargin}[1em]{2em}
+$0^*|(0^* 1 0^* 1 0^* 1 0^* 1 0^*)^*$
+\end{addmargin}
+\bigskip
+
+31.
+\begin{addmargin}[1em]{2em}
+\includegraphics[width=8cm, height=8cm]{31.jpg}
+\end{addmargin}
+\bigskip
+
+32.
+\begin{addmargin}[1em]{2em}
+$L$을 accept하는 finite-state automaton $A$가 있다고 가정하자. $A$는 양수 $n$에 대해 $n$개의 state $s_0,s_1,\cdots,s_n$을 가진다. \\
+$a$로만 이루어진 input string을 생각해보자. $a^1,a^2,\cdots$ 이들은 무한하고, state는 유한하다. 즉 pigeonhole principle에 의해, 양수 $m$에 대해 $A$가 $s_m$을 가지기 위해서 적어도 두 개의 서로 다른 input이 가능하다. 이 input을 서로 다른 양수 $p, q$($p>q$)에 대해 $a^p$와 $a^q$라고 하자. $A$는 $L$을 accept하므로 $A$는 $a^q b^q$를 accept한다. 또한 $a^q$, $a^$가 input일 때 $A$는 $s_m$을 state로 가지게 되므로, $a^p b^q$ 또한 accept한다. \\
+그런데 $p>q$이므로 $a^p b^q$는 $L$에 속하지 않고 이는 $A$가 $L$을 accept한다는 가정에 모순된다. 따라서 $L$을 accpet하는 finite-state automaton은 존재하지 않는다. 
+\end{addmargin}
+\bigskip
+
+33.
+\begin{addmargin}[1em]{2em}
+automaton $A$에 대하여, \\
+0-equivalence classes는 $\{s_1, s_3\}, \{s_0,s_2\}$이다. \\
+1-equivalence classes는 $\{s_1, s_3\}, \{s_0\}, \{s_1\}$이다. \\
+2-equivalence classes는 $\{s_1, s_3\}, \{s_0\}, \{s_1\}$이다. \\
+automaton $A'$에 대하여, \\
+0-equivalence classes는 $\{s'_0, s'_1, s'_2\}, \{s'_3\}$이다. \\
+1-equivalence classes는 $\{s'_0,s'_2\},\{s'_1\},\{s'_3\}$이다. \\
+2-equivalence classes는 $\{s'_0,s'_2\},\{s'_1\},\{s'_3\}$이다. \\
+$\overline{A}$에 대한 diagram(위)과 $\overline{A'}$에 대한 diagram(아래)은 다음과 같다.(다음장)\\
+\includegraphics[width=6cm, height=10cm]{33.jpg}\\
+따라서 $A$와 $A'$는 동일한 language를 accept하고, equivalent automata이다.
+\end{addmargin}
+\bigskip
+
+\end{document}
